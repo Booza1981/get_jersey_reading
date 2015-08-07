@@ -26,9 +26,12 @@ header {
 .temp_logo{
 
 	float: left;
-	margin-top: 18px;
+	margin-top: 10px;
 	width: 280px;
-	letter-spacing: 5px;
+	
+}
+a {
+	text-decoration: none;
 }
 
 li {
