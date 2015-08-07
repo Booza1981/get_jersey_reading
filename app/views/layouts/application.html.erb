@@ -14,14 +14,14 @@
 	<h1 class="temp_logo">Get Jersey Reading</h1>
 		<div class="nav">
 			<ul>
-				<li class="button">Home</li>
-				<li class="button">About</li>
-				<li class="button">Recommend</li>
+				<li>Home</li>
+				<li>About</li>
+				<li>Recommend</li>
 				<% if user_signed_in? %>
   				Logged in as <strong><%= current_user.email %></strong>.
   				<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
 				<% else %>
-  				<%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+  				<%= link_to "Login", new_user_session_path %>
 				<% end %>
 			</ul>
 		</div>
