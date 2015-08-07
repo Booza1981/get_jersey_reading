@@ -1,0 +1,60 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Raleway', "Arial", sans-serif;
+}
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+header {
+	
+  padding: 0 30px;
+  height: 100px;
+  background-color: #B60011;
+  border-bottom: 1px solid #000;
+  color: #fff;
+
+}
+.nav {
+	float: right;
+	
+}
+.temp_logo{
+
+	float: left;
+	margin-top: 18px;
+	width: 280px;
+	letter-spacing: 5px;
+}
+
+li {
+	text-align: center;
+	padding: 0 10px;
+	list-style: none;
+	display: inline;
+	line-height: 100px
+}
+
+.content {
+	width: 900px;
+	margin: 0 auto;
+}
+
+
+footer {
+	padding: 0 30px;
+	background-color: #B60011;
+	bottom: 0;
+	width: 100%;
+	border-top: 1px solid #7D7D7D;
+	text-align: center;
+	color: #fff;
+}
+
+footer {
+	position: fixed;
+}

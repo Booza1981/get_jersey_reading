@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GetJerseyReading</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,700,500,200' rel='stylesheet' type='text/css'>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header class="group">
+	
+	<div class="main_navbar">
+	<h1 class="temp_logo">Get Jersey Reading</h1>
+		<div class="nav">
+			<ul>
+				<li class="button">Home</li>
+				<li class="button">About</li>
+				<li class="button">Recommend</li>
+				<% if user_signed_in? %>
+  				Logged in as <strong><%= current_user.email %></strong>.
+  				<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+				<% else %>
+  				<%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+<section>
+	<div class="content">
+		<p class="notice"><%= notice %></p>
+		<p class="alert"><%= alert %></p>
+		<%= yield %>
+	</div>
+
+</section>
+<footer>
+	<p> Copyright&copy; 2015  | All rights reserved.</p>
+</footer>
+
+</body>
+</html>
