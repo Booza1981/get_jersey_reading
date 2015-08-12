@@ -1,13 +1,18 @@
 
-<p>
+<div class="book_thumbnail">
+	<%= @book.image_link %>
+</div>
+
+
+<div>
   <strong>Link:</strong>
   <%= @book.link %>
-</p>
+</div>
 
-<p>
+<div>
   <strong>ISBN:</strong>
   <%= @book.isbn %>
-</p>
+</div>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
