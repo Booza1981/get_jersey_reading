@@ -5,7 +5,14 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     @books = Book.all
+
+    
+    @book = GoogleBooks.search(Book.first.isbn, { api_key: 'AIzaSyBOnVO64hRZ-18i0pqXBIQ-2BT7iK9_5qc'} )
+    @top = @book.first
+    @thumb = @top.image_link
+        
   end
+
 
   # GET /books/1
   # GET /books/1.json
@@ -14,7 +21,6 @@ class BooksController < ApplicationController
     @books = GoogleBooks.search(@book.isbn) # yields a collection of one result
     @book_show = @books.first # the one result
     @thumb = @book_show.image_link(:zoom => 4)
-
   end
 
   # GET /books/new

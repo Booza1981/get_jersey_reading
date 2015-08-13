@@ -1,8 +1,17 @@
-<p id="notice"><%= notice %></p>
+<div class="hero">
+  <%= image_tag("jersey_festival_of_words.jpg") %>
+</div>
 
-<h1>Listing Books</h1>
+
+<h1>Top Recommendations</h1>
+  
+<div class = "cover_thumb">
+  <%= image_tag(@thumb, :alt => "#{@top.title} cover", :class => "cover-image") %>
+</div>
+
 
 <table>
+
   <thead>
     <tr>
       <th>Link</th>
@@ -10,6 +19,13 @@
       <th colspan="3"></th>
     </tr>
   </thead>
+
+
+
+
+
+
+
 
   <tbody>
     <% @books.each do |book| %>

@@ -24,7 +24,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Google Book API
-gem 'googlebooks'
+gem 'googlebooks', git: 'https://github.com/MacBlazin/GoogleBooks' # Use this if you want to use George's forked Gem instead
+# gem 'googlebooks'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
