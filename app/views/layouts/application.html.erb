@@ -1,46 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GetJerseyReading</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <link href='http://fonts.googleapis.com/css?family=Raleway:400,700,500,200' rel='stylesheet' type='text/css'>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+		<title>Get Jersey Reading</title>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700|PT+Sans|Raleway:400,700' rel='stylesheet' type='text/css'>
+		<%= stylesheet_link_tag 	'application', media: 'all', 'data-turbolinks-track' => true %>
 </head>
-<body>
-<header class="group">
-	
-	<div class="main_navbar">
-	<h1 class="temp_logo">Get Jersey Reading</h1>
-		<div class="nav">
-			<ul>
-				<li>Home</li>
-				<li>About</li>
-				<li>Recommend</li>
+
+		<body>
+		<header>
+		<a href="index.html" id="logo">
+			<h1> Get Jersey Reading</h1>
+		</a>
+		<nav>
+			<select id="select">
+  				<option value="index"><a href="index.html" class="selected">Home</a></option>
+				  <option value="mypage"><a href="mypage.html">My Page</a></option>
+				   <option value="booklists"><a href="booklists.html">Book Lists</a></option>
+				    <option value="about"><a href="about.html">About</a></option>
+				  
+			</select>
+
+
+				<li><a href="index.html" class="selected">Home</a></li>
+				<li><a href="mypage.html">My Page</a></li>
+				<li><a href="Book Lists">Book Lists</a></li>
+				<li><a href="About">About</a></li>
+				
+
+
+			</ul>
+		</header>
+
+
 				<% if user_signed_in? %>
   				Logged in as <strong><%= current_user.email %></strong>.
   				<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
 				<% else %>
   				<%= link_to "Login", new_user_session_path %>
 				<% end %>
-			</ul>
-		</div>
-	</div>
-	<nav>
-		
-	</nav>
-</header>
-<section>
-	<div class="content">
-		<p class="notice"><%= notice %></p>
-		<p class="alert"><%= alert %></p>
-		<%= yield %>
-	</div>
 
-</section>
-<footer>
-	<p> &copy;Copyright 2015 </p>
-</footer>
+
+				<%= yield %>
+
+
+			<footer>
+				<img src="twitter-bird-light-bgs.eps" alt="Twitter Logo">
+				<img src="img/facebook.png" alt="Facebook Logo">
+				<p>&copy; 2015 Jersey Library</p>
+			</footer>
 
 </body>
 </html>

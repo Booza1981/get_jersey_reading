@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, :path => '', :path_names => {:sign_in => 'account/login', :sign_out => 'account/logout'}
   resources :books
 
-  root to: "books#index"
+  root "books#index"
 
   
 
