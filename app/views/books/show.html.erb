@@ -1,17 +1,33 @@
+<div class="wrapper">
 
-<div class="book_thumbnail">
-	<%= @book.image_link %>
-</div>
+	<div class = "cover">
+  		<%= image_tag(@thumb, :alt => "#{@book_show.title} cover", :class => "cover-image") %>
+	</div>
+	
+	<div class = "book-info">
+		
+			<div class="book-title">
+  				<h3><%= @book_show.title %></h3>
+			</div>
+			<div class="book-description">
+				<%= @book_show.description %>
+			</div>
+
+			<div class="review">
+				<h3> Top Tags </h3>
+				<a> funny </a> <a> boring </a> <a> exciting </a> <a> scary </a>
+			</div>
+
+			<div class="book-link">
+				<%= link_to 'Read It!', @book_link %>
+
+				<%= link_to 'Currently Reading', root_path %>
+			</div>
 
 
-<div>
-  <strong>Link:</strong>
-  <%= @book.link %>
-</div>
+  		
+  	</div>
 
-<div>
-  <strong>ISBN:</strong>
-  <%= @book.isbn %>
 </div>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |

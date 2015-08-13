@@ -10,6 +10,11 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
+    @book_link = @book.link
+    @books = GoogleBooks.search(@book.isbn) # yields a collection of one result
+    @book_show = @books.first # the one result
+    @thumb = @book_show.image_link(:zoom => 4)
+
   end
 
   # GET /books/new
@@ -26,15 +31,13 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
 
-    respond_to do |format|
+
       if @book.save
-        format.html { redirect_to @book, notice: 'Book was successfully created.' }
-        format.json { render :show, status: :created, location: @book }
+        redirect_to @book
       else
-        format.html { render :new }
-        format.json { render json: @book.errors, status: :unprocessable_entity }
+        render :new
       end
-    end
+  
   end
 
   # PATCH/PUT /books/1
@@ -42,7 +45,7 @@ class BooksController < ApplicationController
   def update
     respond_to do |format|
       if @book.update(book_params)
-        format.html { redirect_to @book, notice: 'Book was successfully updated.' }
+        format.html { redirect_to @book}
         format.json { render :show, status: :ok, location: @book }
       else
         format.html { render :edit }
@@ -69,6 +72,6 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:link, :isbn, :image_link)
+      params.require(:book).permit(:link, :isbn, :image_link, :title, :description)
     end
 end
