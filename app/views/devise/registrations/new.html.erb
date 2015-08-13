@@ -14,9 +14,11 @@
     <%= f.date_select :date_of_birth %>
   </div>
   
-  <div><%= f.check_box :is_female, {}, false%> <%= f.label :is_female, "Female" %> </div>
-  <div><%= f.check_box :is_female, {}, true %> <%= f.label :is_female, "Male" %> </div>
-
+  <div>
+  <%= radio_button_tag :is_female, '1', true %><%= f.label :is_female, "Female" %>
+  <%= radio_button_tag :is_female, '0', false %><%= f.label :is_female, "Male" %>
+  </div>
+  
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
