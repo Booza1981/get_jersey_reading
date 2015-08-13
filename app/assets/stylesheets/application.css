@@ -14,4 +14,102 @@
  *= require_self
  */
 
- 
+ /*************************
+GENERAL
+************************/
+
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+a {
+	text-decoration: none;
+	
+}
+
+/***************************
+HEADING
+*****************************/
+
+#logo {
+	text-align: left;
+	margin: 0;
+	
+}
+
+h1 {
+	font-family: 'Raleway', sans-serif;
+	margin: 15px 0;
+	font-size: 1.75em;
+	font-weight: normal;
+	line-height: 0.8em;
+}
+
+
+
+/****************************************
+NAVIGATION
+*****************************************/
+
+
+nav {
+	text-align: center;
+	padding: 10px;
+	margin: 20px 0 0;
+	font-size: 0.75em;
+	list-style: none;
+
+}
+
+
+
+/****************************************
+FOOTER
+*****************************************/
+
+
+footer {
+	font-size: 0.75em;
+	text-align: center;
+	clear: both;
+	padding-top: 50px;
+	color: #FF8730;
+
+}
+
+footer .span {
+	content: '\f202';
+}
+
+
+/****************************************
+COLORS
+*****************************************/
+
+
+#logo {
+	color: #E84820;
+}
+
+h1 {
+	color: #E84820;
+}
+
+a {
+	color: FF8730;
+}
+
+nav a, nav a:visited {
+	color: #FF8730;
+}
+
+nav a.selected, nav a:hover {
+	color: #E84820;
+}
+
+/*site body*/
+body {
+	background-color: white;
+	color: #303554;
+}
