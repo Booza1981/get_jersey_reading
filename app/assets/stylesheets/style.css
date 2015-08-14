@@ -49,17 +49,60 @@ li {
 	margin: 0 auto;
 }
 
+*/
+
+.wrapper {
+	width: 1200px;
+	margin: 0 auto;
+}
+
 /*--------------------------------------Home Page---------------------------------------*/
 
 .hero img {
 	width: 100%;
 }
 
-.cover_thumb img{
-	width: 100px;
-	margin: 20px;
+
+
+.box {
+	display: inline-block;
+	width: 100%;
 }
 
+.content-box {
+	width: 380px;
+	display: inline-block;
+	float: left;
+	margin: 10px;
+}
+
+.book_title {
+	margin: 10px;
+	float:left;
+	width: 160px;
+}
+
+.book_cover {
+	margin: 10px;
+	float: left;
+}
+
+.book_cover img{
+	width: 160px;
+}
+
+.avatar {
+	margin: 20px;
+	float: left;
+}
+
+.avatar img{
+	width: 190px;
+}
+.username {
+	margin: 20px;
+	float:left;
+}
 /*--------------------------------------Show Book Details---------------------------------------*/
 
 .cover {
@@ -121,7 +164,7 @@ li {
 }
 
 /*-------------------------footer------------------------*/
-
+/*
 footer {
 	padding: 0 30px;
 	background-color: #B60011;
@@ -134,5 +177,4 @@ footer {
 
 footer {
 	position: fixed;
-}
-************************************/
+}*/
