@@ -1,0 +1,160 @@
+/* Stop floats from collapsing */
+
+.group:after {
+  visibility: hidden;
+  display: block;
+  content: "";
+  clear: both;
+  height: 0;
+  }
+* html .group             { zoom: 1; } /* IE6 */
+*:first-child+html .group { zoom: 1; } /* IE7 */
+
+/*Centre Back button on bottom on Reviews Page */
+
+.back_button {
+  display: block;
+  text-align: center;
+}
+
+/*stop footer overlapping over content */
+
+body {
+   min-height: 400px;
+   margin-bottom: 100px;
+   clear: both;
+}
+
+/* make width of form fill page */
+
+.review_form {
+  width: 100%;
+}
+
+/* centre-align form header */
+
+.review_form h1 {
+  text-align: center;
+}
+
+/* Type what i'm tryng to do here */
+
+form {
+  text-align: center;
+  padding-top: 10px;
+}
+
+/* Font Awesome Icons Thumbs Up and Down + Meh Styling */
+
+.fa {
+  font-size: 5em;
+}
+
+/* set size of image on review page */
+.cover_review {
+  max-width: 40%;
+  }
+
+/* Have ratings function horizontal under book in mobile view */
+.rating_icons {
+  max-width: 33%;
+  display: inline-block;
+  padding: 5px
+}
+
+.book_ratings {
+  display: block;
+}
+
+/* Change form headings to bold */
+
+label {
+  font-style: bold;
+}
+
+/* format form fields */
+
+input, textarea {
+  height: 30px;
+  font-size: 1em;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+  padding-left: 10px;
+  text-align: center;
+}
+
+.review_page {
+  text-align: center;
+}
+
+.review a {
+    display: inline-block;
+    margin-top: 5px;
+    text-align: center;
+  }
+
+.tags {
+  padding-top: 10px
+}
+
+/* group ratings and tags together so that they move at the same time re responsive */
+
+.ratings_and_tags {
+  height: 100%
+}
+  
+
+/* This applies from 600px onwards */
+
+
+@media (min-width: 700px) {
+  .cover_review {
+    max-width: 300px;
+    float: left;
+  }
+/*
+  .book_ratings {
+    min-width: 100px;
+    max-width: 400px;
+    float: left;
+    margin: 0 center;
+    padding: 10px;
+  }
+
+  .tags_review_page {
+    min-width: 100px;
+    max-width: 400px;
+    float: left;
+    padding: 10px;
+    margin: 0 center;
+  }
+*/
+
+  .rating_icons {
+    display: inline-block;
+    min-width: 100px;
+    text-align: center;
+  }
+
+  .fa {
+    display: block
+  }
+
+  .review_content {
+    max-width: 800px;
+    min-width: 650px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  } 
+
+}
+
+  
+
+
+
+
+
+
