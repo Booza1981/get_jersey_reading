@@ -1,4 +1,6 @@
-/*************************************************
+/*********************
+HEADER
+***************************/
 * {
 	margin: 0;
 	padding: 0;
@@ -60,6 +62,14 @@ li {
 	display: inline;
 	line-height: 100px
 }
+
+/*******************
+CONTENT
+********************/
+.yield {
+	margin: 0 auto;
+	width: 800px
+}
 .bottn {
 	border-radius: 5px;
 	padding: 10px;
@@ -68,7 +78,7 @@ li {
 }
 
 .content {
-	width: 900px;
+	width: 1000px;
 	margin: 0 auto;
 }
 .img-circle {
@@ -82,22 +92,20 @@ li {
   margin: 0 auto;
 }
 
-.row:before,
-.row:after {
-  display: table;
-  content: "";
-}
 
-*/
 
 .wrapper {
-	width: 1200px;
+	width: 100%;
 	margin: 0 auto;
 }
 
-/*--------------------------------------Home Page---------------------------------------*/
 
-.hero img {
+/*******************
+HOME PAGE
+********************/
+
+
+.img {
 	width: 100%;
 }
 
@@ -109,10 +117,10 @@ li {
 }
 
 .content-box {
-	width: 380px;
-	display: inline-block;
-	float: left;
-	margin: 10px;
+	width: 125px;
+    display: inline-block;
+    float: left;
+    margin: 7px;
 }
 
 .book_title {
@@ -127,7 +135,8 @@ li {
 }
 
 .book_cover img{
-	width: 160px;
+	width: 100px;
+    padding-top: 20px;
 }
 
 .avatar {
@@ -142,7 +151,11 @@ li {
 	margin: 20px;
 	float:left;
 }
-/*--------------------------------------Show Book Details---------------------------------------*/
+
+/**********************
+SHOW BOOK
+***********************/
+
 .img-circle {
 	width: 30px;
 	height: 30px;
@@ -204,21 +217,28 @@ li {
 	background-color: lightblue;
 	border-radius: 8px;
 	border: 2px solid blue;
->>>>>>> development
+
 }
 
-/*-------------------------footer------------------------*/
-/*
+/*********************
+FOOTER
+**********************/
 footer {
-	padding: 0 30px;
+	font-size: 0.75em;
 	background-color: #B60011;
 	bottom: 0;
 	width: 100%;
 	border-top: 1px solid #7D7D7D;
 	text-align: center;
 	color: #fff;
+	display: inline-block;
 }
 
 footer {
 	position: fixed;*/
+}
+.footerimg{
+	width: 10px;
+	height: 10px;
+
 }

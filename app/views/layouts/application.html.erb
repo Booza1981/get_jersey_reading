@@ -8,29 +8,31 @@
 </head>
 <body>
 <header class="group">
-	
 	<div class="main_navbar">
 	<h1 class="temp_logo">Get Jersey Reading</h1>
 		<div class="nav">
 			<ul>
-				<li>Home</li>
+				<li><%= link_to 'Home', books_path %></li>
 				<li>About</li>
-				<li>Recommend</li>
+				<li>My Profile</li>
 				<% if user_signed_in? %>
-  				<%= link_to current_user.username %>
+  				<%= current_user.email %>
   				<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
 				<% else %>
   				<%= link_to "Login", new_user_session_path %>
 				<% end %>
-
 			</ul>
-		</header>
-
-				<%= yield %>
+		</div>
+	</div>
+</header>
+<div class="yield">
+	<%= yield %>
+</div>
+	
 
 			<footer>
-				<img src="twitter-bird-light-bgs.eps" alt="Twitter Logo">
-				<img src="img/facebook.png" alt="Facebook Logo">
+				<a href="http://facebook.com"><%=image_tag("facebook-wrap.png",:class =>"footerimg")%></a>
+      			<a href="http://twitter.com"><%=image_tag("twitter-wrap.png",:class =>"footerimg") %></a>
 				<p>&copy; 2015 Jersey Library</p>
 			</footer>
 

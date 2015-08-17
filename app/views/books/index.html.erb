@@ -3,10 +3,9 @@
   <%= image_tag("Words_festival.png", :class => "img-circle")  %>
 </div>
 
-<div class="wrapper">
-<div class="box">
 
-<h1>Top Recommendations</h1>
+<div class="page-header">
+<h2> Top Recommendations</h2>
 
 <% for i in 0..2  %>
 	<div class="content-box">
@@ -20,7 +19,12 @@
 			<h4><%= @book_title[i] %></h4>
 		</div>
 	</div>
-<%end%>
+<%end%>	
+</div>
+<div class="wrapper">
+<div class="box">
+
+
 
 </div>
 
