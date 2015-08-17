@@ -96,18 +96,18 @@ li {
 	float: left;
 }
 
-<<<<<<< HEAD
+
 body {
 	padding: 0;
 	margin: 0;
-=======
-.avatar img{
+}
+
+.avatar img {
 	width: 190px;
 }
 .username {
 	margin: 20px;
 	float:left;
->>>>>>> development
 }
 /*--------------------------------------Show Book Details---------------------------------------*/
 .img-circle {
