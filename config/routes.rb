@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-
+  resources :books
   resources :reviews
   devise_for :users, :path => '', :path_names => {:sign_in => 'account/login', :sign_out => 'account/logout'}
-  resources :books
+  
 
   root "books#index"
 

@@ -6,6 +6,9 @@ class ApplicationController < ActionController::Base
     @user = User.new
   end
 
+  def books
+  end
+
   protect_from_forgery with: :exception 
   
 end
