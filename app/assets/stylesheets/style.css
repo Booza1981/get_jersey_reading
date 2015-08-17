@@ -19,6 +19,23 @@ header {
   color: #fff;
 
 }
+.recommend {
+	position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.page-header {
+  padding-bottom: 17px;
+  margin: 18px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.page-header h1 , p {
+  line-height: 1;
+}
+
 .nav {
 	float: right;
 	
@@ -46,7 +63,29 @@ li {
 	width: 900px;
 	margin: 0 auto;
 }
+.img-circle {
+	width: 50px;
+	height: 50px;
+	border-radius: 30px; 
+}
+.row {
+  margin-left: -20px;
+  *zoom: 1;
+  margin: 0 auto;
+}
 
+.row:before,
+.row:after {
+  display: table;
+  content: "";
+}
+
+.row:after {
+  clear: both;
+}
+.text-right{
+	float: ;
+}
 
 footer {
 	padding: 0 30px;
