@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GetJerseyReading</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <link href='http://fonts.googleapis.com/css?family=Raleway:400,700,500,200' rel='stylesheet' type='text/css'>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+		<title>Get Jersey Reading</title>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700|PT+Sans|Raleway:400,700' rel='stylesheet' type='text/css'>
+		<%= stylesheet_link_tag 	'application', media: 'all', 'data-turbolinks-track' => true %>
 </head>
 <body>
 <header class="group">
@@ -23,24 +22,17 @@
 				<% else %>
   				<%= link_to "Login", new_user_session_path %>
 				<% end %>
-			</ul>
-		</div>
-	</div>
-	<nav>
-		
-	</nav>
-</header>
-<section>
-	<div class="content">
-		<p class="notice"><%= notice %></p>
-		<p class="alert"><%= alert %></p>
-		<%= yield %>
-	</div>
 
-</section>
-<footer>
-	<p> &copy;Copyright 2015 </p>
-</footer>
+			</ul>
+		</header>
+
+				<%= yield %>
+
+			<footer>
+				<img src="twitter-bird-light-bgs.eps" alt="Twitter Logo">
+				<img src="img/facebook.png" alt="Facebook Logo">
+				<p>&copy; 2015 Jersey Library</p>
+			</footer>
 
 </body>
 </html>

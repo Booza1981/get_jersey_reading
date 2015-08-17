@@ -5,11 +5,38 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     @books = Book.all
+
+    @top_rated_isbn = []
+
+
+
+    @books.each do |book|
+      @top_rated_isbn.push(book.isbn)
+    end
+
+    @book_title = []
+    @book_thumb = []
+
+    @top_rated_isbn.each do |top_isbn|
+      @book = GoogleBooks.search(top_isbn, { api_key: 'AIzaSyBOnVO64hRZ-18i0pqXBIQ-2BT7iK9_5qc'} )
+      @book_title.push(@book.first.title)
+      @book_thumb.push(@book.first.image_link)
+    end
+
+    @top_reader_avatar = ["http://img1.wikia.nocookie.net/__cb20150105230449/pokemon/images/1/13/007Squirtle_Pokemon_Mystery_Dungeon_Explorers_of_Sky.png", "http://images2.fanpop.com/image/photos/11600000/Pikachu-the-ultimate-pokemon-fan-club-11690553-450-413.jpg", "http://img3.wikia.nocookie.net/__cb20140903033758/pokemon/images/b/b8/001Bulbasaur_Dream.png"]
+    @top_reader_username = ["Squirtle", "Pikachu", "Bulbasaur"]
+    @top_reader_points = [186, 123, 96]
   end
+
+
 
   # GET /books/1
   # GET /books/1.json
   def show
+    @book_link = @book.link
+    @books = GoogleBooks.search(@book.isbn) # yields a collection of one result
+    @book_show = @books.first # the one result
+    @thumb = @book_show.image_link(:zoom => 4)
   end
 
   # GET /books/new
@@ -26,15 +53,13 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
 
-    respond_to do |format|
+
       if @book.save
-        format.html { redirect_to @book, notice: 'Book was successfully created.' }
-        format.json { render :show, status: :created, location: @book }
+        redirect_to @book
       else
-        format.html { render :new }
-        format.json { render json: @book.errors, status: :unprocessable_entity }
+        render :new
       end
-    end
+  
   end
 
   # PATCH/PUT /books/1
@@ -42,7 +67,7 @@ class BooksController < ApplicationController
   def update
     respond_to do |format|
       if @book.update(book_params)
-        format.html { redirect_to @book, notice: 'Book was successfully updated.' }
+        format.html { redirect_to @book}
         format.json { render :show, status: :ok, location: @book }
       else
         format.html { render :edit }
@@ -69,6 +94,6 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:link, :isbn)
+      params.require(:book).permit(:link, :isbn, :image_link, :title, :description)
     end
 end

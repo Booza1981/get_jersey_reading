@@ -1,3 +1,4 @@
+/*************************************************
 * {
 	margin: 0;
 	padding: 0;
@@ -52,6 +53,7 @@ a {
 }
 
 li {
+	text-decoration: none;
 	text-align: center;
 	padding: 0 10px;
 	list-style: none;
@@ -86,13 +88,127 @@ li {
   content: "";
 }
 
-.row:after {
-  clear: both;
-}
-.text-right{
-	float: ;
+*/
+
+.wrapper {
+	width: 1200px;
+	margin: 0 auto;
 }
 
+/*--------------------------------------Home Page---------------------------------------*/
+
+.hero img {
+	width: 100%;
+}
+
+
+
+.box {
+	display: inline-block;
+	width: 100%;
+}
+
+.content-box {
+	width: 380px;
+	display: inline-block;
+	float: left;
+	margin: 10px;
+}
+
+.book_title {
+	margin: 10px;
+	float:left;
+	width: 160px;
+}
+
+.book_cover {
+	margin: 10px;
+	float: left;
+}
+
+.book_cover img{
+	width: 160px;
+}
+
+.avatar {
+	margin: 20px;
+	float: left;
+}
+
+.avatar img{
+	width: 190px;
+}
+.username {
+	margin: 20px;
+	float:left;
+}
+/*--------------------------------------Show Book Details---------------------------------------*/
+.img-circle {
+	width: 30px;
+	height: 30px;
+	border-radius: 5px; 
+}
+.cover {
+	margin: 30px 30px 0 0;
+	width: 300px;
+	float: left;
+}
+
+.cover-image {
+	width: 300px;
+	border-radius: 5px;
+}
+
+.book-info {
+	margin: 30px 0 0 0;
+	float: left;
+	width: 550px;
+}
+
+.book-title {
+	margin: 30px 0 0 0;
+}
+
+.book-description {
+	margin: 30px 0 30px 0;
+}
+
+.book-link {
+	margin: 30px 0 30px 0;
+}
+
+.book-link :hover{
+	background: grey;
+}
+
+.book-link a {
+	width: 80px;
+	margin: 0 30px 0 0;
+	padding: 0 10px 0 10px;
+	color: white;
+	background: red;
+	border-radius: 5px;
+}
+
+.review {
+	margin: 10px 10px 10px 0;
+}
+
+.review h3{
+	margin: 40px 30px 30px 0;
+}
+
+.review a {
+	margin: 30px;
+	padding: 0 10px 0 10px;
+	background-color: lightblue;
+	border-radius: 8px;
+	border: 2px solid blue;
+>>>>>>> development
+}
+
+/*-------------------------footer------------------------*/
+/*
 footer {
 	padding: 0 30px;
 	background-color: #B60011;
@@ -104,5 +220,5 @@ footer {
 }
 
 footer {
-	position: fixed;
+	position: fixed;*/
 }

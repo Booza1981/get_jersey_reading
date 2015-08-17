@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20150813115132) do
 
+
   create_table "books", force: :cascade do |t|
     t.string   "link"
     t.text     "isbn"
@@ -20,7 +21,12 @@ ActiveRecord::Schema.define(version: 20150813115132) do
     t.datetime "updated_at", null: false
   end
 
+
   create_table "profiles", force: :cascade do |t|
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "book_id"
+    t.integer  "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
 
   get 'profiles/:id' => 'profiles#show'
-
-  devise_for :users, :path => '', :path_names => {:sign_in => 'account/login', :sign_out => 'account/logout'}
   resources :books
+  resources :reviews
+  devise_for :users, :path => '', :path_names => {:sign_in => 'account/login', :sign_out => 'account/logout'}
+  
 
-  root to: "books#index"
+  root "books#index"
 
   
 
