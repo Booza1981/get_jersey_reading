@@ -1,6 +1,6 @@
 <div class="page-header">
   <%= image_tag("book_review.jpg", :alt => "book_review placeholder", :class => "img-circle") %>
-  <h1 class="text-right"><%= @user.email %></h1>
+  <h1 class="text-right"><%= current_user.username %></h1>
 </div>
 <div class="page-header">
 <h2> Recommendations.</h2>
@@ -10,3 +10,5 @@
 <div class="page-header">
 <h2> Books I've read.</h2>	
 </div>
+
+<a class="bottn" href="#">Review A Book</a>

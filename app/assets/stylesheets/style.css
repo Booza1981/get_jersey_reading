@@ -58,6 +58,12 @@ li {
 	display: inline;
 	line-height: 100px
 }
+.bottn {
+	border-radius: 5px;
+	padding: 10px;
+	color: #FFF;
+	background-color: #A6CB27;
+}
 
 .content {
 	width: 900px;
