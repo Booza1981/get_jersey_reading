@@ -58,8 +58,15 @@ li {
 
 /*--------------------------------------Home Page---------------------------------------*/
 
-.hero img {
+.hero {
 	width: 100%;
+}
+
+.hero img {
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
 }
 
 
