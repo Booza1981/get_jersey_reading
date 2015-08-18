@@ -5,7 +5,16 @@
 <div class="page-header">
 <h2> Recommendations.</h2>
 <p> Based on books you've read..</p>
-
+<% @books.each do |book|  %>
+	<div class="content-box">
+		<div class="book_cover">
+			<%= image_tag(book.image_link) %>
+		</div>
+		<div class="book_title">
+			<h4><%= book.title %></h4>
+		</div>
+	</div>
+<%end%>
 </div>
 
 <div class="page-header">

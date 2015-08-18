@@ -7,23 +7,20 @@
 <div class="page-header">
 <h2> Top Recommendations</h2>
 <p> Jersey words festival books 2015..</p>
-
-<% for i in 0..2  %>
+<% @books.each do |book|  %>
 	<div class="content-box">
 		<div class="book_cover">
-			<%= image_tag(@book_thumb[i]) %>
+			<%= image_tag(book.image_link) %>
 		</div>
 
 		<div class="book_title">
-			<h4><%= @book_title[i] %></h4>
+			<h4><%= book.title %></h4>
 		</div>
 	</div>
 <%end%>	
 </div>
 <div class="wrapper">
 <div class="box">
-
-
 
 </div>
 

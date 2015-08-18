@@ -47,3 +47,5 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'avatars_for_rails'
+

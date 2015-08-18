@@ -6,23 +6,6 @@ class BooksController < ApplicationController
   def index
     @books = Book.all
 
-    @top_rated_isbn = []
-
-
-
-    @books.each do |book|
-      @top_rated_isbn.push(book.isbn)
-    end
-
-    @book_title = []
-    @book_thumb = []
-
-    @top_rated_isbn.each do |top_isbn|
-      @book = GoogleBooks.search(top_isbn, { api_key: 'AIzaSyBOnVO64hRZ-18i0pqXBIQ-2BT7iK9_5qc'} )
-      @book_title.push(@book.first.title)
-      @book_thumb.push(@book.first.image_link)
-    end
-
     @top_reader_avatar = ["http://img1.wikia.nocookie.net/__cb20150105230449/pokemon/images/1/13/007Squirtle_Pokemon_Mystery_Dungeon_Explorers_of_Sky.png", "http://images2.fanpop.com/image/photos/11600000/Pikachu-the-ultimate-pokemon-fan-club-11690553-450-413.jpg", "http://img3.wikia.nocookie.net/__cb20140903033758/pokemon/images/b/b8/001Bulbasaur_Dream.png"]
     @top_reader_username = ["Squirtle", "Pikachu", "Bulbasaur"]
     @top_reader_points = [186, 123, 96]

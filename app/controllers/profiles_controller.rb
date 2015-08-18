@@ -1,10 +1,12 @@
 class ProfilesController < ApplicationController
+  
   def show
-  	@user = User.find_by_username(params[:id]) || current_user
-    if @user
-      @books = @user.books.all
-    else
-  	  render action: :show
-  	end
+  	@user = current_user
+    @books = Book.all
   end
+
+  def friend
+  	@user = User.find_by_username(params[:id])
+  end
+
 end
