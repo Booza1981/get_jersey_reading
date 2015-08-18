@@ -69,14 +69,14 @@ FOOTER
 *****************************************/
 
 
-footer {
+/*footer {
 	font-size: 0.75em;
-	text-align: center;
+	display: inline-block;
 	clear: both;
-	padding-top: 50px;
+	padding-top: 10px;
 	color: #FF8730;
 
-}
+}*/
 
 footer .span {
 	content: '\f202';
@@ -92,9 +92,7 @@ COLORS
 	color: #E84820;
 }
 
-h1 {
-	color: #E84820;
-}
+
 
 a {
 	color: FF8730;
