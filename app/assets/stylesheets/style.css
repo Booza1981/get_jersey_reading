@@ -52,6 +52,7 @@ header {
 }
 a {
 	text-decoration: none;
+	color: #FFF;
 }
 
 li {
@@ -60,7 +61,7 @@ li {
 	padding: 0 10px;
 	list-style: none;
 	display: inline;
-	line-height: 100px
+	line-height: 100px;
 }
 
 /*******************
@@ -112,7 +113,7 @@ HOME PAGE
 	display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 80%;
+  width: 95%;
 }
 
 
@@ -234,10 +235,7 @@ SHOW BOOK
 FOOTER
 **********************/
 footer {
-<<<<<<< HEAD
 	font-size: 0.75em;
-=======
->>>>>>> 80f140c506c68666439b02ec9390be4445e19bb2
 	background-color: #B60011;
 	bottom: 0;
 	width: 100%;
@@ -247,18 +245,12 @@ footer {
 	
 }
 
-<<<<<<< HEAD
 
 footer {
 	position: fixed;
 }
-<<<<<<< HEAD
 .footerimg{
 	width: 10px;
 	height: 10px;
 
 }
-=======
-
-*/
->>>>>>> 80f140c506c68666439b02ec9390be4445e19bb2

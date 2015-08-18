@@ -14,10 +14,10 @@
 		<div class="nav">
 			<ul>
 				<li><%= link_to 'Home', books_path %></li>
-				<li>About</li>
-				<li>My Profile</li>
+				<li><%= link_to "About" %></li>
+				<li><%= link_to "My Profile" %></li>
 				<% if user_signed_in? %>
-  				<%= current_user.email %>
+  				<%= current_user.username %>
   				<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
 				<% else %>
   				<%= link_to "Login", new_user_session_path %>
@@ -32,8 +32,8 @@
 	
 
 			<footer>
-				<a href="http://facebook.com"><%=image_tag("facebook-wrap.png",:class =>"footerimg")%></a>
-      			<a href="http://twitter.com"><%=image_tag("twitter-wrap.png",:class =>"footerimg") %></a>
+				<!-- <a href="http://facebook.com"><%=image_tag("facebook-wrap.png",:class =>"footerimg")%></a>
+      			<a href="http://twitter.com"><%=image_tag("twitter-wrap.png",:class =>"footerimg") %></a> -->
 				<p>&copy; 2015 Jersey Library</p>
 			</footer>
 

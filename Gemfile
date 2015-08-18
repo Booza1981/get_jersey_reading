@@ -32,8 +32,8 @@ gem 'googlebooks', git: 'https://github.com/MacBlazin/GoogleBooks' # Use this if
 
 # Use Unicorn as the app server
 # gem 'unicorn'
-
 # Use Capistrano for deployment
+
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
