@@ -11,8 +11,39 @@
     </div>
   <% end %>
 
+  <div class="review_content group">
+    <img src="http://books.google.com/books/content?id=st6EqikLVKoC&printsec=frontcover&img=1&zoom=4&source=gbs_api" class="cover_review">
+
+    <div class = "ratings_and_tags">
+      <div class="book_ratings">
+        <h3> Overall Rating </h3>
+        <div class="rating_icons"><i class="fa fa-thumbs-up"></i><br>Loved it</div>
+        <div class="rating_icons" ><i class="fa fa-meh-o"></i><br>Not Bad</div>
+        <div class="rating_icons"><i class="fa fa-thumbs-down"></i><br>Disliked</div>
+      </div>
+    
+
+      <div class="review tags_review_page">
+        <h3> Top Tags </h3>
+          <div class="tags">
+            <a> funny </a> <a> boring </a> <a> exciting </a> <a> scary </a>
+            <a> romantic </a> <a> emotional </a> 
+            <a> intriguing </a>
+            <a> thrilling </a>
+            <a> fascinating </a>
+            <a> enthralling </a>
+            <a> evocative </a>
+            <a> heart-warming </a>
+            <a> sensitive </a>
+            <a> suspenseful </a>
+          </div>
+      </div>
+    </div>
+  </div>
+
+<% if false %>
   <div class="field">
-    <%= f.label :user_id %><br>
+   <%= f.label :user_id %><br>
     <%= f.number_field :user_id %>
   </div>
   <div class="field">
@@ -26,4 +57,7 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+<% end %>
+
+
 <% end %>

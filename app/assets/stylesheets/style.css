@@ -104,9 +104,15 @@ CONTENT
 HOME PAGE
 ********************/
 
-
-.img {
+.hero {
 	width: 100%;
+}
+
+.hero img {
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
 }
 
 
@@ -144,7 +150,13 @@ HOME PAGE
 	float: left;
 }
 
-.avatar img{
+
+body {
+	padding: 0;
+	margin: 0;
+}
+
+.avatar img {
 	width: 190px;
 }
 .username {
@@ -207,12 +219,10 @@ SHOW BOOK
 	margin: 10px 10px 10px 0;
 }
 
-.review h3{
-	margin: 40px 30px 30px 0;
-}
+
+ 
 
 .review a {
-	margin: 30px;
 	padding: 0 10px 0 10px;
 	background-color: lightblue;
 	border-radius: 8px;
@@ -224,7 +234,10 @@ SHOW BOOK
 FOOTER
 **********************/
 footer {
+<<<<<<< HEAD
 	font-size: 0.75em;
+=======
+>>>>>>> 80f140c506c68666439b02ec9390be4445e19bb2
 	background-color: #B60011;
 	bottom: 0;
 	width: 100%;
@@ -234,11 +247,18 @@ footer {
 	
 }
 
+<<<<<<< HEAD
+
 footer {
-	position: fixed;*/
+	position: fixed;
 }
+<<<<<<< HEAD
 .footerimg{
 	width: 10px;
 	height: 10px;
 
 }
+=======
+
+*/
+>>>>>>> 80f140c506c68666439b02ec9390be4445e19bb2
