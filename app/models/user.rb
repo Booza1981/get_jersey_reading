@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  # acts_as_avatarable
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -16,6 +16,8 @@ class User < ActiveRecord::Base
   :uniqueness => {
     :case_sensitive => false
   }
+
+  acts_as_avatarable
   
   attr_accessor :login
 
