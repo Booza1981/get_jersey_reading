@@ -18,7 +18,17 @@
 </div>
 
 <div class="page-header">
-<h2> Books I've read.</h2>	
+<h2> Books I've read.</h2>
+<% @books.each do |book|  %>
+	<div class="content-box">
+		<div class="book_cover">
+			<%= image_tag(book.image_link) %>
+		</div>
+		<div class="book_title">
+			<h4><%= book.title %></h4>
+		</div>
+	</div>
+<%end%>
 </div>
 
 <a class="bottn" <%= link_to "Review Book",new_review_path %></a>
