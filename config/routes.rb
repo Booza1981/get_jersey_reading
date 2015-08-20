@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'profiles/:id' => 'profiles#friend', as: :friend
-  get 'profile' => 'profiles#show', as: :profile
+  get 'profiles/:id' => 'profiles#show' 
+  get 'profile' => 'profiles#show'
  
 
   resources :books

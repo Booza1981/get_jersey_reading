@@ -29,17 +29,17 @@
 
 <h2>Top Readers</h2>
 
-<% for i in 0..2  %>
+<% @top_readers.each do |user|  %>
 	<div class="content-box">
 		<div class="avatar">
 
-			<%= image_tag(@top_reader_avatar[i]) %>
+			<%= image_tag(user.logo) %>
 			
 		</div>
 
 		<div class="username">
-			<h4><%= @top_reader_username[i] %> </h4>
-			<a><%= @top_reader_points[i] %></a>
+			<h4><%= user.username %> </h4>
+			<a>123</a>
 		</div>
 	</div>
 <%end%>

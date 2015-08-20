@@ -17,9 +17,13 @@ class User < ActiveRecord::Base
     :case_sensitive => false
   }
 
-  acts_as_avatarable
-  
+  has_attached_file :logo
+  do_not_validate_attachment_file_type :logo
+
   attr_accessor :login
+
+  # Create an identicon for the user when they sign up
+  after_create :add_identicon
 
   def login=(login)
     @login = login
@@ -37,4 +41,26 @@ class User < ActiveRecord::Base
 	  where(conditions.to_h).first
    end
   end
+
+  # Adds identicons for all users
+  #  eg: go to console and run: 
+  #  $ User.add_identicons
+  def self.add_identicons
+    User.all.each do |user|
+      user.add_identicon
+    end
+  end
+
+  # Creates an identicon for a user given their email address and saves it as their logo
+  def add_identicon
+    base64_identicon = RubyIdenticon.create_base64(email)
+    StringIO.open(Base64.decode64(base64_identicon)) do |data|
+      data.class.class_eval { attr_accessor :filename, :content_type }
+      data.filename = 'logo.jpg'
+      data.content_type = 'image/jpeg'
+      self.logo = data
+    end
+    save(validate: false)
+  end
+
 end
