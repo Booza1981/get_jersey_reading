@@ -1,18 +1,9 @@
-<%= form_for(@review) do |f| %>
-  <% if @review.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
 
-      <ul>
-      <% @review.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+
 
   <div class="review_content group">
-    <img src="http://books.google.com/books/content?id=st6EqikLVKoC&printsec=frontcover&img=1&zoom=4&source=gbs_api" class="cover_review">
+    
+    <%= image_tag(@review.book.image_link) %>
 
     <div class = "ratings_and_tags">
       <div class="book_ratings">
@@ -41,23 +32,3 @@
     </div>
   </div>
 
-<% if false %>
-  <div class="field">
-   <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :book_id %><br>
-    <%= f.number_field :book_id %>
-  </div>
-  <div class="field">
-    <%= f.label :rating %><br>
-    <%= f.number_field :rating %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-
-
-<% end %>

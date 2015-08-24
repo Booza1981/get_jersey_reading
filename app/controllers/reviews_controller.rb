@@ -14,7 +14,8 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/new
   def new
-    @review = Review.new
+    book = Book.find(params[:book_id])
+    @review = book.reviews.build
   end
 
   # GET /reviews/1/edit
@@ -24,7 +25,8 @@ class ReviewsController < ApplicationController
   # POST /reviews
   # POST /reviews.json
   def create
-    @review = Review.new(review_params)
+    book = Book.find(params[:book_id])
+    @review = @book.review.build(params [:review])
 
     respond_to do |format|
       if @review.save

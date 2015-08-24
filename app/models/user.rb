@@ -6,8 +6,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, 
          :validatable, :authentication_keys => [:login] 
     
-
-
   has_many :books
   has_one :profile
 
@@ -33,16 +31,7 @@ class User < ActiveRecord::Base
     @login || self.username || self.email
   end
 
-  def self.find_for_database_authentication(warden_conditions)
-	conditions = warden_conditions.dup
-   if login = conditions.delete(:login)
-	  where(conditions.to_h).where(["lower(username) = :value OR lower(email) = :value", { :value => login.downcase }]).first
-   else
-	  where(conditions.to_h).first
-   end
-  end
-
-  # Adds identicons for all users
+    # Adds identicons for all users
   #  eg: go to console and run: 
   #  $ User.add_identicons
   def self.add_identicons
@@ -62,5 +51,16 @@ class User < ActiveRecord::Base
     end
     save(validate: false)
   end
+
+
+  def self.find_for_database_authentication(warden_conditions)
+	conditions = warden_conditions.dup
+   if login = conditions.delete(:login)
+	  where(conditions.to_h).where(["lower(username) = :value OR lower(email) = :value", { :value => login.downcase }]).first
+   else
+	  where(conditions.to_h).first
+   end
+  end
+
 
 end

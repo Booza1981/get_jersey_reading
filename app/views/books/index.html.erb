@@ -12,11 +12,11 @@
 <% @books.each do |book|  %>
 	<div class="content-box">
 		<div class="book_cover">
-			<%= image_tag(book.image_link) %>
+			<%= link_to ( image_tag(book.image_link)), book_path(book) %>
 		</div>
 
 		<div class="book_title">
-			<h4><%= book.title %></h4>
+			<h4><%= link_to (book.title), book_path(book) %></h4>
 		</div>
 	</div>
 <%end%>		
@@ -33,12 +33,12 @@
 	<div class="content-box">
 		<div class="avatar">
 
-			<%= image_tag(user.logo) %>
+			<%= link_to ( image_tag(user.logo)), profile_path(user) %>
 			
 		</div>
 
 		<div class="username">
-			<h4><%= user.username %> </h4>
+			<h4><%= link_to (user.username), profile_path(user) %> </h4>
 			<a>123</a>
 		</div>
 	</div>
