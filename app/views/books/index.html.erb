@@ -1,53 +1,49 @@
 
-
 <div class="hero">
-  <%= image_tag("jersey_festival_of_words.jpg") %>
+  <%= image_tag("https://dl.dropboxusercontent.com/u/12000520/Jersey%20Festival%20of%20Words.png", :class => "hero_img")  %>
 </div>
 
-<div class="wrapper">
-<div class="box">
 
-<h1>Top Recommendations</h1>
-
-<% for i in 0..2  %>
+<div class="page-header">
+<h2> Top Recommendations</h2>
+<p> Jersey words festival books 2015..</p>
+</div>
+<div class="page-header">
+<% @books.each do |book|  %>
 	<div class="content-box">
 		<div class="book_cover">
-
-			<%= image_tag(@book_thumb[i]) %>
-			
+			<%= link_to ( image_tag(book.image_link)), book_path(book) %>
 		</div>
 
 		<div class="book_title">
-			<h4><%= @book_title[i] %></h4>
+			<h4><%= link_to (book.title), book_path(book) %></h4>
 		</div>
 	</div>
-<%end%>
-
+<%end%>		
+</div>
+<div class="wrapper">
+<div class="box">
 </div>
 
-<div class="box">
+<div class="page-header">
 
-<h1>Top Readers</h1>
+<h2>Top Readers</h2>
 
-
-
-<% for i in 0..2  %>
+<% @top_readers.each do |user|  %>
 	<div class="content-box">
 		<div class="avatar">
 
-			<%= image_tag(@top_reader_avatar[i]) %>
+			<%= link_to ( image_tag(user.logo)), profile_path(user) %>
 			
 		</div>
 
 		<div class="username">
-			<h4><%= @top_reader_username[i] %> </h4>
-			<a><%= @top_reader_points[i] %></a>
+			<h4><%= link_to (user.username), profile_path(user) %> </h4>
+			<a>123</a>
 		</div>
 	</div>
 <%end%>
 
 
-
 </div>
 </div>
-
