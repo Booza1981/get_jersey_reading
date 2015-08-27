@@ -28,6 +28,12 @@ a {
 	
 }
 
+a:link_to {
+	color: blue;
+	text-decoration: none;
+}
+
+
 /***************************
 HEADING
 *****************************/
@@ -94,9 +100,10 @@ COLORS
 
 
 
-a {
+/***********a {
 	color: FF8730;
 }
+*********/
 
 nav a, nav a:visited {
 	color: #FF8730;
@@ -111,3 +118,4 @@ body {
 	background-color: white;
 	color: #303554;
 }
+
