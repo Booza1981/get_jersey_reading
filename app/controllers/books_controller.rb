@@ -36,8 +36,6 @@ class BooksController < ApplicationController
   # POST /books.json
   def create
     @book = Book.new(book_params)
-
-
       if @book.save
         redirect_to @book
       else

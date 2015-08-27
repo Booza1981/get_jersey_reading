@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, 
          :validatable, :authentication_keys => [:login] 
     
+  recommends :books
+
   has_many :books
   has_one :profile
 
