@@ -12,7 +12,8 @@ Rails.application.routes.draw do
     end
     resources :reviews, only: [:show, :edit, :new]
   end
-  devise_for :users, :path => '', :path_names => {:sign_in => 'account/login', :sign_out => 'account/logout'}
+
+  devise_for :users, :path => '/', :path_names => {:sign_in => 'account/login', :sign_out => 'account/logout'}
   
 
   root "books#index"
