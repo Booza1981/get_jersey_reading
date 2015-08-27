@@ -35,7 +35,6 @@ header {
   padding-bottom: 17px;
   margin: 18px 0;
   border-bottom: 1px solid #eeeeee;
-  overflow: auto;
 }
 
 .page-header h1 , p {
@@ -96,10 +95,13 @@ CONTENT
 
 
 .wrapper {
-	width: 100%;
+	width: 800px;
 	margin: 0 auto;
 }
 
+.book-container {
+  float:left;
+}
 
 /*******************
 HOME PAGE
@@ -124,7 +126,7 @@ HOME PAGE
 }
 
 .content-box {
-	width: 125px;
+	width: 100%;
     display: inline-block;
     float: left;
     margin: 7px;
@@ -132,8 +134,7 @@ HOME PAGE
 
 .book_title {
 	margin: 10px;
-	float:left;
-	width: 160px;
+	width: 120px;
 }
 
 .book_cover {
@@ -162,7 +163,10 @@ body {
 }
 .username {
 	margin: 20px;
-	float:left;
+}
+
+.user-container {
+  float: left;
 }
 
 /**********************
@@ -189,7 +193,6 @@ SHOW BOOK
 
 .book-info {
 	margin: 30px 0 0 0;
-	float: left;
 	width: 550px;
 }
 

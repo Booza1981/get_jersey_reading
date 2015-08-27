@@ -25,6 +25,7 @@
     <div class="swiper-scrollbar"></div>
 </div>
 
+<div class="wrapper">
 
 <div class="hero">
   
@@ -36,9 +37,9 @@
 <div class="page-header">
 <h2> Top Recommendations</h2>
 <p> Jersey words festival books 2015..</p>
-
+<div class="content-box">
 <% @books.each do |book|  %>
-	<div class="content-box">
+    <div class="book-container">
 		<div class="book_cover">
 			<%= link_to ( image_tag(book.image_link)), book_path(book) %>
 		</div>
@@ -47,21 +48,19 @@
 			<h4><%= link_to (book.title), book_path(book) %></h4>
 		</div>
 	</div>
-</div>
-<%end%>		
+<%end%>	
+</div>	
 </div>
 
-
-<div class="wrapper">
 <div class="box">
 </div>
 
 <div class="page-header">
 
 <h2>Top Readers</h2>
-
+<div class="content-box">
 <% @top_readers.each do |user|  %>
-	<div class="content-box">
+    <div class="user-container">
 		<div class="avatar">
 
 			<%= link_to ( image_tag(user.logo)), profile_path(user) %>
@@ -72,9 +71,9 @@
 			<h4><%= link_to (user.username), profile_path(user) %> </h4>
 			<a>123</a>
 		</div>
-	</div>
+    </div>
 <%end%>
-
+</div>
 
 
 </div>
