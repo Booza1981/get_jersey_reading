@@ -51,4 +51,4 @@ end
 
 gem 'paperclip'
 gem 'ruby_identicon'
-
+gem 'recommendable'

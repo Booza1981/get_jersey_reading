@@ -14,8 +14,8 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/new
   def new
-    book = Book.find(params[:book_id])
-    @review = book.reviews.build
+    @book = Book.find(params[:book_id])
+    @review = @book.reviews.build
   end
 
   # GET /reviews/1/edit

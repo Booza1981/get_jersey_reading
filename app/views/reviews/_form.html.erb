@@ -8,9 +8,54 @@
     <div class = "ratings_and_tags">
       <div class="book_ratings">
         <h3> Overall Rating </h3>
-        <div class="rating_icons"><i class="fa fa-thumbs-up"></i><br>Loved it</div>
-        <div class="rating_icons" ><i class="fa fa-meh-o"></i><br>Not Bad</div>
-        <div class="rating_icons"><i class="fa fa-thumbs-down"></i><br>Disliked</div>
+        <div class="rating_icons">
+
+          <% if current_user.likes?(@book) %>
+
+            <i class="fa fa-thumbs-up"></i><br>Voted for this!
+
+          <% else %>
+
+            <%= link_to like_book_path(@book), method: :post do %>
+              <i class="fa fa-thumbs-up"></i><br>Like it!
+            <% end %>
+
+          <% end %>
+
+        </div>
+
+        <div class="rating_icons" >
+
+          <% if current_user.hides?(@book) %>
+
+            <i class="fa fa-meh-o"></i><br>Voted for this!
+
+          <% else %>
+
+            <%= link_to hide_book_path(@book), method: :post do %>
+              <i class="fa fa-meh-o"></i><br>Meh it!
+            <% end %>
+
+          <% end %>
+
+        </div>
+
+         <div class="rating_icons" >
+
+          <% if current_user.dislikes?(@book) %>
+
+            <i class="fa fa-thumbs-down"></i><br>Voted for this!
+
+          <% else %>
+
+            <%= link_to dislike_book_path(@book), method: :post do %>
+              <i class="fa fa-thumbs-down"></i><br>Dislike it!
+            <% end %>
+
+          <% end %>
+
+        </div>
+
       </div>
     
 

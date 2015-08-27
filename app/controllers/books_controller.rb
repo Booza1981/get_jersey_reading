@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: [:show, :edit, :update, :destroy]
+  before_action :set_book, only: [:show, :edit, :update, :destroy, :like, :dislike, :hide]
   
   # GET /books
   # GET /books.json
@@ -68,6 +68,28 @@ class BooksController < ApplicationController
       format.html { redirect_to books_url, notice: 'Book was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  # POST /books/:id/like
+  def like
+    current_user.unhide(@book)
+    current_user.like(@book)
+    redirect_to @book, notice: 'Thanks for voting!'
+  end
+
+  # POST /books/:id/dislike
+  def dislike
+    current_user.unhide(@book)
+    current_user.dislike(@book)
+    redirect_to @book, notice: 'Thanks for voting!'
+  end
+
+  # POST /books/:id/hide
+  def hide
+    current_user.unlike(@book)
+    current_user.undislike(@book)
+    current_user.hide(@book)
+    redirect_to @book, notice: 'Thanks for voting!'
   end
 
   private

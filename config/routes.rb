@@ -5,6 +5,11 @@ Rails.application.routes.draw do
  
 
   resources :books do
+    member do
+      post 'like'
+      post 'dislike'
+      post 'hide'
+    end
     resources :reviews, only: [:show, :edit, :new]
   end
   devise_for :users, :path => '', :path_names => {:sign_in => 'account/login', :sign_out => 'account/logout'}
