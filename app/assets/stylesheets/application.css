@@ -28,6 +28,12 @@ a {
 	
 }
 
+a:link_to {
+	color: blue;
+	text-decoration: none;
+}
+
+
 /***************************
 HEADING
 *****************************/
@@ -112,3 +118,4 @@ body {
 	background-color: white;
 	color: #303554;
 }
+

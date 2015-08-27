@@ -1,19 +1,19 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.1.2/css/swiper.min.css">
 
   
-
-  
-
 <!-- Slider main container -->
 <div class="swiper-container">
+    
     <!-- Additional required wrapper -->
+
     <div class="swiper-wrapper">
         <!-- Slides -->
-        <div class="swiper-slide">Slide 1</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide"><%=image_tag("teenagers reading.jpg")%></div>
+        <div class="swiper-slide"><%= image_tag("https://dl.dropboxusercontent.com/u/12000520/Jersey%20Festival%20of%20Words.png", :class => "hero_img")  %></div>
+        <div class="swiper-slide"><%=image_tag("autumn.jpg")%></div>
         
     </div>
+
     <!-- If we need pagination -->
     <div class="swiper-pagination"></div>
     
@@ -26,18 +26,17 @@
 </div>
 
 
-
-
 <div class="hero">
-  <%= image_tag("https://dl.dropboxusercontent.com/u/12000520/Jersey%20Festival%20of%20Words.png", :class => "hero_img")  %>
+  
 </div>
+
+
 
 
 <div class="page-header">
 <h2> Top Recommendations</h2>
 <p> Jersey words festival books 2015..</p>
-</div>
-<div class="page-header">
+
 <% @books.each do |book|  %>
 	<div class="content-box">
 		<div class="book_cover">
@@ -48,8 +47,11 @@
 			<h4><%= link_to (book.title), book_path(book) %></h4>
 		</div>
 	</div>
+</div>
 <%end%>		
 </div>
+
+
 <div class="wrapper">
 <div class="box">
 </div>
@@ -74,8 +76,26 @@
 <%end%>
 
 
+
 </div>
 </div>
+
+<div class="twitter-feed">
+
+            <a class="twitter-timeline"  
+            href="https://twitter.com/JerseyWordFest" 
+            width="300"
+            height="300"
+            data-widget-id="636675700120907776">Tweets by @JerseyWordFest</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          
+
+</div>
+
+
+
+
+
 <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.1.2/js/swiper.jquery.min.js"></script>
 
@@ -86,6 +106,7 @@
     direction: 'horizontal',
     autoplay: 2000,
     loop: true,
+   
     
     // If we need pagination
     pagination: '.swiper-pagination',
