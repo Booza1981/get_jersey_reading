@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :books do
     resources :reviews, only: [:show, :edit, :new]
   end
+  
   devise_for :users, :path => '', :path_names => {:sign_in => 'account/login', :sign_out => 'account/logout'}
   
 
