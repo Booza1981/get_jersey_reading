@@ -52,3 +52,4 @@ end
 gem 'paperclip'
 gem 'ruby_identicon'
 gem 'recommendable'
+gem 'seed_dump'
