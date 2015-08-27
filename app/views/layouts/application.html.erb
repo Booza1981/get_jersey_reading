@@ -6,6 +6,8 @@
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700|PT+Sans|Raleway:400,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<%= stylesheet_link_tag 	'application', media: 'all', 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag "application" %>
+		<%= csrf_meta_tag %>
 </head>
 <body>
 <header class="group">
@@ -14,8 +16,8 @@
 		<div class="nav">
 			<ul>
 				<li><%= link_to 'Home', books_path %></li>
-				<li><%= link_to "About" %></li>
-				<li><%= link_to "My Profile" %></li>
+				<li><%= link_to "About", "/about" %></li>
+				<li><%= link_to "My Profile", profile_path %></li>
 				<% if user_signed_in? %>
   				<%= current_user.username %>
   				<%= link_to "Logout", logout_path, method: :get, :class => 'navbar-link'  %>
@@ -26,12 +28,15 @@
 		</div>
 	</div>
 </header>
+
 <div class="yield">
 	<%= yield %>
 </div>
 	
 
 			<footer>
+
+			
 				<!-- <a href="http://facebook.com"><%=image_tag("facebook-wrap.png",:class =>"footerimg")%></a>
       			<a href="http://twitter.com"><%=image_tag("twitter-wrap.png",:class =>"footerimg") %></a> -->
 				<p>&copy; 2015 Jersey Library</p>

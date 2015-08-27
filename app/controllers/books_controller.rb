@@ -4,7 +4,7 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    @books = Book.limit(5)
 
     # @top_reader_avatar = ["http://img1.wikia.nocookie.net/__cb20150105230449/pokemon/images/1/13/007Squirtle_Pokemon_Mystery_Dungeon_Explorers_of_Sky.png", "http://images2.fanpop.com/image/photos/11600000/Pikachu-the-ultimate-pokemon-fan-club-11690553-450-413.jpg", "http://img3.wikia.nocookie.net/__cb20140903033758/pokemon/images/b/b8/001Bulbasaur_Dream.png"]
     # @top_reader_username = ["Squirtle", "Pikachu", "Bulbasaur"]

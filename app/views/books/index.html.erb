@@ -1,16 +1,45 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.1.2/css/swiper.min.css">
+
+  
+<!-- Slider main container -->
+<div class="swiper-container">
+    
+    <!-- Additional required wrapper -->
+
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide"><%=image_tag("teenagers reading.jpg")%></div>
+        <div class="swiper-slide"><%= image_tag("https://dl.dropboxusercontent.com/u/12000520/Jersey%20Festival%20of%20Words.png", :class => "hero_img")  %></div>
+        <div class="swiper-slide"><%=image_tag("autumn.jpg")%></div>
+        
+    </div>
+
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+    
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+</div>
+
+<div class="wrapper">
 
 <div class="hero">
-  <%= image_tag("https://dl.dropboxusercontent.com/u/12000520/Jersey%20Festival%20of%20Words.png", :class => "hero_img")  %>
+  
 </div>
+
+
 
 
 <div class="page-header">
 <h2> Top Recommendations</h2>
 <p> Jersey words festival books 2015..</p>
-</div>
-<div class="page-header">
+<div class="content-box">
 <% @books.each do |book|  %>
-	<div class="content-box">
+    <div class="book-container">
 		<div class="book_cover">
 			<%= link_to ( image_tag(book.image_link)), book_path(book) %>
 		</div>
@@ -19,18 +48,19 @@
 			<h4><%= link_to (book.title), book_path(book) %></h4>
 		</div>
 	</div>
-<%end%>		
+<%end%>	
+</div>	
 </div>
-<div class="wrapper">
+
 <div class="box">
 </div>
 
 <div class="page-header">
 
 <h2>Top Readers</h2>
-
+<div class="content-box">
 <% @top_readers.each do |user|  %>
-	<div class="content-box">
+    <div class="user-container">
 		<div class="avatar">
 
 			<%= link_to ( image_tag(user.logo)), profile_path(user) %>
@@ -41,10 +71,52 @@
 			<h4><%= link_to (user.username), profile_path(user) %> </h4>
 			<a>123</a>
 		</div>
-	</div>
+    </div>
 <%end%>
+</div>
 
 
 </div>
 </div>
 
+<div class="twitter-feed">
+
+            <a class="twitter-timeline"  
+            href="https://twitter.com/JerseyWordFest" 
+            width="300"
+            height="300"
+            data-widget-id="636675700120907776">Tweets by @JerseyWordFest</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          
+
+</div>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.1.2/js/swiper.jquery.min.js"></script>
+
+<script>  
+	$(document).ready(function(){      
+  var mySwiper = new Swiper ('.swiper-container', {
+    // Optional parameters
+    direction: 'horizontal',
+    autoplay: 2000,
+    loop: true,
+   
+    
+    // If we need pagination
+    pagination: '.swiper-pagination',
+    paginationClickable: true,
+    
+    // Navigation arrows
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    
+    // And if we need scrollbar
+    scrollbar: '.swiper-scrollbar',
+  })   
+     });      
+  </script>
