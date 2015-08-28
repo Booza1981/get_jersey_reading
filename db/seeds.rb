@@ -18,3 +18,4 @@ Book.create!([
   {link: "http://capitadiscovery.co.uk/jersey/items/367175?query=Owen+Sheers%3A+I+Saw+a+Man&resultsUri=items%3Fquery%3DOwen%2BSheers%253A%2BI%2BSaw%2Ba%2BMan", isbn: "0571317723", title: "I Saw a Man", image_link: "http://books.google.com/books/content?id=-ULIoQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"},
   {link: "http://capitadiscovery.co.uk/jersey/items/280222?query=author%3A%28Sheers%2C+Owen%2C+1974-%29&resultsUri=items%3Fquery%3Dauthor%253A%2528Sheers%252C%2BOwen%252C%2B1974-%2529", isbn: "1407400711", title: "Resistance", image_link: "http://books.google.com/books/content?id=J9p2MQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"}
 ])
+require "#{Rails.root}/db/gioco/db.rb"

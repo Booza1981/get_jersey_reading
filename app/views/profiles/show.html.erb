@@ -1,41 +1,74 @@
 <div class="page-header">
+  
   <%= image_tag(@user.logo, :alt => "book_review placeholder", :class => "img-circle") %>
+  
   <h1 class="text-right"><%= current_user.username %></h1>
-</div>
 
-
-	<div class="page-header">
-		<h2> Recommendations.</h2>
-			<p> Based on books you've read..</p>
-<div class="content-box">
-<% @books.each do |book|  %>
-    <div class="book-container">
-		<div class="book_cover">
-			<%= link_to ( image_tag(book.image_link)), book_path(book) %>
-		</div>
-
-		<div class="book_title">
-			<h4><%= link_to (book.title), book_path(book) %></h4>
-		</div>
-	</div>
-<%end%>	
-</div>	
 </div>
 
 <div class="wrapper">
+
 	<div class="page-header">
-	<h2> Books I've read.</h2>
-<div class="content-box">
-<% @books.each do |book|  %>
-    <div class="book-container">
-		<div class="book_cover">
-			<%= link_to ( image_tag(book.image_link)), book_path(book) %>
+		
+		<h2> Recommendations.</h2>
+			
+		<p> Based on books you've read..</p>
+
+      <div class="content-box">
+
+      <% @books.each do |book|  %>
+
+          <div class="book-container">
+
+      		<div class="book_cover">
+
+      			<%= link_to ( image_tag(book.image_link)), book_path(book) %>
+      		</div>
+
+      		<div class="book_title">
+
+      			<h4><%= link_to (book.title), book_path(book) %></h4>
+      		
+              </div>
+      	
+          </div>
+      
+      <%end%>	
+      
+      </div>	
+
 		</div>
 
-		<div class="book_title">
-			<h4><%= link_to (book.title), book_path(book) %></h4>
-		</div>
 	</div>
-<%end%>	
-</div>	
+
+
+	<div class="page-header">
+	
+		<h2> Books I've read.</h2>
+	
+    <div class="content-box">
+
+    <% @books.each do |book|  %>
+
+        <div class="book-container">
+
+    		<div class="book_cover">
+
+    			<%= link_to ( image_tag(book.image_link)), book_path(book) %>
+    		</div>
+
+    		<div class="book_title">
+
+    			<h4><%= link_to (book.title), book_path(book) %></h4>
+    		
+            </div>
+    	
+        </div>
+    
+    <%end%>	
+    
+    </div>	
+	
+	</div>
+
 </div>
