@@ -9,6 +9,12 @@
 			<div class="book-title">
   				<h3><%= @book_show.title %></h3>
 			</div>
+
+			<div>
+				<p> <h4> Author: <%= @book_show.authors %></p>
+				<p>Pages: <%= @book_show.page_count %> </h4></p>
+			</div>
+
 			<div class="book-description">
 				<%= @book_show.description %>
 			</div>
