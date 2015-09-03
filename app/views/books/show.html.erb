@@ -1,44 +1,95 @@
 <div class="wrapper">
-
-	<div class = "cover">
-  		<%= image_tag(@thumb, :alt => "#{@book_show.title} cover", :class => "cover-image") %>
-	</div>
 	
 	<div class = "book-info">
+		<div class = "cover">
+  			<%= image_tag(@thumb, :alt => "#{@book_show.title} cover", :class => "cover-image") %>
+		</div>
 		
-			<div class="book-title">
-  				<h3><%= @book_show.title %></h3>
-			</div>
+		<div class="book-title">
+				<h3><%= @book_show.title %></h3>
+		</div>
 
-			<div>
-				<p> <h4> Author: <%= @book_show.authors %></p>
-				<p>Pages: <%= @book_show.page_count %> </h4></p>
-			</div>
+		<div>
+			<h4> Author: <%= @book_show.authors %> </h4>
+			<h4> Pages: <%= @book_show.page_count %> </h4>
+		</div>
 
-			<div class="book-description">
-				<%= @book_show.description %>
-			</div>
+		<div class="book-description">
+			<%= @book_show.description %>
+		</div>
 
-			<div class="review">
-				<h3> Top Tags </h3>
-				<a> funny </a> <a> boring </a> <a> exciting </a> <a> scary </a>
-			</div>
+		<div class="review">
+			<h3> Top Tags </h3>
+			<% @top_tags.each do |top_tag| %>
+				<div class="tag">
+					<%= top_tag %>
+				</div>
+			<% end %>
+	
+		</div>
 
-			<div class="book-link">
-				<%= link_to 'Read It!', @book_link %>
+		<div class="book-link">
+			<%= link_to 'Reserve', @book_link %>  				
+		</div>
+	</div>
 
-				<%= link_to 'Currently Reading', root_path %>
+    <div class = "ratings_and_tags">
+      	<div class="book_ratings">
+	        <h3> Rating: </h3>
+			<div class="rating_icons">
 
-				<%= link_to 'Review It!', new_book_review_path(@book) %>
-  
-			</div>
+		        <div class="rating_icon">
+		          <% if current_user.likes?(@book) %>
+		            <i class="fa fa-thumbs-up"></i><br>Voted for this!
+		          <% else %>
+		            <%= link_to like_book_path(@book), method: :post do %>
+		              <i class="fa fa-thumbs-up"></i><br>Like it!
+		            <% end %>
+		          <% end %>
+		        </div>
 
+		        <div class="rating_icon" >
+		          <% if current_user.hides?(@book) %>
+		            <i class="fa fa-meh-o"></i><br>Voted for this!
+		          <% else %>
+		            <%= link_to hide_book_path(@book), method: :post do %>
+		              <i class="fa fa-meh-o"></i><br>Meh it!
+		            <% end %>
+		          <% end %>
+		        </div>
 
-  		
-  	</div>
+		        <div class="rating_icon" >
+		          <% if current_user.dislikes?(@book) %>
+		            <i class="fa fa-thumbs-down"></i><br>Voted for this!
+		          <% else %>
+		            <%= link_to dislike_book_path(@book), method: :post do %>
+		              <i class="fa fa-thumbs-down"></i><br>Dislike it!
+		            <% end %>
+		          <% end %>
+		        </div>
+      		</div>
+      	</div>
+
+		<div class="tags">
+			<h3> Review Tags: </h3>
+			
+			<% Tag.all.each do |tag| %>
+
+				<% if books_tag = @book.books_tags.find_by(user: current_user, book: @book, tag: tag) %>
+
+					<%= render 'books_tags/destroy_books_tag_form', tag: tag, books_tag: books_tag %>
+
+				<% else %>
+
+					<%= render 'books_tags/create_books_tag_form', book: @book, tag: tag %>
+
+				<% end %>
+
+			<% end %>
+
+		
+		</div>
+
+    </div>
 
 </div>
-
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
-

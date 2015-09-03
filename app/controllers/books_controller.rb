@@ -4,15 +4,9 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.limit(5)
-
-    # @top_reader_avatar = ["http://img1.wikia.nocookie.net/__cb20150105230449/pokemon/images/1/13/007Squirtle_Pokemon_Mystery_Dungeon_Explorers_of_Sky.png", "http://images2.fanpop.com/image/photos/11600000/Pikachu-the-ultimate-pokemon-fan-club-11690553-450-413.jpg", "http://img3.wikia.nocookie.net/__cb20140903033758/pokemon/images/b/b8/001Bulbasaur_Dream.png"]
-    # @top_reader_username = ["Squirtle", "Pikachu", "Bulbasaur"]
-    # @top_reader_points = [186, 123, 96]
     @top_readers = User.limit(3)
+    @top_recommended_books = Book.top(5)
   end
-
-
 
   # GET /books/1
   # GET /books/1.json
@@ -21,6 +15,11 @@ class BooksController < ApplicationController
     @books = GoogleBooks.search(@book.isbn) # yields a collection of one result
     @book_show = @books.first # the one result
     @thumb = @book_show.image_link(:zoom => 4)
+    top_tags
+  end
+
+  def top_tags
+    @top_tags = Tag.joins(:books).where(:books => {:id => @book.id}).group(:name).count.sort_by{|k,v| v}.reverse.first(3).map {|a| a[0]}
   end
 
   # GET /books/new
@@ -36,29 +35,27 @@ class BooksController < ApplicationController
   # POST /books.json
   def create
     @book = Book.new(book_params)
-
-
       if @book.save
         redirect_to @book
       else
         render :new
       end
-  
   end
 
   # PATCH/PUT /books/1
   # PATCH/PUT /books/1.json
   def update
-    respond_to do |format|
-      if @book.update(book_params)
-        format.html { redirect_to @book}
-        format.json { render :show, status: :ok, location: @book }
-      else
-        format.html { render :edit }
-        format.json { render json: @book.errors, status: :unprocessable_entity }
-      end
+    if @book.update(book_params)
+      redirect_to @book
+    else
+      render :edit
     end
   end
+
+  def tags
+
+  end
+
 
   # DELETE /books/1
   # DELETE /books/1.json
@@ -100,6 +97,6 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:link, :isbn, :image_link, :title, :description)
+      params.require(:book).permit(:link, :isbn, :image_link, :title, :description, :user_id, tag_ids: [])
     end
 end

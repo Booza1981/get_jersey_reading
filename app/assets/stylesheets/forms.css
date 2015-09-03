@@ -55,12 +55,7 @@ form {
   max-width: 40%;
   }
 
-/* Have ratings function horizontal under book in mobile view */
-.rating_icons {
-  max-width: 33%;
-  display: inline-block;
-  padding: 5px
-}
+
 
 .book_ratings {
   display: block;
@@ -93,10 +88,6 @@ input, textarea {
     margin-top: 5px;
     text-align: center;
   }
-
-.tags {
-  padding-top: 10px
-}
 
 /* group ratings and tags together so that they move at the same time re responsive */
 
@@ -131,11 +122,6 @@ input, textarea {
   }
 */
 
-  .rating_icons {
-    display: inline-block;
-    min-width: 100px;
-    text-align: center;
-  }
 
   .fa {
     display: block

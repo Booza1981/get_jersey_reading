@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150827113847) do
+ActiveRecord::Schema.define(version: 20150901121901) do
 
   create_table "book_genres", force: :cascade do |t|
     t.string   "name"
@@ -33,6 +33,14 @@ ActiveRecord::Schema.define(version: 20150827113847) do
     t.string   "image_link"
   end
 
+  create_table "books_tags", force: :cascade do |t|
+    t.integer  "book_id"
+    t.integer  "user_id"
+    t.integer  "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "profiles", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -51,6 +59,12 @@ ActiveRecord::Schema.define(version: 20150827113847) do
     t.integer  "user_id"
     t.integer  "book_id"
     t.integer  "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
