@@ -1,0 +1,8 @@
+<%= form_for BooksTag.new, remote: true, html: { id: dom_id(tag) } do |f| %>
+	
+	<%= f.hidden_field :tag_id, value: tag.id %>
+	<%= f.hidden_field :book_id, value: book.id %>
+
+	<%= f.submit tag.name, class: 'add-tag' %>
+
+<% end %>
