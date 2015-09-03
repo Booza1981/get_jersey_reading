@@ -4,6 +4,7 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
+    @books = Book.all
     @top_readers = User.limit(3)
     @top_recommended_books = Book.top(5)
   end
