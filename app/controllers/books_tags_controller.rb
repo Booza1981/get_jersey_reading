@@ -11,10 +11,7 @@ class BooksTagsController < ApplicationController
   	@books_tag.destroy
   end
 
-  def top_tags
-    @top_tags = Tag.joins(:books).where(:id => @book.id).group(:tag_name).count
-    puts @top_tags
-  end
+
 
 
   private 

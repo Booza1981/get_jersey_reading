@@ -17,6 +17,7 @@ class BooksController < ApplicationController
     @thumb = @book_show.image_link(:zoom => 4)
 
     top_tags
+    
   end
 
   def top_tags
