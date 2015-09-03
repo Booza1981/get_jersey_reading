@@ -4,8 +4,8 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.limit(5)
     @top_readers = User.limit(3)
+    @top_recommended_books = Book.top(5)
   end
 
   # GET /books/1
@@ -15,9 +15,7 @@ class BooksController < ApplicationController
     @books = GoogleBooks.search(@book.isbn) # yields a collection of one result
     @book_show = @books.first # the one result
     @thumb = @book_show.image_link(:zoom => 4)
-
     top_tags
-    
   end
 
   def top_tags

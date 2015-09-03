@@ -38,7 +38,7 @@
 <h2> Top Recommendations</h2>
 <p> Jersey words festival books 2015..</p>
 <div class="content-box">
-<% @books.each do |book|  %>
+<% @top_recommended_books.each do |book|  %>
     <div class="book-container">
 		<div class="book_cover">
 			<%= link_to ( image_tag(book.image_link)), book_path(book) %>
