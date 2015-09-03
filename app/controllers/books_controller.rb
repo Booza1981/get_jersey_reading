@@ -16,8 +16,11 @@ class BooksController < ApplicationController
     @book_show = @books.first # the one result
     @thumb = @book_show.image_link(:zoom => 4)
 
+    top_tags
+  end
+
+  def top_tags
     @top_tags = Tag.joins(:books).where(:books => {:id => @book.id}).group(:name).count.sort_by{|k,v| v}.reverse.first(3).map {|a| a[0]}
-    puts @top_tags
   end
 
   # GET /books/new
