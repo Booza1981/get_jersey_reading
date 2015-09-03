@@ -53,4 +53,4 @@ gem 'paperclip'
 gem 'ruby_identicon'
 gem 'recommendable'
 gem 'seed_dump'
-gem 'gioco', '~> 1.1.1'
+
