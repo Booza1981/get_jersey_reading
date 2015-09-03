@@ -66,7 +66,7 @@ end
   # Create an identicon for the user when they sign up
   after_create :add_identicon
 
-  recommends :books
+  # recommends :books
 
   def login=(login)
     @login = login

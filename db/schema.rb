@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150827113847) do
+ActiveRecord::Schema.define(version: 20150901182056) do
 
   create_table "book_genres", force: :cascade do |t|
     t.string   "name"
@@ -23,14 +23,6 @@ ActiveRecord::Schema.define(version: 20150827113847) do
     t.integer "reading_list_id"
     t.integer "book_id"
   end
-ActiveRecord::Schema.define(version: 20150827222707) do
-
-  create_table "badges", force: :cascade do |t|
-    t.string   "name"
-    t.boolean  "default"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "books", force: :cascade do |t|
     t.string   "link"
@@ -41,13 +33,6 @@ ActiveRecord::Schema.define(version: 20150827222707) do
     t.string   "image_link"
   end
 
-  create_table "levels", force: :cascade do |t|
-    t.integer  "badge_id"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "profiles", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -55,11 +40,8 @@ ActiveRecord::Schema.define(version: 20150827222707) do
 
   create_table "reading_lists", force: :cascade do |t|
     t.string   "title"
-    t.string   "author"
-    t.string   "link"
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -90,7 +72,6 @@ ActiveRecord::Schema.define(version: 20150827222707) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
-    t.integer  "points"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
