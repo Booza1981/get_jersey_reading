@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150827113847) do
+ActiveRecord::Schema.define(version: 20150901121901) do
 
   create_table "book_genres", force: :cascade do |t|
     t.string   "name"
@@ -23,14 +23,6 @@ ActiveRecord::Schema.define(version: 20150827113847) do
     t.integer "reading_list_id"
     t.integer "book_id"
   end
-ActiveRecord::Schema.define(version: 20150827222707) do
-
-  create_table "badges", force: :cascade do |t|
-    t.string   "name"
-    t.boolean  "default"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "books", force: :cascade do |t|
     t.string   "link"
@@ -41,9 +33,10 @@ ActiveRecord::Schema.define(version: 20150827222707) do
     t.string   "image_link"
   end
 
-  create_table "levels", force: :cascade do |t|
-    t.integer  "badge_id"
+  create_table "books_tags", force: :cascade do |t|
+    t.integer  "book_id"
     t.integer  "user_id"
+    t.integer  "tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -70,6 +63,12 @@ ActiveRecord::Schema.define(version: 20150827222707) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "tags", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
@@ -90,7 +89,6 @@ ActiveRecord::Schema.define(version: 20150827222707) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
-    t.integer  "points"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

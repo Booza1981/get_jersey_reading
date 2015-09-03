@@ -4,6 +4,10 @@ class Book < ActiveRecord::Base
 	# Automatically add google book info when a book is created
 	after_create :add_information_from_google_books
 
+	has_many :books_tags, dependent: :destroy
+	has_many :tags, through: :books_tags
+	has_many :users, through: :books_tags
+
 	# Loops over all the books and adds title and image link to the database (uses the Google Book API)
 	# Run this by going to the console and typing
 	# $ Book.add_all_books_info

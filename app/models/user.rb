@@ -2,6 +2,10 @@ class User < ActiveRecord::Base
 has_many :badges , :through => :levels 
 has_many :levels  
 
+has_many :books_tags, dependent: :destroy
+has_many :tags, through: :books_tags
+has_many :books, through: :books_tags
+
 def change_points(options)
   if Gioco::Core::KINDS
     points = options[:points]
