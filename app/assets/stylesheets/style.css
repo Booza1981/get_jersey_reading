@@ -291,7 +291,7 @@ footer {
   .nav select { display: inline-block; }
 }
 
-
+/*
 // Create the dropdown base
 $("<select />").appendTo("nav");
 
@@ -314,3 +314,4 @@ $("<option />", {
 $("nav select").change(function() {
  window.location = $(this).find("option:selected").val();
 });
+*/
