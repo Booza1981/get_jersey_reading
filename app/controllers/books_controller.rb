@@ -1,39 +1,37 @@
 class BooksController < ApplicationController
+
   before_action :set_book, only: [:show, :edit, :update, :destroy, :like, :dislike, :hide]
   
   # GET /books
   # GET /books.json
   def index
-    @top_readers = User.limit(3)
+    @top_readers = User.all.sort_by(&:points).reverse.take(3)
     @top_recommended_books = Book.top(5)
   end
 
   # GET /books/1
   # GET /books/1.json
   def show
-    @book_link = @book.link
-    @books = GoogleBooks.search(@book.isbn) # yields a collection of one result
-    @book_show = @books.first # the one result
-    @thumb = @book_show.image_link(:zoom => 4)
-    top_tags
-  end
-
-  def top_tags
+    authorize! :read, Book
     @top_tags = Tag.joins(:books).where(:books => {:id => @book.id}).group(:name).count.sort_by{|k,v| v}.reverse.first(3).map {|a| a[0]}
   end
 
   # GET /books/new
   def new
+    authorize! :create, Book
     @book = Book.new
   end
 
   # GET /books/1/edit
   def edit
+    authorize! :update, @book
+
   end
 
   # POST /books
   # POST /books.json
   def create
+    authorize! :create, Book
     @book = Book.new(book_params)
       if @book.save
         redirect_to @book
@@ -45,6 +43,8 @@ class BooksController < ApplicationController
   # PATCH/PUT /books/1
   # PATCH/PUT /books/1.json
   def update
+    authorize! :update, @book
+
     if @book.update(book_params)
       redirect_to @book
     else
