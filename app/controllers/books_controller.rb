@@ -5,6 +5,8 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
+    
+    @books = Book.all
     @top_readers = User.all.sort_by(&:points).reverse.take(3)
     @top_recommended_books = Book.top(5)
   end
@@ -13,6 +15,13 @@ class BooksController < ApplicationController
   # GET /books/1.json
   def show
     authorize! :read, Book
+    @book_link = @book.link
+    @books = GoogleBooks.search(@book.isbn) # yields a collection of one result
+    @book_show = @books.first # the one result
+    @thumb = @book_show.image_link(:zoom => 4)
+  end
+
+  def top_tags
     @top_tags = Tag.joins(:books).where(:books => {:id => @book.id}).group(:name).count.sort_by{|k,v| v}.reverse.first(3).map {|a| a[0]}
   end
 
@@ -71,14 +80,12 @@ class BooksController < ApplicationController
   def like
     current_user.unhide(@book)
     current_user.like(@book)
-    redirect_to @book, notice: 'Thanks for voting!'
   end
 
   # POST /books/:id/dislike
   def dislike
     current_user.unhide(@book)
     current_user.dislike(@book)
-    redirect_to @book, notice: 'Thanks for voting!'
   end
 
   # POST /books/:id/hide
@@ -86,7 +93,6 @@ class BooksController < ApplicationController
     current_user.unlike(@book)
     current_user.undislike(@book)
     current_user.hide(@book)
-    redirect_to @book, notice: 'Thanks for voting!'
   end
 
   private

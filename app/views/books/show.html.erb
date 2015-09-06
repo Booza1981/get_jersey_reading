@@ -36,45 +36,22 @@
     <div class = "ratings_and_tags">
       	<div class="book_ratings">
 	        <h3> Rating: </h3>
-			<div class="rating_icons">
-
-		        <div class="rating_icon">
-		          <% if current_user.likes?(@book) %>
-		            <i class="fa fa-thumbs-up"></i><br>Voted for this!
-		          <% else %>
-		            <%= link_to like_book_path(@book), method: :post do %>
-		              <i class="fa fa-thumbs-up"></i><br>Like it!
-		            <% end %>
-		          <% end %>
-		        </div>
-
-		        <div class="rating_icon" >
-		          <% if current_user.hides?(@book) %>
-		            <i class="fa fa-meh-o"></i><br>Voted for this!
-		          <% else %>
-		            <%= link_to hide_book_path(@book), method: :post do %>
-		              <i class="fa fa-meh-o"></i><br>Meh it!
-		            <% end %>
-		          <% end %>
-		        </div>
-
-		        <div class="rating_icon" >
-		          <% if current_user.dislikes?(@book) %>
-		            <i class="fa fa-thumbs-down"></i><br>Voted for this!
-		          <% else %>
-		            <%= link_to dislike_book_path(@book), method: :post do %>
-		              <i class="fa fa-thumbs-down"></i><br>Dislike it!
-		            <% end %>
-		          <% end %>
-		        </div>
+			<div class="rating_icons" id="ratings">
+				<% if current_user.likes?(@book)  %>
+					<%= render 'liked_book', book: @book %>
+				<% elsif current_user.dislikes?(@book) %>
+					<%= render 'disliked_book', book: @book %>
+				<% elsif current_user.hides?(@book)%>
+					<%= render 'hidden_book', book: @book %>
+				<%else%>
+					<%= render 'no_vote_book', book: @book %>
+				<% end %>
       		</div>
       	</div>
 
 		<div class="tags">
-			<h3> Review Tags: </h3>
-			
+			<h3> Review Tags: </h3>		
 			<% Tag.all.each do |tag| %>
-
 				<% if books_tag = @book.books_tags.find_by(user: current_user, book: @book, tag: tag) %>
 
 					<%= render 'books_tags/destroy_books_tag_form', tag: tag, books_tag: books_tag %>
@@ -84,10 +61,7 @@
 					<%= render 'books_tags/create_books_tag_form', book: @book, tag: tag %>
 
 				<% end %>
-
 			<% end %>
-
-		
 		</div>
 
     </div>
