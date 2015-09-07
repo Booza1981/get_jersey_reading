@@ -9,7 +9,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, 
          :validatable, :authentication_keys => [:login] 
     
-  has_many :books
   has_one :profile
 
   validates :username,
@@ -34,6 +33,28 @@ class User < ActiveRecord::Base
 
   def login
     @login || self.username || self.email
+  end
+
+  # Calculates the number of points that a user has
+  # Gives more weight when a user has tagged a book
+  def points
+
+    # Get an array of all the books that the user has liked, disliked or hidden (ie ones they have rated)
+    read_books = liked_books + disliked_books + hidden_books
+    
+    # Loop over each book and calculate and sum the points
+    read_books.sum do |book|
+
+      # If they have tagged the book then they get 1.5x points (pages)
+      multiplier = 1
+
+      # Extra multiplier if they have tagged the book
+      if books_tags.where(book: book).any?
+        multiplier = 1.5
+      end
+
+      (book.page_count * multiplier).to_i
+    end
   end
 
     # Adds identicons for all users
