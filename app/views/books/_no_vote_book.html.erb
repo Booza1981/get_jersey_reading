@@ -1,0 +1,17 @@
+ <div class="rating_icon">
+ 	<%= link_to like_book_path(book), remote: true, method: :post do %>
+    	<i class="fa fa-thumbs-up"></i><br>Like it!
+    <% end %>
+</div>
+
+<div class="rating_icon" >
+	<%= link_to hide_book_path(book), remote: true, method: :post do %>
+      <i class="fa fa-meh-o"></i><br>Meh it!
+    <% end %>
+</div>
+
+<div class="rating_icon" >
+	<%= link_to dislike_book_path(book), remote: true, method: :post do %>
+      <i class="fa fa-thumbs-down"></i><br>Dislike it!
+    <% end %>
+</div>
