@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Google Book API
-gem 'googlebooks'
+gem 'googlebooks', git: 'https://github.com/MacBlazin/GoogleBooks.git'
 # gem 'googlebooks'
 
 # Use ActiveModel has_secure_password
@@ -53,4 +53,5 @@ gem 'paperclip'
 gem 'ruby_identicon'
 gem 'recommendable'
 gem 'seed_dump'
+gem 'social-share-button'
 
