@@ -9,41 +9,55 @@
 		<%= javascript_include_tag "application" %>
 		<%= csrf_meta_tag %>
 </head>
+
 <body>
-<header class="group">
-	<div class="main_navbar">
-	<h1 class="temp_logo">Get Jersey Reading</h1>
-		<div class="nav">
-			<ul>
-				<li><%= link_to 'Home', books_path %></li>
-				<li><%= link_to "About", "/about" %></li>
-				<li><%= link_to "My Profile", profile_path %></li>
-				<% if user_signed_in? %>
-					<% if current_user.admin? %>
-						<li><%= link_to "Add New Book", new_book_path %></li>
+
+	<header class="group">
+		
+			<div class="logo"><%=image_tag("GJRlogo2.jpg")%></div>
+
+			<div class="nav">
+				<ul>
+					<li><%= link_to 'Home', books_path %></li>
+					<li><%= link_to "About", "/about" %></li>
+					<li><%= link_to "My Profile", profile_path %></li>
+					<% if user_signed_in? %>
+						<% if current_user.admin? %>
+							<li><%= link_to "Add New Book", new_book_path %></li>
+						<% end %>
+  					<%= current_user.username %>
+	  				<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'%>
+	  				</li>
+					<% else %>
+	  				<li><%= link_to "Login", new_user_session_path %></li>
 					<% end %>
-  				<%= current_user.username %>
-  				<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'%>
-				<% else %>
-  				<%= link_to "Login", new_user_session_path %>
-				<% end %>
-			</ul>
-		</div>
-	</div>
-</header>
-
-<div class="yield">
-	<%= yield %>
-</div>
-	
-
-			<footer>
-
+				</ul>
 			
-				<!-- <a href="http://facebook.com"><%=image_tag("facebook-wrap.png",:class =>"footerimg")%></a>
-      			<a href="http://twitter.com"><%=image_tag("twitter-wrap.png",:class =>"footerimg") %></a> -->
-				<p>&copy; 2015 Jersey Library</p>
-			</footer>
+		</div>
+	</header>
+
+	<div class="yield">
+		<%= yield %>
+	</div>
+		
+
+	<footer>
+
+		<div class="socials">	
+				 <a href="http://facebook.com"><%=image_tag("facebook-wrap.png",:class =>"footerimg")%></a>
+			      <a href="http://twitter.com"><%=image_tag("twitter-wrap.png",:class =>"footerimg") %></a> 
+		</div>
+
+		<div class="footerlogo">
+			<a href="http://www.jerseyfestivalofwords.org/"><%=image_tag("smallfestivallogo.jpg",:class =>"footerlogo")%></a>
+		</div>
+
+
+		
+	     <div class="copyr">
+		<p>&copy; 2015 Jersey Festival of Words</p>
+			</div>
+	</footer>
 
 </body>
 </html>
