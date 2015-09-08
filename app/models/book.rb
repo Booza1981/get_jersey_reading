@@ -1,7 +1,9 @@
 class Book < ActiveRecord::Base
 	has_many :reviews
+	
 	has_many :book_reading_lists
-	belongs_to_many :reading_list, :through => :book_reading_lists
+	has_many :reading_lists, :through => :book_reading_lists
+
 	# Automatically add google book info when a book is created
 	after_create :add_information_from_google_books
 	after_update :add_information_from_google_books
