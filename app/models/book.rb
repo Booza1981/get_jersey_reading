@@ -40,7 +40,7 @@ class Book < ActiveRecord::Base
 	    	book = google_books.first
 
 		    self.update_columns(	title: book.title, 
-		    											image_link: book.image_link(zoom: 3),
+		    											image_link: book.image_link,
 		    											page_count: book.page_count,
 		    											authors: book.authors,
 		    											description: book.description,
