@@ -199,6 +199,7 @@ DEPENDENCIES
   paperclip
   rails (= 4.2.3)
   recommendable
+  redis
   ruby_identicon
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
@@ -208,3 +209,6 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+
+BUNDLED WITH
+   1.10.6
