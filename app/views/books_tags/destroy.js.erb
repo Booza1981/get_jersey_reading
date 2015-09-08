@@ -1,0 +1,1 @@
+$('#<%= dom_id(@books_tag.tag) %>').replaceWith("<%= escape_javascript render 'books_tags/create_books_tag_form', book: @books_tag.book, tag: @books_tag.tag %>");

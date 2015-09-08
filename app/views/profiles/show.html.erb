@@ -16,20 +16,20 @@
 
       <div class="content-box">
 
-      <% @books.each do |book|  %>
+      <% @recommended_books.each do |book|  %>
 
           <div class="book-container">
 
-      		<div class="book_cover">
+        		<div class="book_cover">
 
-      			<%= link_to ( image_tag(book.image_link)), book_path(book) %>
-      		</div>
+        			<%= link_to ( image_tag(book.image_link)), book_path(book) %>
+        		</div>
 
-      		<div class="book_title">
+        		<div class="book_title">
 
-      			<h4><%= link_to (book.title), book_path(book) %></h4>
+        			<h4><%= link_to (book.title), book_path(book) %></h4>
       		
-              </div>
+            </div>
       	
           </div>
       
@@ -48,7 +48,7 @@
 	
     <div class="content-box">
 
-    <% @books.each do |book|  %>
+    <% @read_books.each do |book|  %>
 
         <div class="book-container">
 

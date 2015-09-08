@@ -11,7 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150901182056) do
+
+ActiveRecord::Schema.define(version: 20150906233144) do
 
   create_table "book_genres", force: :cascade do |t|
     t.string   "name"
@@ -27,10 +28,24 @@ ActiveRecord::Schema.define(version: 20150901182056) do
   create_table "books", force: :cascade do |t|
     t.string   "link"
     t.text     "isbn"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.string   "title"
     t.string   "image_link"
+    t.string   "authors"
+    t.string   "description"
+    t.integer  "page_count"
+    t.string   "categories"
+    t.string   "publisher"
+    t.date     "published_date"
+  end
+
+  create_table "books_tags", force: :cascade do |t|
+    t.integer  "book_id"
+    t.integer  "user_id"
+    t.integer  "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -48,6 +63,12 @@ ActiveRecord::Schema.define(version: 20150901182056) do
     t.integer  "user_id"
     t.integer  "book_id"
     t.integer  "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -72,6 +93,8 @@ ActiveRecord::Schema.define(version: 20150901182056) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
+
+    t.boolean  "admin"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

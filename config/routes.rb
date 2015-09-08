@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :books_tags, only: [:create, :destroy]
+
+  resources :tags
+  
   get 'profiles/:id' => 'profiles#show' 
   get 'profile' => 'profiles#show'
 
@@ -12,7 +16,6 @@ Rails.application.routes.draw do
       post 'dislike'
       post 'hide'
     end
-    resources :reviews, only: [:show, :edit, :new]
   end
 
   devise_for :users, :path => '/', :path_names => {:sign_in => 'account/login', :sign_out => 'account/logout'}
