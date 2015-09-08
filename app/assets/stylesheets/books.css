@@ -4,8 +4,9 @@ body {
 }
 
 .swiper-container {
-    max-width: 100%;
+    max-width: 80%;
     height: 300px;
+    float: center;
 }    
 
 
@@ -16,23 +17,35 @@ body {
 
 }
 
-
 .mainimage {
 	max-width: 100%;
 	float: center;
 }
 
-img {
-	max-width: 100%;
+.swiper-slide img {
+	width: 600px;
+	height: 280px;
+	float: center;
+	
 }
 
+.swiper-slide
+{
+	float: center;
+	max-size: 60%;
+	margin: 10px 0 5px 50px;
+	
+}
 
-
-
+.swiper-scrollbar
+{
+	float: center;
+	padding: 0 0 0 50px:
+}
 
 #recommendations  {
-	float: center;
-	max-width: 100%;
+	float: left;
+	max-width: 60%;
 	margin: 2.5%;
 	background-color: #DECA9F;
 	
@@ -47,8 +60,8 @@ img {
 
 #popularlists
   {
-	float: center;
-	max-width: 100%;
+	float: left;
+	max-width: 60%;
 	margin: 2.5%;
 	background-color: #DECA9F
 
@@ -63,8 +76,8 @@ img {
 
 
 #topreaders  {
-	float: center;
-	max-width: 100%;
+	float: left;
+	max-width: 60%;
 	margin: 2.5%;
 	background-color: #DECA9F
 
@@ -75,9 +88,12 @@ img {
 
 }
 
-.twitter-feed
+.twitter-feed 
 {
-	width: 350px;
+	max-width: 25%;
+	height: 600px;
+	float: right;
 	margin-right:auto;
 	margin-left: auto;	
+	padding: 30px 20px 0 0;
 }
