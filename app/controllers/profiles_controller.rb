@@ -8,6 +8,8 @@ class ProfilesController < ApplicationController
   	end
 
     @recommended_books = @user.recommended_books
+
+    puts @recommended_books
     
     liked_books = @user.liked_books
     disliked_books = @user.disliked_books

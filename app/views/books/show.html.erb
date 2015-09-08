@@ -2,20 +2,20 @@
 	
 	<div class = "book-info">
 		<div class = "cover">
-  			<%= image_tag(@thumb, :alt => "#{@book_show.title} cover", :class => "cover-image") %>
+  			<%= image_tag(@book.image_link, :alt => "#{@book.title} cover", :class => "cover-image") %>
 		</div>
 		
 		<div class="book-title">
-				<h3><%= @book_show.title %></h3>
+				<h3><%= @book.title %></h3>
 		</div>
 
 		<div>
-			<h4> Author: <%= @book_show.authors %> </h4>
-			<h4> Pages: <%= @book_show.page_count %> </h4>
+			<h4> Author: <%= @book.authors %> </h4>
+			<h4> Pages: <%= @book.page_count %> </h4>
 		</div>
 
 		<div class="book-description">
-			<%= @book_show.description %>
+			<%= @book.description %>
 		</div>
 
 		<div class="review">
@@ -29,7 +29,7 @@
 		</div>
 
 		<div class="book-link">
-			<%= link_to 'Reserve', @book_link %>  				
+			<%= link_to 'Reserve', @book.link %>  				
 		</div>
 	</div>
 
@@ -62,6 +62,11 @@
 
 				<% end %>
 			<% end %>
+		</div>
+
+		<div class="social">
+			<%= social_share_button_tag(@book.title, :popup => "true") %>
+
 		</div>
 
     </div>
