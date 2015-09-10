@@ -6,8 +6,13 @@ Rails.application.routes.draw do
   
   get 'profiles/:id' => 'profiles#show' 
   get 'profile' => 'profiles#show'
+
   get 'admin' => 'admin_view#admin_view' 
   
+
+  # get 'reading_list' => 'reading_lists#show'
+  resources :reading_lists
+
 
   resources :books do
     member do
@@ -24,6 +29,7 @@ Rails.application.routes.draw do
   root "books#index"
 
   get "/:page" => "static#show"
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

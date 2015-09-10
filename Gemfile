@@ -37,6 +37,7 @@ gem 'googlebooks', git: 'https://github.com/MacBlazin/GoogleBooks.git'
 # Use Capistrano for deployment
 
 # gem 'capistrano-rails', group: :development
+gem 'redis'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -54,4 +55,3 @@ gem 'ruby_identicon'
 gem 'recommendable'
 gem 'seed_dump'
 gem 'cancancan'
-gem 'social-share-button'

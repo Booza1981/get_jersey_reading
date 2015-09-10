@@ -54,11 +54,8 @@ ActiveRecord::Schema.define(version: 20150906233144) do
 
   create_table "reading_lists", force: :cascade do |t|
     t.string   "title"
-    t.string   "author"
-    t.string   "link"
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "reviews", force: :cascade do |t|

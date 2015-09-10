@@ -1,6 +1,9 @@
 class Book < ActiveRecord::Base
 	has_many :reviews
-	has_and_belongs_to_many :reading_lists
+	
+	has_many :book_reading_lists
+	has_many :reading_lists, :through => :book_reading_lists
+
 	# Automatically add google book info when a book is created
 	after_create :add_information_from_google_books
 	after_update :add_information_from_google_books
@@ -40,7 +43,7 @@ class Book < ActiveRecord::Base
 	    	book = google_books.first
 
 		    self.update_columns(	title: book.title, 
-		    											image_link: book.image_link(zoom: 3),
+		    											image_link: book.image_link,
 		    											page_count: book.page_count,
 		    											authors: book.authors,
 		    											description: book.description,
