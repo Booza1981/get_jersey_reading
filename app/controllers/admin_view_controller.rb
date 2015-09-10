@@ -1,9 +1,7 @@
 class AdminViewController < ApplicationController
-	def index
+	def admin_view
 		@books = Book.all
-
 		@tags = Tag.all
+		@users = User.all
 	end
-
-
 end
