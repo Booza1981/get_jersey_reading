@@ -11,18 +11,6 @@
 </head>
 
 <body>
-<header class="group">
-	<div class="main_navbar">
-	<h1 class="temp_logo">Get Jersey Reading</h1>
-		<div class="nav">
-			<ul>
-				<li><%= link_to 'Home', books_path %></li>
-				<li><%= link_to "About", "/about" %></li>
-				<li><%= link_to "My Profile", profile_path %></li>
-				<% if user_signed_in? %>
-					<% if current_user.admin? %>
-						<li><%= link_to "Add New Book", new_book_path %></li>
-						<li><%= link_to "Manage Reading Lists", reading_lists_path %></li>
 
 	<header class="group">
 		
@@ -36,9 +24,10 @@
 					<% if user_signed_in? %>
 						<% if current_user.admin? %>
 							<li><%= link_to "Add New Book", new_book_path %></li>
+							<li><%= link_to "Manage Reading Lists", reading_lists_path %></li>
 						<% end %>
-  					<%= current_user.username %>
-	  				<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'%>
+  					<li><%= current_user.username %></li>
+	  				<li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'%>
 	  				</li>
 					<% else %>
 	  				<li><%= link_to "Login", new_user_session_path %></li>
