@@ -1,4 +1,5 @@
 class Book < ActiveRecord::Base
+	validates :link, uniqueness: true
 	has_many :reviews
 	
 	has_many :book_reading_lists
