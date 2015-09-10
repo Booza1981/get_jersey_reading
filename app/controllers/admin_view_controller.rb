@@ -3,5 +3,6 @@ class AdminViewController < ApplicationController
 		@books = Book.all
 		@tags = Tag.all
 		@users = User.all
+		@reading_lists = ReadingList.all
 	end
 end

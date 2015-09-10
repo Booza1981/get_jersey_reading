@@ -6,12 +6,19 @@ Rails.application.routes.draw do
   
   get 'profiles/:id' => 'profiles#show' 
   get 'profile' => 'profiles#show'
-
   get 'admin' => 'admin_view#admin_view' 
   
 
   # get 'reading_list' => 'reading_lists#show'
   resources :reading_lists
+
+  resources :users do
+    member do
+      get 'admin'  
+    end
+  end
+
+
 
 
   resources :books do
