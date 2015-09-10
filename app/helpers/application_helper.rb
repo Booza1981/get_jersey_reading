@@ -8,4 +8,8 @@ module ApplicationHelper
       "http://gravatar.com/avatar/#{gravatar_id}.png?s=48&d=#{CGI.escape(default_url)}"
     end
   end
+
+  def external_book_url(source)
+    URI.join(root_url, book_path(source))
+  end
 end

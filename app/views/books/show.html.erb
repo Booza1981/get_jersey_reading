@@ -35,7 +35,7 @@
 
     <div class = "ratings_and_tags">
       	<div class="book_ratings">
-	        <h3> Rating: </h3>
+	        <h3> Review: </h3>
 			<div class="rating_icons" id="ratings">
 				<% if current_user.likes?(@book)  %>
 					<%= render 'liked_book', book: @book %>
@@ -65,9 +65,25 @@
 		</div>
 
 		<div class="social">
-			<%= social_share_button_tag("I've just read " + @book.title) %>
-
+			<h3> Recommed: </h3>
+			<a href="http://twitter.com/home?status=I've read and recommend <%= @book.title %> by <%= @book.authors %> <%= book_url(@book) %> #Jerseywordfest" title="Share on Twitter" target="_blank" class="btn btn-twitter"><i class="fa fa-twitter-square"></i></i></a>
+			 <!-- Facebook -->
+			<a href="https://www.facebook.com/sharer/sharer.php?u=I've read and recommend <%= @book.title %> by <%= @book.authors %> <%= book_url(@book) %>" title="Share on Facebook" target="_blank" class="btn btn-facebook"><i class="fa fa-facebook-square"></i></a>
+			<!--Tumblr -->
+			<a href="http://www.tumblr.com/share/link?url=[uri encoded URL]&amp;name=[title]&amp;description=[description]"><i class="fa fa-tumblr-square"></i></a>
 		</div>
+
+		<div>
+			<% if current_user.admin? %>
+      	<%= link_to 'Edit', edit_book_path %><br>
+      	<%= link_to 'Destroy', book_path,
+          method: :delete, data: { confirm: 'Are you sure?' } %>
+    	<% end %>        
+  	</div>
+
+  </div>
+
+
 
     </div>
 

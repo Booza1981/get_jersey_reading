@@ -1,15 +1,15 @@
  <div class="rating_icon">
-    <i class="fa fa-thumbs-up"></i><br>Voted for this!
+    <i class="fa fa-thumbs-up"></i><br>
 </div>
 
 <div class="rating_icon" >
     <%= link_to hide_book_path(book), remote: true, method: :post do %>
-      <i class="fa fa-meh-o"></i><br>Meh it!
+      <i class="fa fa-meh-o"></i>
     <% end %>
 </div>
 
 <div class="rating_icon" >
     <%= link_to dislike_book_path(book), remote: true, method: :post do %>
-      <i class="fa fa-thumbs-down"></i><br>Dislike it!
+      <i class="fa fa-thumbs-down"></i>
     <% end %>
 </div>
