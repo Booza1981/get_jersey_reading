@@ -29,13 +29,13 @@
 		</div>
 
 		<div class="book-link">
-			<%= link_to 'Reserve', @book.link %>  				
+			<%= link_to 'Read', @book.link %>  				
 		</div>
 	</div>
 
     <div class = "ratings_and_tags">
       	<div class="book_ratings">
-	        <h3> Review: </h3>
+	        <h3> Rate: </h3>
 			<div class="rating_icons" id="ratings">
 				<% if current_user.likes?(@book)  %>
 					<%= render 'liked_book', book: @book %>
@@ -50,7 +50,7 @@
       	</div>
 
 		<div class="tags">
-			<h3> Review Tags: </h3>		
+			<h3> What tags best describe the book: </h3>		
 			<% Tag.all.each do |tag| %>
 				<% if books_tag = @book.books_tags.find_by(user: current_user, book: @book, tag: tag) %>
 
