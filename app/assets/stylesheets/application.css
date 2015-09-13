@@ -62,7 +62,8 @@ HEADING
 	padding: 0 0 10px;
 	background-color: orange;
 	position: relative;
-	
+	font-family: 'Lobster Two', cursive;
+	font-size: 80px;
 }
 
 .logo img
