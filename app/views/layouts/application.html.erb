@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-		<title>Get Jersey Reading</title>
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700|PT+Sans|Raleway:400,700' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-		<%= stylesheet_link_tag 	'application', media: 'all', 'data-turbolinks-track' => true %>
-		<%= javascript_include_tag "application" %>
-		<%= csrf_meta_tag %>
-</head>
+	<head>
+	  <meta charset="utf-8">
+			<title>Get Jersey Reading</title>
+			<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700|PT+Sans|Raleway:400,700' rel='stylesheet' type='text/css'>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+			<%= stylesheet_link_tag 	'application', media: 'all', 'data-turbolinks-track' => true %>
+			<%= javascript_include_tag "application" %>
+			<%= csrf_meta_tag %>
+	</head>
 
-<body>
-
-	<header class="group">
-		
-			<div class="logo"><%=image_tag("GJRlogo2.jpg")%></div>
+	<body>
+			<header class="group">
+				
+				<div class="logo"><%= link_to image_tag("GJRlogo2.jpg"), root_url %></div>
 
 			<div class="nav">
 				<ul>
@@ -24,40 +23,43 @@
 					<% if user_signed_in? %>
 						<% if current_user.admin? %>
 							<li><%= link_to "Add New Book", new_book_path %></li>
+							<li><%= link_to "Manage Reading Lists", reading_lists_path %></li>
 						<% end %>
-  					<%= current_user.username %>
-	  				<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'%>
+  					<li><%= current_user.username %></li>
+	  				<li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'%>
 	  				</li>
 					<% else %>
 	  				<li><%= link_to "Login", new_user_session_path %></li>
 					<% end %>
 				</ul>
 			
-		</div>
-	</header>
-
-	<div class="yield">
-		<%= yield %>
-	</div>
-		
-
-	<footer>
-
-		<div class="socials">	
-				 <a href="http://facebook.com"><%=image_tag("FB-f-Logo__blue_100.png",:class =>"footerimg")%></a>
-			      <a href="http://twitter.com"><%=image_tag("twitterlogo.png",:class =>"footerimg") %></a> 
-		</div>
-
-		<div class="footerlogo">
-			<a href="http://www.jerseyfestivalofwords.org/"><%=image_tag("smallfestivallogo.jpg",:class =>"footerlogo")%></a>
-		</div>
-
-
-		
-	     <div class="copyr">
-		<p>&copy; 2015 Jersey Festival of Words</p>
 			</div>
-	</footer>
+			</header>
 
-</body>
+			<div class="yield">
+				<%= yield %>
+			</div>
+			
+			<div class="clear"></div>
+
+			<footer>
+
+
+				<div class="socials">	
+						 <a href="http://facebook.com"><%=image_tag("FB-f-Logo__blue_100.png",:class =>"footerimg")%></a>
+					      <a href="http://twitter.com"><%=image_tag("TwitterLogo_#55acee.png",:class =>"footerimg") %></a> 
+				</div>
+
+				<div class="footerlogo">
+					<a href="http://www.jerseyfestivalofwords.org/"><%=image_tag("smallfestivallogo.jpg",:class =>"footerlogo")%></a>
+				</div>
+
+
+				
+			     <div class="copyr">
+				<p>&copy; 2015 Jersey Festival of Words</p>
+					</div>
+			</footer>
+
+	</body>
 </html>

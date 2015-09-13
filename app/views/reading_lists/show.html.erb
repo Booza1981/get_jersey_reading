@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @reading_list.title %></h1>
+
+<% if @reading_list.books.any? %>
+
+	<% @reading_list.books.each do |book| %>
+
+		<p><strong>Name: </strong><%= book.title %></p>
+
+	<% end %>
+
+<% else %>
+
+	<p>There are no books in this reading list.</p>
+
+<% end %>
+
+
+
+<%= link_to 'Edit', edit_reading_list_path(@reading_list) %> |
+<%= link_to 'Back', reading_lists_path %>
