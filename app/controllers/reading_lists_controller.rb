@@ -19,6 +19,7 @@ class ReadingListsController < ApplicationController
 
   # GET /reading_lists/1/edit
   def edit
+#    @reading_list = ReadingList.find(params[:id])
   end
 
   # POST /reading_lists
@@ -69,6 +70,6 @@ class ReadingListsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reading_list_params
-      params.require(:reading_list).permit(:title)
+      params.require(:reading_list).permit(:title, :image_link)
     end
 end
