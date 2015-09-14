@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150910200347) do
+ActiveRecord::Schema.define(version: 20150910234124) do
 
   create_table "book_genres", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20150910200347) do
     t.string   "image_link",     limit: 255
     t.string   "authors",        limit: 255
     t.text     "description",    limit: 65535
-    t.integer  "page_count",     limit: 4,     default: 0, null: false
+    t.integer  "page_count",     limit: 4,     default: 0
     t.string   "categories",     limit: 255
     t.string   "publisher",      limit: 255
     t.date     "published_date"

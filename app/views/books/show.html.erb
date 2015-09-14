@@ -29,40 +29,42 @@
 		</div>
 
 		<div class="book-link">
-			<%= link_to 'Reserve', @book.link %>  				
+			<%= link_to 'Read', @book.link %>  				
 		</div>
 	</div>
 
-    <div class = "ratings_and_tags">
-      	<div class="book_ratings">
-	        <h3> Review: </h3>
-			<div class="rating_icons" id="ratings">
-				<% if current_user.likes?(@book)  %>
-					<%= render 'liked_book', book: @book %>
-				<% elsif current_user.dislikes?(@book) %>
-					<%= render 'disliked_book', book: @book %>
-				<% elsif current_user.hides?(@book)%>
-					<%= render 'hidden_book', book: @book %>
-				<%else%>
-					<%= render 'no_vote_book', book: @book %>
+			<% if user_signed_in? %> 
+	    	<div class = "ratings_and_tags">
+	      	<div class="book_ratings">
+		        <h3> Rate: </h3>
+				<div class="rating_icons" id="ratings">
+					<% if current_user.likes?(@book)  %>
+						<%= render 'liked_book', book: @book %>
+					<% elsif current_user.dislikes?(@book) %>
+						<%= render 'disliked_book', book: @book %>
+					<% elsif current_user.hides?(@book)%>
+						<%= render 'hidden_book', book: @book %>
+					<%else%>
+						<%= render 'no_vote_book', book: @book %>
+					<% end %>
+	      		</div>
+	      	</div>
+
+			<div class="tags">
+				<h3> What tags best describe the book: </h3>		
+				<% Tag.all.each do |tag| %>
+					<% if books_tag = @book.books_tags.find_by(user: current_user, book: @book, tag: tag) %>
+
+						<%= render 'books_tags/destroy_books_tag_form', tag: tag, books_tag: books_tag %>
+
+					<% else %>
+
+						<%= render 'books_tags/create_books_tag_form', book: @book, tag: tag %>
+
+					<% end %>
 				<% end %>
-      		</div>
-      	</div>
-
-		<div class="tags">
-			<h3> Review Tags: </h3>		
-			<% Tag.all.each do |tag| %>
-				<% if books_tag = @book.books_tags.find_by(user: current_user, book: @book, tag: tag) %>
-
-					<%= render 'books_tags/destroy_books_tag_form', tag: tag, books_tag: books_tag %>
-
-				<% else %>
-
-					<%= render 'books_tags/create_books_tag_form', book: @book, tag: tag %>
-
-				<% end %>
-			<% end %>
-		</div>
+			</div>
+		<% end %>
 
 		<div class="social">
 			<h3> Recommed: </h3>
@@ -74,10 +76,12 @@
 		</div>
 
 		<div>
-			<% if current_user.admin? %>
-      	<%= link_to 'Edit', edit_book_path %><br>
-      	<%= link_to 'Destroy', book_path,
-          method: :delete, data: { confirm: 'Are you sure?' } %>
+			<% if user_signed_in? %>
+				<% if current_user.admin? %>
+  	    	<%= link_to 'Edit', edit_book_path %><br>
+    	  	<%= link_to 'Destroy', book_path,
+      	    method: :delete, data: { confirm: 'Are you sure?' } %>
+    		<% end %>
     	<% end %>        
   	</div>
 

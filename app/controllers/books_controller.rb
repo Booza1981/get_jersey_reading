@@ -2,6 +2,7 @@ class BooksController < ApplicationController
 
   before_action :set_book, only: [:show, :edit, :update, :destroy, :like, :dislike, :hide]
   
+  
   # GET /books
   # GET /books.json
   def index
@@ -18,7 +19,7 @@ class BooksController < ApplicationController
     @book_link = @book.link
     @books = GoogleBooks.search(@book.isbn) # yields a collection of one result
     @book_show = @books.first # the one result
-    @thumb = @book_show.image_link(:zoom => 4)
+    @thumb = @book.image_link
     @top_tags = Tag.joins(:books).where(:books => {:id => @book.id}).group(:name).count.sort_by{|k,v| v}.reverse.first(3).map {|a| a[0]}
   end
 
