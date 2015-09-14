@@ -1,0 +1,17 @@
+
+.about-content
+{
+	background: orange;
+	max-width: 100%;
+	padding: 10;
+
+}
+
+
+a {
+	text-decoration: none;
+}
+
+p {
+	line-height: 70%;
+}

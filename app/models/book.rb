@@ -1,12 +1,13 @@
 class Book < ActiveRecord::Base
+	validates :link, uniqueness: true
 	has_many :reviews
 	
 	has_many :book_reading_lists
 	has_many :reading_lists, :through => :book_reading_lists
 
 	# Automatically add google book info when a book is created
-	after_create :add_information_from_google_books
-	after_update :add_information_from_google_books
+	after_create :add_information_from_google_books, :modify_page_count_if_null
+	after_update :add_information_from_google_books, :modify_page_count_if_null
 
 	has_many :books_tags, dependent: :destroy
 	has_many :tags, through: :books_tags
@@ -55,4 +56,10 @@ class Book < ActiveRecord::Base
 
 	end
 
+	def modify_page_count_if_null
+
+		if page_count == "null"
+			page_count = 0
+		end
+	end
 end
