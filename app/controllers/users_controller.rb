@@ -1,39 +1,9 @@
-class TagsController < ApplicationController
-  before_action :set_tag, only: [:show, :edit, :update, :destroy]
+class UsersController < ApplicationController
+  before_action :set_user
 
-  # GET /tags
-  # GET /tags.json
-  def index
-    @tags = Tag.all
-  end
-
-  # GET /tags/1
-  # GET /tags/1.json
-  def show
-  end
-
-  # GET /tags/new
-  def new
-    @tag = Tag.new
-  end
-
-  # GET /tags/1/edit
   def edit
   end
 
-  # POST /tags
-  # POST /tags.json
-  def create
-    @tag = Tag.new(tag_params)
-
-    respond_to do |format|
-      if @tag.save
-        format.html { redirect_to admin_path, notice: 'Tag was successfully created.'}
-      else
-        format.html { render :new }
-      end
-    end
-  end
 
   # PATCH/PUT /tags/1
   # PATCH/PUT /tags/1.json
@@ -50,21 +20,39 @@ class TagsController < ApplicationController
   # DELETE /tags/1
   # DELETE /tags/1.json
   def destroy
-    @tag.destroy
+    @user.destroy
     respond_to do |format|
       format.html { redirect_to admin_path, notice: 'Tag was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
+  def admin
+  	if @user.admin == true
+  		@user.admin = false
+  		@user.save
+  		respond_to do |format|
+      		format.html { redirect_to admin_path }
+    	end
+  	else
+  		@user.admin = true
+  		@user.save
+  		respond_to do |format|
+      		format.html { redirect_to admin_path }
+    	end
+  	end 	
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_tag
-      @tag = Tag.find(params[:id])
+    def set_user
+      @user = User.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tag_params
-      params.require(:tag).permit(:name)
+      params.require(:user).permit(:id)
     end
+
 end

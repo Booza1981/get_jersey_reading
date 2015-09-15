@@ -1,0 +1,54 @@
+.admin-content-box {
+	width: 100%;
+    display: inline-block;
+    float: left;
+    margin: 7px;
+}
+
+.admin-book-container {
+	height:420px;
+	float:left;
+	width: 120px;
+	margin: 10px;
+}
+
+.admin_book_title {
+	width: 100%;
+}
+
+.admin_book_title a {
+	text-decoration: none;
+	color:black;
+}
+
+.admin_book_cover {
+
+	float: left;
+}
+
+.admin_book_cover img{
+	width: 100%;
+}
+.admin_book_options {
+	margin-top: 10px;
+}
+
+.admin_book_options a {
+	text-decoration: none;
+	color:black;
+}
+
+.admin-user-container {
+	height:120px;
+	float:left;
+	width: 120px;
+	margin: 10px;
+}
+
+.admin_user_display {
+
+}
+
+.admin_user_options {
+	
+}

@@ -19,4 +19,12 @@ class ProfilesController < ApplicationController
     @read_books = liked_books + disliked_books + hidden_books
   end
 
+  def destroy
+    user.destroy
+
+    if user.destroy
+        redirect_to root_url, notice: "User deleted."
+    end
+  end
+
 end

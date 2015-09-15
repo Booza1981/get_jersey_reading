@@ -53,7 +53,7 @@ CONTENT
 ********************/
 .yield {
 	margin: 0 auto;
-	max-width: 100%;
+
 }
 .bottn {
 	border-radius: 5px;
@@ -76,7 +76,7 @@ CONTENT
 
 
 .wrapper {
-	width: 800px;
+	width: 900px;
 	margin: 0 auto;
 }
 

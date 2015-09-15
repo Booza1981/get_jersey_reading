@@ -51,24 +51,22 @@ a:link_to {
 HEADING
 *****************************/
 
+
+
 .logo {
 
 	float: left;
 	margin: 0 0 auto;
 	max-width: 50%;
 	width: 100%;
-	height: 40px;
-	padding: 0 0 10px;
-	background-color: orange;
+	height: 110px;
+	padding: 15px 0 0px;
 	position: relative;
-	font-family: 'Lobster Two', cursive;
-	font-size: 80px;
 }
 
-.logo img
-{
-	width: 100%;
-	height: 120px;
+.logo img {
+	max-height: 100%;
+	max-width:	100%;
 }
 
 .group {
@@ -78,6 +76,7 @@ HEADING
 	max-width: 100%;
 	padding: 0;
 	margin: 0 auto;
+	
 }
 
 
@@ -99,7 +98,7 @@ li {
 	padding: 45px 15px;
 	list-style: none;
 	display: inline-block;
-	font-size: 10px;
+	font-size: 20px;
 }
 
 .nav 
@@ -200,21 +199,6 @@ COLORS
 *********/
 
 
-.group {
-  background-color: #fff;
-  
-}
-
-
-.group {
-	
-  padding: 0 30px;
-  background-color: #fff;
- 
-  
-}
-
-
 nav a, nav a:visited {
 	color: #FF8730;
 }
@@ -228,6 +212,14 @@ body {
 	background-color: white;
 	color: #303554;
 }
+
+
+.group {	
+  padding: 0 30px;
+  background-color: orange;
+}
+
+
 
 /****************************************
 SOCIAL MEDIA TAG COLORS

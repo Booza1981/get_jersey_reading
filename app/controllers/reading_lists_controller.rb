@@ -29,11 +29,9 @@ class ReadingListsController < ApplicationController
 
     respond_to do |format|
       if @reading_list.save
-        format.html { redirect_to @reading_list, notice: 'Reading list was successfully created.' }
-        format.json { render :show, status: :created, location: @reading_list }
+        format.html { redirect_to admin_path, notice: 'Reading list was successfully created.' }
       else
         format.html { render :new }
-        format.json { render json: @reading_list.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -43,11 +41,9 @@ class ReadingListsController < ApplicationController
   def update
     respond_to do |format|
       if @reading_list.update(reading_list_params)
-        format.html { redirect_to @reading_list, notice: 'Reading list was successfully updated.' }
-        format.json { render :show, status: :ok, location: @reading_list }
+        format.html { redirect_to admin_path, notice: 'Reading list was successfully updated.' }
       else
         format.html { render :edit }
-        format.json { render json: @reading_list.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -57,7 +53,7 @@ class ReadingListsController < ApplicationController
   def destroy
     @reading_list.destroy
     respond_to do |format|
-      format.html { redirect_to reading_lists_url, notice: 'Reading list was successfully destroyed.' }
+      format.html { redirect_to admin_path, notice: 'Reading list was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
