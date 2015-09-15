@@ -1,0 +1,87 @@
+<div class="wrapper">
+
+    <div class="page-header">
+        <h2> Books </h2> <%= link_to 'New Book', new_book_path %>
+        <div class="admin-content-box">
+
+            <% @books.each do |book|  %>
+
+                <div class="admin-book-container">
+
+                    <div class="admin_book_cover">
+                        <%= link_to ( image_tag(book.image_link)), book_path(book) %>
+                    </div>
+
+                    <div class="admin_book_title">
+                        <h4><%= link_to (book.title), book_path(book) %></h4>
+                        <br>
+                        <h4><%= link_to (book.page_count), book_path(book) %></h4>
+                    </div>
+
+                    <div class="admin_book_options">
+                        <td><%= link_to 'Edit', edit_book_path(book) %> |</td>
+                        <td><%= link_to 'Delete', book_path(book), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    </div>
+
+                </div>
+
+            <%end%>	
+
+        </div>	
+    </div>
+
+    <div class="page-header">
+        <h2> Users</h2>
+        <div class="admin-content-box">
+            <% @users.each do |user|  %>
+                <div class="admin-user-container">
+                    <div class="admin_user_display">
+                        <h4><%= user.username%></h4>
+                        <h4><%= user.email%></h4>
+                        <h4>Admin: <%= user.admin%></h4>
+                    </div>
+
+                    <div class="admin_user_options">
+                        <td><%= link_to 'Destroy', user_path(user), method: :delete, data: { confirm: 'Are you sure?' } %></td><br>
+                        <td><%= link_to 'Make Admin', admin_user_path(user)%></td>
+                    </div>
+                </div>
+            <%end%> 
+        </div>  
+    </div>
+
+    <div class="page-header">
+        <h2> Tags </h2> <%= link_to 'New Tag', new_tag_path %>
+        <div class="content-box">
+            <% @tags.each do |tag|  %>
+                <div class="book-container">
+
+                    <div class="book_title">
+                        <h4><%= tag.name %></h4>
+                    </div>
+
+                    <td><%= link_to 'Edit', edit_tag_path(tag) %> |</td>
+                    <td><%= link_to 'Destroy', tag_path(tag), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+                </div>
+            <%end%> 
+        </div>  
+    </div>
+
+    <div class="page-header">
+        <h2> Reading Lists </h2> <%= link_to 'New Reading List', new_reading_list_path %>
+        <div class="content-box">
+            <% @reading_lists.each do |list|  %>
+                <div class="book-container">
+                    <div class="book_title">
+                        <h4><%= list.title %></h4>
+                    </div>
+                    <td><%= link_to 'Edit', edit_reading_list_path(list) %> |</td>
+                    <td><%= link_to 'Destroy', reading_list_path(list), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </div>
+            <%end%> 
+        </div>  
+    </div>
+
+
+</div>

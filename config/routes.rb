@@ -6,9 +6,20 @@ Rails.application.routes.draw do
   
   get 'profiles/:id' => 'profiles#show' 
   get 'profile' => 'profiles#show'
+  get 'admin' => 'admin_view#admin_view' 
+  
 
   # get 'reading_list' => 'reading_lists#show'
   resources :reading_lists
+
+  resources :users do
+    member do
+      get 'admin'  
+    end
+  end
+
+
+
 
   resources :books do
     member do
@@ -20,6 +31,7 @@ Rails.application.routes.draw do
 
   devise_for :users, :path => '/', :path_names => {:sign_in => 'account/login', :sign_out => 'account/logout'}
   
+
 
   root "books#index"
 
