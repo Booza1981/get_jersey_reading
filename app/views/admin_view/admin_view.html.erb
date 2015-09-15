@@ -2,41 +2,49 @@
 
     <div class="page-header">
         <h2> Books </h2> <%= link_to 'New Book', new_book_path %>
-        <div class="content-box">
+        <div class="admin-content-box">
+
             <% @books.each do |book|  %>
-                <div class="book-container">
-                    <div class="book_cover">
+
+                <div class="admin-book-container">
+
+                    <div class="admin_book_cover">
                         <%= link_to ( image_tag(book.image_link)), book_path(book) %>
                     </div>
 
-                    <div class="book_title">
+                    <div class="admin_book_title">
                         <h4><%= link_to (book.title), book_path(book) %></h4>
                         <br>
                         <h4><%= link_to (book.page_count), book_path(book) %></h4>
                     </div>
 
-                    <td><%= link_to 'Edit', edit_book_path(book) %> |</td>
-                    <td><%= link_to 'Destroy', book_path(book), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    <div class="admin_book_options">
+                        <td><%= link_to 'Edit', edit_book_path(book) %> |</td>
+                        <td><%= link_to 'Delete', book_path(book), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    </div>
 
                 </div>
+
             <%end%>	
+
         </div>	
     </div>
 
     <div class="page-header">
         <h2> Users</h2>
-        <div class="content-box">
+        <div class="admin-content-box">
             <% @users.each do |user|  %>
-                <div class="book-container">
-                    <div class="book_title">
+                <div class="admin-user-container">
+                    <div class="admin_user_display">
                         <h4><%= user.username%></h4>
                         <h4><%= user.email%></h4>
                         <h4>Admin: <%= user.admin%></h4>
-
                     </div>
-                    
-              <td><%= link_to 'Destroy', user_path(user), method: :delete, data: { confirm: 'Are you sure?' } %></td><br>
-                    <td><%= link_to 'Make Admin', admin_user_path(user)%></td>
+
+                    <div class="admin_user_options">
+                        <td><%= link_to 'Destroy', user_path(user), method: :delete, data: { confirm: 'Are you sure?' } %></td><br>
+                        <td><%= link_to 'Make Admin', admin_user_path(user)%></td>
+                    </div>
                 </div>
             <%end%> 
         </div>  
