@@ -6,11 +6,12 @@ class ProfilesController < ApplicationController
   	else
   		@user = current_user
   	end
+  	
+  	Recommendable::Helpers::Calculations.update_similarities_for(@user.id)
+    Recommendable::Helpers::Calculations.update_recommendations_for(@user.id)
 
     @recommended_books = @user.recommended_books
 
-    puts @recommended_books
-    
     liked_books = @user.liked_books
     disliked_books = @user.disliked_books
     hidden_books = @user.hidden_books
