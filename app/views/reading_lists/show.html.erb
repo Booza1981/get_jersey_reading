@@ -6,7 +6,15 @@
 
 	<% @reading_list.books.each do |book| %>
 
-		<p><strong>Name: </strong><%= book.title %></p>
+		<div class="book-container">
+                    <div class="book_cover">
+                        <%= link_to ( image_tag(book.image_link)), book_path(book) %>
+                    </div>
+
+                    <div class="book_title">
+                        <h4><%= link_to (book.title), book_path(book) %></h4>
+                    </div>
+                </div>
 
 	<% end %>
 
@@ -14,9 +22,11 @@
 
 	<p>There are no books in this reading list.</p>
 
+
 <% end %>
 
 
-
+<div>
 <%= link_to 'Edit', edit_reading_list_path(@reading_list) %> |
 <%= link_to 'Back', reading_lists_path %>
+</div>

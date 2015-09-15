@@ -7,11 +7,23 @@
     <!-- Additional required wrapper -->
 
     <div class="swiper-wrapper">
-        <!-- Slides -->
+        
+        <!-- Slides --><!-- 
         <div class="swiper-slide"><%=image_tag("teenagers reading.jpg")%></div>
         <div class="swiper-slide"><%= image_tag("https://dl.dropboxusercontent.com/u/12000520/Jersey%20Festival%20of%20Words.png", :class => "hero_img")  %></div>
-        <div class="swiper-slide"><%=image_tag("autumn.jpg")%></div>
+        <div class="swiper-slide"><%=image_tag("autumn.jpg")%></div -->>
+
         
+        <% @reading_lists.each do |reading_list| %>
+            <% if reading_list.image_link.present? %>
+              <div class="swiper-slide">
+                <%= link_to reading_list do %>
+                    <%= image_tag(reading_list.image_link, width: '100%') %>
+                <% end %>
+
+              </div>
+            <% end %>
+        <% end %>
     </div>
 
     <!-- If we need pagination -->
