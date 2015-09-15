@@ -61,9 +61,11 @@ HEADING
 	width: 100%;
 	height: 110px;
 	padding: 0 0 10px;
+<<<<<<< Updated upstream
+=======
+	
+>>>>>>> Stashed changes
 	position: relative;
-	font-family: 'Lobster Two', cursive;
-	font-size: 80px;
 }
 
 .logo img {
@@ -78,6 +80,7 @@ HEADING
 	max-width: 100%;
 	padding: 0;
 	margin: 0 auto;
+	
 }
 
 
