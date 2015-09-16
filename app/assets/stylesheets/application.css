@@ -12,7 +12,9 @@
  *
  *= require_tree .
  *= require_self
+ *= require awesome-share-buttons
  */
+
 
  /*************************
 GENERAL
