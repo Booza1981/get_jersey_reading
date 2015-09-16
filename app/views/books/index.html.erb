@@ -8,9 +8,9 @@
 
     <div class="swiper-wrapper">
         <!-- Slides -->
-        <div class="swiper-slide"><%=image_tag("teenagers reading.jpg")%></div>
-        <div class="swiper-slide"><%= image_tag("https://dl.dropboxusercontent.com/u/12000520/Jersey%20Festival%20of%20Words.png", :class => "hero_img")  %></div>
-        <div class="swiper-slide"><%=image_tag("autumn.jpg")%></div>
+        <div class="swiper-slide"><%=image_tag("teenagers reading.jpg", :class => "listimg")%></div>
+        <div class="swiper-slide"><%= image_tag("https://dl.dropboxusercontent.com/u/12000520/Jersey%20Festival%20of%20Words.png", :class => "listimg")  %></div>
+        <div class="swiper-slide"><%=image_tag("autumn.jpg", :class => "listimg")%></div>
         
     </div>
 
@@ -118,8 +118,9 @@
   var mySwiper = new Swiper ('.swiper-container', {
     // Optional parameters
     direction: 'horizontal',
-    autoplay: 3000,
+    autoplay: 5000,
     loop: true,
+    centeredSlides: true,
    
     
     // If we need pagination

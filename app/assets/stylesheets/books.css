@@ -4,9 +4,7 @@ body {
 }
 
 .swiper-container {
-    max-width: 80%;
-    height: 300px;
-    float: center;
+    height: 200px;
 }    
 
 
@@ -17,9 +15,12 @@ body {
 
 }
 
-.mainimage {
+.listimg {
+	display: inline-block;
+	text-align: center;
+	margin: 0 auto;
+	max-height: 100%;
 	max-width: 100%;
-	float: center;
 }
 
 .swiper-slide img {
@@ -34,7 +35,6 @@ body {
 	float: center;
 	max-size: 60%;
 	margin: 10px 0 5px 50px;
-	
 }
 
 .swiper-scrollbar
@@ -97,3 +97,5 @@ body {
 	margin-left: auto;	
 	padding: 30px 20px 0 0;
 }
+
+
