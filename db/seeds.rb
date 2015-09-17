@@ -1,3 +1,7 @@
+User.create!([
+  {email: "james.beuzeval@gmail.com", encrypted_password: "$2a$10$7ZKoPp1bVgzTZtvl2E1hi.CaRNB3YFjUBFgpBmoVYqG1QIMZrlvWi", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 5, current_sign_in_at: "2015-09-16 21:20:25", last_sign_in_at: "2015-09-15 17:29:32", current_sign_in_ip: "::1", last_sign_in_ip: "::1", username: "Booza", date_of_birth: "2015-09-10 00:00:00", is_female: false, logo_file_name: "data", logo_content_type: "image/png", logo_file_size: 312, logo_updated_at: "2015-09-10 23:21:12", admin: true},
+  {email: "booza@home.com", encrypted_password: "$2a$10$GYRb2I1jxj3pCnJLSvugi.MQP1KEJzm/gySo/3uHks3/chq4HZvBW", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2015-09-14 20:23:55", last_sign_in_at: "2015-09-14 20:23:55", current_sign_in_ip: "::1", last_sign_in_ip: "::1", username: "Frankie", date_of_birth: "2015-09-14 00:00:00", is_female: false, logo_file_name: "data", logo_content_type: "image/png", logo_file_size: 244, logo_updated_at: "2015-09-14 20:23:55", admin: nil}
+])
 Book.create!([
   {link: "http://capitadiscovery.co.uk/jersey/items/365975?query=Steven+Butler&resultsUri=items%3Fquery%3DSteven%2BButler", isbn: "0141355743", title: "The Diary of Dennis the Menace: Beanotown Battle", image_link: "http://books.google.com/books/content?id=-axtngEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api", authors: "Steven Butler", description: "I've had the worst news ever! The boring Mayor has entered Beanotown in a flower competition and you know what awful stinky creatures flowers attract? Softies. Me and Gnasher are going to have to think of a brilliant emergency menacing plan to save Beanotown from the invasion. Read all about The Beano's most popular character - scribbled in his own words (and pictures . . . and doddles and splats). With help from Steven Butler, the hilarious author of The Wrong Pong, shortlisted for the Roald Dahl Funny Prize", page_count: 144, categories: "Children's stories", publisher: nil, published_date: nil},
   {link: "http://capitadiscovery.co.uk/jersey/items/324966?query=Steven+Butler&resultsUri=items%3Fquery%3DSteven%2BButler", isbn: "0141333901", title: "The Wrong Pong", image_link: "http://books.google.com/books/content?id=XRun0N2BfR0C&printsec=frontcover&img=1&zoom=1&source=gbs_api", authors: "Steven Butler", description: "Oh dungle droppings! Neville's been yanked down the toilet by a TROLL but there's no use gripin' in the pipin'. He's part of the Bulch family now - whether he likes it or not. And he certainly doesn't like their grizzly feasts of rat patties and earwax brownies and pickled fish eyes - totally GROTSOME! Neville wants to go home - but can he get there without being EATEN? If you go down the toilet today you're in for a BIG surprise with this laugh-out-loud tale of trolls, toadstools and trollaballoos . . .", page_count: 160, categories: "Juvenile Fiction", publisher: nil, published_date: nil},
@@ -40,4 +44,79 @@ Book.create!([
   {link: "http://capitadiscovery.co.uk/jersey/items/356198?query=Stinker%E2%80%99s+Nine+Lives%3A+From+Dunkirk+to+D-Day+and+Beyond&resultsUri=items%3Fquery%3DStinker%25E2%2580%2599s%2BNine%2BLives%253A%2BFrom%2BDunkirk%2Bto%2BD-Day%2Band%2BBeyond", isbn: "9780992715908", title: "Stinker's Nine Lives", image_link: "http://capitadiscovery.co.uk/jersey/items/356198/image-medium", authors: "Clive Kemp, Chris Stone", description: nil, page_count: nil, categories: "", publisher: nil, published_date: nil},
   {link: "http://www.pauldarroch.com/", isbn: "9781906641832", title: "Jersey The Hidden Histories", image_link: "http://www.pauldarroch.com/wp-content/uploads/2015/08/Jersey-The-Hidden-Histories.png", authors: "Paul Darroch", description: nil, page_count: 0, categories: nil, publisher: nil, published_date: nil},
   {link: "http://capitadiscovery.co.uk/jersey/items/362292?query=author%3A%28Ronayne%2C+Ian%29&resultsUri=items%3Fquery%3Dauthor%253A%2528Ronayne%252C%2BIan%2529", isbn: "0956207987", title: "Jersey's Great War: An Island and its people 1914-18", image_link: "https://dl.dropboxusercontent.com/s/8fy0utvswsodkbx/51QageGE8cL._SY330_BO1%2C204%2C203%2C200_.jpg?dl=0", authors: "Ian Ronayne", description: nil, page_count: 0, categories: nil, publisher: nil, published_date: nil}
+])
+BookReadingList.create!([
+  {reading_list_id: 1, book_id: 56},
+  {reading_list_id: 1, book_id: 26},
+  {reading_list_id: 2, book_id: 20},
+  {reading_list_id: 2, book_id: 8},
+  {reading_list_id: 3, book_id: 47},
+  {reading_list_id: 3, book_id: 46},
+  {reading_list_id: 4, book_id: 11},
+  {reading_list_id: 4, book_id: 12},
+  {reading_list_id: 5, book_id: 3},
+  {reading_list_id: 5, book_id: 4},
+  {reading_list_id: 5, book_id: 1},
+  {reading_list_id: 5, book_id: 2},
+  {reading_list_id: 5, book_id: 7},
+  {reading_list_id: 1, book_id: 16},
+  {reading_list_id: 1, book_id: 17},
+  {reading_list_id: 1, book_id: 18},
+  {reading_list_id: 1, book_id: 25},
+  {reading_list_id: 1, book_id: 28},
+  {reading_list_id: 1, book_id: 21},
+  {reading_list_id: 4, book_id: 41},
+  {reading_list_id: 4, book_id: 19},
+  {reading_list_id: 4, book_id: 15},
+  {reading_list_id: 4, book_id: 9},
+  {reading_list_id: 4, book_id: 10}
+])
+BooksTag.create!([
+  {book_id: 26, user_id: 1, tag_id: 6},
+  {book_id: 26, user_id: 1, tag_id: 15},
+  {book_id: 26, user_id: 1, tag_id: 23},
+  {book_id: 26, user_id: 1, tag_id: 24},
+  {book_id: 26, user_id: 1, tag_id: 25},
+  {book_id: 26, user_id: 1, tag_id: 26},
+  {book_id: 26, user_id: 1, tag_id: 18}
+])
+ReadingList.create!([
+  {title: "War and Remembrance", image_link: "war.jpg"},
+  {title: "Inspired by an Island", image_link: "inspired_list.png"},
+  {title: "Local Talent", image_link: "children_list.png"},
+  {title: "These Women Have Something To Say", image_link: "women_list.png"},
+  {title: "Children's Books", image_link: "local_list.png"}
+])
+Tag.create!([
+  {name: "Wild"},
+  {name: "Alien"},
+  {name: "Family"},
+  {name: "Business"},
+  {name: "Love"},
+  {name: "War"},
+  {name: "Saga"},
+  {name: "Children"},
+  {name: "Jersey"},
+  {name: "Occupation"},
+  {name: "Island"},
+  {name: "Poetry"},
+  {name: "Money"},
+  {name: "Fiction"},
+  {name: "Exciting"},
+  {name: "Thought-provoking"},
+  {name: "Thriller"},
+  {name: "Page-turner"},
+  {name: "Moving"},
+  {name: "Funny"},
+  {name: "Science Fiction"},
+  {name: "Crime"},
+  {name: "Romance"},
+  {name: "Sad"},
+  {name: "Fantasy"},
+  {name: "Historical Fiction"},
+  {name: "Biographical"},
+  {name: "Terrifying"},
+  {name: "Natural-World"},
+  {name: "Fashion"},
+  {name: "Art"}
 ])
