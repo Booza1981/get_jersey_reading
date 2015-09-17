@@ -14,29 +14,35 @@
 			<h4> Pages: <%= @book.page_count %> </h4>
 		</div>
 
-		<div class="book-description">
-			<%= @book.description %>
-		</div>
+		<br>
 
-		<div class="review">
-			<h3> Top Tags </h3>
+		<h3><a href="http://www.jerseyfestivalofwords.org/writers-2015/">Find out more about this author and book your ticket for the appearance at the Jersey Festival of Words</a></h3>
+
+		<br>
+
+		<h4> Other users tags: </h4>
 			<% @top_tags.each do |top_tag| %>
 				<div class="tag">
 					<%= top_tag %>
 				</div>
 			<% end %>
-	
+
+		<div class="book-description">
+			<%= @book.description %>
 		</div>
 
-		<div class="book-link">
-			<%= link_to 'Read', @book.link %>  				
+
+		<div>
+			<h3><%= link_to 'Read It!', @book.link %></h3>
+			<h4><%= link_to 'Check the Jersey Library for availability', @book.link %></h3>
 		</div>
 	</div>
 
 			<% if user_signed_in? %> 
 	    	<div class = "ratings_and_tags">
 	      	<div class="book_ratings">
-		        <h3> Rate: </h3>
+		        <h3>Rate It: </h3>
+		        <h4>Rate the book to receive recommendations</h4> 
 				<div class="rating_icons" id="ratings">
 					<% if current_user.likes?(@book)  %>
 						<%= render 'liked_book', book: @book %>
@@ -51,7 +57,7 @@
 	      	</div>
 
 			<div class="tags">
-				<h3> What tags best describe the book: </h3>		
+				<h4> What tags best describe the book: </h4>		
 				<% Tag.all.each do |tag| %>
 					<% if books_tag = @book.books_tags.find_by(user: current_user, book: @book, tag: tag) %>
 
@@ -65,14 +71,14 @@
 				<% end %>
 			</div>
 		<% end %>
-
+		<br>
 		<div class="social">
-			<h3> Recommed: </h3>
+			<h3> Recommed It: </h3>
+			<h4> By sharing it with your friends on social media</h4>
 			<a href="http://twitter.com/home?status=I've read and recommend <%= @book.title %> by <%= @book.authors %> <%= book_url(@book) %> #Jerseywordfest" title="Share on Twitter" target="_blank" class="btn btn-twitter"><i class="fa fa-twitter-square"></i></i></a>
 			 <!-- Facebook -->
-			<a href="https://www.facebook.com/sharer/sharer.php?u=I've read and recommend <%= @book.title %> by <%= @book.authors %> <%= book_url(@book) %>" title="Share on Facebook" target="_blank" class="btn btn-facebook"><i class="fa fa-facebook-square"></i></a>
-			<!--Tumblr -->
-			<a href="http://www.tumblr.com/share/link?url=[uri encoded URL]&amp;name=[title]&amp;description=[description]"><i class="fa fa-tumblr-square"></i></a>
+			<a href="https://www.facebook.com/sharer.php?u=<%= book_url(@book) %>&t=I've read recommend <%= @book.title %> by <%= @book.authors %> " title="Share on Facebook" target="_blank" class="btn btn-facebook"><i class="fa fa-facebook-square"></i></a>
+
 		</div>
 
 		<div>
