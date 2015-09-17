@@ -52,3 +52,17 @@
 .admin_user_options {
 	
 }
+
+.date-filter{
+	display: none;
+}
+
+td {
+	padding: 2px;
+}
+  table.my-grid {
+    border: 1px solid black;
+  }
+  table.my-grid tr.my-header {
+    background-color: #ebebeb;
+  }

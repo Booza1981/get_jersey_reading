@@ -1,3 +1,4 @@
+<div class="wrapper">
 <%= form_for(@reading_list) do |f| %>
   <% if @reading_list.errors.any? %>
     <div id="error_explanation">
@@ -19,7 +20,45 @@
     <%= f.label :image_link %><br>
     <%= f.text_field :image_link %>
   </div>
+
+  <div class="field">
+    <%= f.label "Add Books" %><br>
+        <div class="admin-content-box">
+
+            <div class="books-table">
+                <%= grid(@books_grid, html: {class: 'my-grid'}, header_tr_html:  {class: 'my-header'}) do |g|
+
+                  g.column name: 'ID' do |book|
+                    book.id
+                  end
+
+                  g.column name: 'Add to Reading List' do |book|
+                    "Add"
+                  end
+
+                  g.column name: 'Title', attribute: 'title' do |book|
+                    book.title
+                  end
+                  
+                  g.column name: 'Created At', attribute: 'created_at' do |book|
+                    book.created_at.to_s(:short)
+                  end
+
+                  g.column name: 'Edit' do |book|
+                    link_to('Edit', edit_book_path(book))
+                  end
+
+                  g.column name: 'Delete' do |book|
+                    link_to 'Delete', book_path(book), method: :delete, data: { confirm: 'Are you sure?' }
+                  end
+                end %>
+            </div>
+
+        </div>  
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+</div>

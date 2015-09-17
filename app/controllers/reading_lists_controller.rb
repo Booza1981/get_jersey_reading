@@ -15,10 +15,13 @@ class ReadingListsController < ApplicationController
   # GET /reading_lists/new
   def new
     @reading_list = ReadingList.new
+    @books_grid = initialize_grid(Book.all, name: 'g1', order:'books.created_at', order_direction: 'desc')
+
   end
 
   # GET /reading_lists/1/edit
   def edit
+    @books_grid = initialize_grid(Book.all, name: 'g1', order:'books.created_at', order_direction: 'desc')
 #    @reading_list = ReadingList.find(params[:id])
   end
 
