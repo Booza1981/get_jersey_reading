@@ -4,7 +4,9 @@
     
     <%= image_tag(@user.logo, :alt => "book_review placeholder", :class => "img-circle") %>
     
-    <h1 class="text-right"><%= current_user.username %></h1>
+    <h1 class="text-right"><%= @user.username %></h1>
+
+    <%= @user.points %>
 
   </div>
 

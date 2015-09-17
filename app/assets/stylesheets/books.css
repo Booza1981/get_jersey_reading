@@ -3,11 +3,6 @@ body {
 	font-family: 'Open Sans', sans-serif;
 }
 
-.swiper-container {
-    max-width: 80%;
-    height: 400px;
-    float: center;
-}    
 
 
 .wrapper {
@@ -17,31 +12,14 @@ body {
 
 }
 
-.mainimage {
+#hero-carousel .hero-img img {
+	display: block;
 	max-width: 100%;
-	float: center;
+	height: 300px;
+	margin: 0 auto;
+	overflow: hidden
 }
 
-.swiper-slide img {
-	width: 720px;
-	height: 400px;
-	float: center;
-	
-}
-
-.swiper-slide
-{
-	float: center;
-	max-size: 80%;
-	margin: 10px 0 5px 50px;
-	
-}
-
-.swiper-scrollbar
-{
-	float: center;
-	padding: 0 0 0 50px;
-}
 
 #recommendations  {
 	float: left;
@@ -97,3 +75,5 @@ body {
 	margin-left: auto;	
 	padding: 30px 20px 0 0;
 }
+
+
