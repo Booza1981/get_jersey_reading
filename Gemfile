@@ -19,7 +19,7 @@ gem 'coffee-rails', '~> 4.1.0'
 
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem "jquery-rails", "~> 2.3.0"
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -40,6 +40,10 @@ gem 'googlebooks', git: 'https://github.com/MacBlazin/GoogleBooks.git'
 
 # gem 'capistrano-rails', group: :development
 gem 'redis'
+gem "wice_grid", '3.6.0.pre4'
+gem 'font-awesome-sass',  '~> 4.3'
+gem "jquery-ui-rails"
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

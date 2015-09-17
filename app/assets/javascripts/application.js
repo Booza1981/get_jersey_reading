@@ -10,8 +10,21 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
 //= require owl.carousel
+
+// = require jquery
+// = require jquery_ujs
+// = require turbolinks
+// = require_tree .
+// = require jquery
+// = require jquery_ujs
+// = require jquery-ui
+// = require wice_grid
+//= require jquery-ui/datepicker
+// = require_tree .
+

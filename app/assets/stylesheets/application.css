@@ -16,6 +16,10 @@
  *= require owl.theme
  */
 
+  @import "wice_grid";
+  @import "font-awesome-sprockets";
+  @import "font-awesome";
+
 
  /*************************
 GENERAL

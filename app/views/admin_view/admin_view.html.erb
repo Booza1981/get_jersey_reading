@@ -1,31 +1,35 @@
 <div class="wrapper">
 
     <div class="page-header">
-        <h2> Books </h2> <%= link_to 'Add Book', new_book_path %>
+
+        <h2> Books </h2> <%= link_to 'Add New Book', new_book_path %>
+
         <div class="admin-content-box">
 
-            <% @books.each do |book|  %>
+            <div class="books-table">
+                <%= grid(@books_grid, html: {class: 'my-grid'}, header_tr_html:  {class: 'my-header'}) do |g|
 
-                <div class="admin-book-container">
+                  g.column name: 'ID' do |book|
+                    book.id
+                  end
 
-                    <div class="admin_book_cover">
-                        <%= link_to ( image_tag(book.image_link)), book_path(book) %>
-                    </div>
+                  g.column name: 'Title', attribute: 'title' do |book|
+                    book.title
+                  end
+                  
+                  g.column name: 'Created At', attribute: 'created_at' do |book|
+                    book.created_at.to_s(:short)
+                  end
 
-                    <div class="admin_book_title">
-                        <h4><%= link_to (book.title), book_path(book) %></h4>
-                        <br>
-                        <h4><%= link_to (book.page_count), book_path(book) %></h4>
-                    </div>
+                  g.column name: 'Edit' do |book|
+                    link_to('Edit', edit_book_path(book))
+                  end
 
-                    <div class="admin_book_options">
-                        <td><%= link_to 'Edit', edit_book_path(book) %> |</td>
-                        <td><%= link_to 'Delete', book_path(book), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                    </div>
-
-                </div>
-
-            <%end%>	
+                  g.column name: 'Delete' do |book|
+                    link_to 'Delete', book_path(book), method: :delete, data: { confirm: 'Are you sure?' }
+                  end
+                end %>
+            </div>
 
         </div>	
     </div>
@@ -33,61 +37,102 @@
     <div class="page-header">
         <h2> Users</h2>
         <div class="admin-content-box">
-            <% @users.each do |user|  %>
-                <div class="admin-user-container">
-                    <div class="admin_user_display">
-                        <h4><%= user.username%></h4>
-                        <h4><%= user.email%></h4>
-                        <h4>Admin: <%= user.admin%></h4>
-                    </div>
+            <div class="users-table">
+                <%= grid(@users_grid, html: {class: 'my-grid'}, header_tr_html:  {class: 'my-header'}) do |g|
 
-                    <div class="admin_user_options">
-                        <td><%= link_to 'Destroy', user_path(user), method: :delete, data: { confirm: 'Are you sure?' } %></td><br>
-                        <td><%= link_to 'Make Admin', admin_user_path(user)%></td>
-                    </div>
-                </div>
-            <%end%> 
-        </div>  
+                  g.column name: 'ID' do |user|
+                    user.id
+                  end
+
+                  g.column name: 'Username', attribute: 'username' do |user|
+                    user.username
+                  end
+
+                  g.column name: 'Email', attribute: 'email' do |user|
+                    user.email
+                  end
+                  
+                  g.column name: 'Created At', attribute: 'created_at' do |user|
+                    user.created_at.to_s(:short)
+                  end
+
+                  g.column name: 'Last Sign In', attribute: 'last_sign_in_at' do |user|
+                    user.last_sign_in_at.to_s(:short)
+                  end
+
+                  g.column name: 'Edit' do |user|
+                    link_to('Edit', edit_user_path(user))
+                  end
+
+                  g.column name: 'Admin' do |user|
+                    if user.admin == true
+                        "User is an admin"
+                    else   
+                    link_to 'Make Admin', admin_user_path(user)
+                    end
+                  end
+
+                  g.column name: 'Delete' do |user|
+                    link_to 'Delete', user_path(user), method: :delete, data: { confirm: 'Are you sure?' }
+                  end
+                end %>
+            </div>
     </div>
 
     <div class="page-header">
-        <h2> Tags </h2> <%= link_to 'New Tag', new_tag_path %>
-        <div class="content-box">
-            <% @tags.each do |tag|  %>
-                <div class="book-container">
+        <h2> Tags </h2> <%= link_to 'Add New Tag', new_tag_path %>
+        <div class="admin-content-box">
+            <div class="tags-table">
+                <%= grid(@tags_grid, html: {class: 'my-grid'}, header_tr_html:  {class: 'my-header'}) do |g|
 
-                    <div class="book_title">
-                        <h4><%= tag.name %></h4>
-                    </div>
+                  g.column name: 'ID' do |tag|
+                    tag.id
+                  end
 
-                    <td><%= link_to 'Edit', edit_tag_path(tag) %> |</td>
-                    <td><%= link_to 'Destroy', tag_path(tag), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  g.column name: 'Name' do |tag|
+                    tag.name
+                  end
 
-                </div>
-            <%end%> 
-        </div>  
+                  g.column name: 'Edit' do |tag|
+                    link_to('Edit', edit_tag_path(tag))
+                  end
+
+                  g.column name: 'Delete' do |tag|
+                    link_to 'Delete', tag_path(tag), method: :delete, data: { confirm: 'Are you sure?' }
+                  end
+                end %>
+            </div>
+
+        </div>
     </div>
 
     <div class="page-header">
-        <h2> Manage Reading Lists </h2> <%= link_to 'Add Reading List', new_reading_list_path %>
-        <div class="content-box">
-            <% @reading_lists.each do |reading_list|  %>
-                <div class="readinglist-container">
-                    
-                    <div class="readinglist_cover">
-                        <%= link_to ( image_tag(reading_list.image_link)), reading_list_path(reading_list) %>
-                    </div>
-                    <div class="readindlist_title">
-                        <h4><%= reading_list.title %></h4>
-                    </div>
-                    <div>
-                        <%= link_to 'Edit', edit_reading_list_path(reading_list) %> |
-                        <%= link_to 'Destroy', reading_list_path(reading_list), method: :delete, data: { confirm: 'Are you sure?' } %>
-                    </div>
-                </div>
-            <%end%> 
-        </div>  
-    </div>
 
+        <h2> Reading Lists </h2> <%= link_to 'Add New Reading List', new_reading_list_path %>        
+        <div class="admin-content-box">
+            <div class="reading-lists-table">
+                <%= grid(@reading_lists_grid, html: {class: 'my-grid'}, header_tr_html:  {class: 'my-header'}) do |g|
+
+                  g.column name: 'ID' do |list|
+                    list.id
+                  end
+
+                  g.column name: 'Title' do |list|
+                    list.title
+                  end
+
+
+                  g.column name: 'Edit' do |list|
+                    link_to 'Edit', edit_reading_list_path(list)
+                  end
+
+                  g.column name: 'Delete' do |list|
+                    link_to 'Destroy', reading_list_path(list), method: :delete, data: { confirm: 'Are you sure?' } 
+                  end
+                end %>
+            </div>
+
+        </div>
+    </div>
 
 </div>
