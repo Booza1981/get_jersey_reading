@@ -98,7 +98,7 @@ li {
 	padding: 45px 15px;
 	list-style: none;
 	display: inline-block;
-	font-size: 20px;
+	font-size: 17px;
 }
 
 .nav 
@@ -209,7 +209,7 @@ nav a.selected, nav a:hover {
 
 /*site body*/
 body {
-	background-color: white;
+	background-color: #F2F1F3;
 	color: #303554;
 }
 

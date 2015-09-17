@@ -28,7 +28,7 @@ body {
 }
 
 .swiper-slide img {
-	width: 750px;
+	width: 720px;
 	height: 400px;
 	float: center;
 	
@@ -37,7 +37,7 @@ body {
 .swiper-slide
 {
 	float: center;
-	max-size: 60%;
+	max-size: 80%;
 	margin: 10px 0 5px 50px;
 }
 
