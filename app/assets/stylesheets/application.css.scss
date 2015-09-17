@@ -10,16 +10,25 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
+ * require_tree .
  *= require_self
  *= require owl.carousel
  *= require owl.theme
- */
+*/
 
-  @import "wice_grid";
-  @import "font-awesome-sprockets";
-  @import "font-awesome";
+// @import "wice_grid";
+// @import "font-awesome-sprockets";
+// @import "font-awesome";
 
+@import 'mixins';
+@import 'about';
+@import 'admin_view';
+@import 'books';
+@import 'books_tags';
+@import 'forms';
+@import 'main_header';
+@import 'readinglist';
+@import 'style';
 
  /*************************
 GENERAL
@@ -36,7 +45,7 @@ body {
 
 a {
 	text-decoration: none;
-	
+
 }
 
 /****
@@ -51,72 +60,33 @@ a:link_to {
   content: "";
   clear: both;
 }
- 
 
+.yield {
+  padding-bottom: 85px;
 
-/***************************
-HEADING
-*****************************/
+  .content-wrap {
+  	padding: 15px;
+  	@include breakpoint(medium) {
+			padding: 30px;
+  	}
+  }
+}
 
-
-
-.logo {
-
-	float: left;
-	margin: 0 0 auto;
-	max-width: 50%;
+.content-wrap {
 	width: 100%;
-	height: 110px;
-	padding: 15px 0 0px;
-	position: relative;
-}
+	@extend .group;
 
-.logo img {
-	max-height: 100%;
-	max-width:	100%;
-}
-
-.group {
-	
-  height: 130px;
-  border-bottom: 3px solid #B60011;
-	max-width: 100%;
-	padding: 0;
-	margin: 0 auto;
-	
-}
-
-
-/****************************************
-NAVIGATION
-*****************************************/
-/***
-.main_navbar
-{
-	height: 100px;
-	left: 30px;
-	top: 20px;
+	@include breakpoint(large) {
+		width: 1200px;
+		margin: 0 auto;
+	}
 
 }
-**/
 
-li {
-	text-decoration: none;
-	padding: 45px 15px;
-	list-style: none;
-	display: inline-block;
-	font-size: 17px;
-}
 
-.nav 
-{
-	/*position: relative;
-	display: inline-block;*/
-	float: right;
-	max-width: 50%;
-	height: 100px; 
-	
-}
+
+
+
 
 
 
@@ -153,11 +123,11 @@ footer  {
 	color: #B60011;
 	position: fixed;
 	background-color: #fff;
-	
+
 }
 
 
-.socials 
+.socials
 {
 	float: left;
 	max-width: 30%;
@@ -173,7 +143,7 @@ footer  {
 	margin: 5px;
 	padding: 5px;
 	display: inline-block;
-	
+
 }
 
 .copyr
@@ -221,9 +191,9 @@ body {
 }
 
 
-.group {	
-  padding: 0 30px;
-  background-color: orange;
+.group {
+  // padding: 0 30px;
+  // background-color: orange;
 }
 
 

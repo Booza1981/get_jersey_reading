@@ -1,10 +1,12 @@
 <div class="wrapper">
-	
+
 	<div class = "book-info">
-		<div class = "cover">
-  			<%= image_tag(@book.image_link, :alt => "#{@book.title} cover", :class => "cover-image") %>
+
+		<div class="cover-image-wrap">
+			<%= image_tag(@book.image_link, :alt => "#{@book.title} cover", :class => "cover-image") %>
+			<%= link_to 'read it!', @book.link, class: 'read-it-link', target: "_blank" %>
 		</div>
-		
+
 		<div class="book-title">
 				<h3><%= @book.title %></h3>
 		</div>
@@ -33,16 +35,15 @@
 
 
 		<div>
-			<h3><%= link_to 'Read It!', @book.link %></h3>
 			<h4><%= link_to 'Check the Jersey Library for availability', @book.link %></h3>
 		</div>
 	</div>
 
-			<% if user_signed_in? %> 
+			<% if user_signed_in? %>
 	    	<div class = "ratings_and_tags">
 	      	<div class="book_ratings">
 		        <h3>Rate It: </h3>
-		        <h4>Rate the book to receive recommendations</h4> 
+		        <h4>Rate the book to receive recommendations</h4>
 				<div class="rating_icons" id="ratings">
 					<% if current_user.likes?(@book)  %>
 						<%= render 'liked_book', book: @book %>
@@ -57,7 +58,7 @@
 	      	</div>
 
 			<div class="tags">
-				<h4> What tags best describe the book: </h4>		
+				<h4> What tags best describe the book: </h4>
 				<% Tag.all.each do |tag| %>
 					<% if books_tag = @book.books_tags.find_by(user: current_user, book: @book, tag: tag) %>
 
@@ -88,7 +89,7 @@
     	  	<%= link_to 'Destroy', book_path,
       	    method: :delete, data: { confirm: 'Are you sure?' } %>
     		<% end %>
-    	<% end %>        
+    	<% end %>
   	</div>
 
   </div>

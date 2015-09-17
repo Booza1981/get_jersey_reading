@@ -94,16 +94,16 @@ input, textarea {
 .ratings_and_tags {
   height: 100%
 }
-  
+
 
 /* This applies from 600px onwards */
 
 
-@media (min-width: 700px) {
+/*@media (min-width: 700px) {
   .cover_review {
     max-width: 300px;
     float: left;
-  }
+  }*/
 /*
   .book_ratings {
     min-width: 100px;
@@ -123,21 +123,19 @@ input, textarea {
 */
 
 
-  .fa {
-    display: block
-  }
-
-  .review_content {
-    max-width: 800px;
-    min-width: 650px;
-    margin: 0 auto;
-    padding-left: 20px;
-    padding-right: 20px;
-  } 
-
+.fa {
+  display: block
 }
 
-  
+.review_content {
+  max-width: 800px;
+  min-width: 650px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
 
 
 
