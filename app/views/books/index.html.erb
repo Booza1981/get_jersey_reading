@@ -2,27 +2,10 @@
 
   
 <!-- Slider main container -->
-<div class="swiper-container">
-    
-    <!-- Additional required wrapper -->
-
-    <div class="swiper-wrapper">
-        <!-- Slides -->
-        <div class="swiper-slide"><%=image_tag("teenagers reading.jpg", :class => "listimg")%></div>
-        <div class="swiper-slide"><%= image_tag("https://dl.dropboxusercontent.com/u/12000520/Jersey%20Festival%20of%20Words.png", :class => "listimg")  %></div>
-        <div class="swiper-slide"><%=image_tag("autumn.jpg", :class => "listimg")%></div>
-        
-    </div>
-
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
-    
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-    
-    <!-- If we need scrollbar -->
-    <div class="swiper-scrollbar"></div>
+<div id="hero-carousel" class="owl-carousel owl-theme">
+        <div class="hero-img"><%=image_tag ("teenagers reading.jpg") %></div>
+        <div class="hero-img"><%= image_tag ("https://dl.dropboxusercontent.com/u/12000520/Jersey%20Festival%20of%20Words.png")  %></div>
+        <div class="hero-img"><%=image_tag ("autumn.jpg") %></div>
 </div>
 
  <div class="twitter-feed">
@@ -110,30 +93,24 @@
 
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
-<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.1.2/js/swiper.jquery.min.js"></script>
 
-<script>  
-	$(document).ready(function(){      
-  var mySwiper = new Swiper ('.swiper-container', {
-    // Optional parameters
-    direction: 'horizontal',
-    autoplay: 5000,
-    loop: true,
-    centeredSlides: true,
-   
-    
-    // If we need pagination
-    pagination: '.swiper-pagination',
-    paginationClickable: true,
-    
-    // Navigation arrows
-    nextButton: '.swiper-button-next',
-    prevButton: '.swiper-button-prev',
-    
-    // And if we need scrollbar
-    scrollbar: '.swiper-scrollbar',
-  })   
-     });      
+
+<script> 
+  $(".owl-carousel").owlCarousel({
+ 
+      navigation : true, // Show next and prev buttons
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem:true
+ 
+      // "singleItem:true" is a shortcut for:
+      // items : 1, 
+      // itemsDesktop : false,
+      // itemsDesktopSmall : false,
+      // itemsTablet: false,
+      // itemsMobile : false
+ 
+  });
+
   </script>
 
