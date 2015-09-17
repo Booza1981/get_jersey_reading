@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :tags
 
-  get 'profiles/:id' => 'profiles#show'
+  get 'profiles/:username' => 'profiles#show'
   get 'profile' => 'profiles#show'
   get 'admin' => 'admin_view#admin_view'
 
