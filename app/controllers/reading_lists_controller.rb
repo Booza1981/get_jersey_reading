@@ -19,7 +19,6 @@ class ReadingListsController < ApplicationController
 
   # GET /reading_lists/1/edit
   def edit
-#    @reading_list = ReadingList.find(params[:id])
   end
 
   # POST /reading_lists
