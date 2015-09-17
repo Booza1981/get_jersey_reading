@@ -1,11 +1,19 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.1.2/css/swiper.min.css">
 
   
-<!-- Slider main container -->
 <div id="hero-carousel" class="owl-carousel owl-theme">
-        <div class="hero-img"><%=image_tag ("teenagers reading.jpg") %></div>
         <div class="hero-img"><%= image_tag ("https://dl.dropboxusercontent.com/u/12000520/Jersey%20Festival%20of%20Words.png")  %></div>
-        <div class="hero-img"><%=image_tag ("autumn.jpg") %></div>
+        <% @reading_lists.each do |reading_list| %>
+            <% if reading_list.image_link.present? %>
+              <div class="hero-img">
+                <%= link_to reading_list do %>
+                    <%= image_tag(reading_list.image_link, width: '100%') %>
+                <% end %>
+
+              </div>
+            <% end %>
+        <% end %>
+        </div>
 </div>
 
  <div class="twitter-feed">

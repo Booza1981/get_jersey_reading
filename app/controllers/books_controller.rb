@@ -10,6 +10,7 @@ class BooksController < ApplicationController
     @books = Book.all
     @top_readers = User.all.sort_by(&:points).reverse.take(3)
     @top_recommended_books = Book.top(5)
+    @reading_lists = ReadingList.all
   end
 
   # GET /books/1
