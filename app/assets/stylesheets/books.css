@@ -4,7 +4,11 @@ body {
 }
 
 .swiper-container {
+
     height: 200px;
+    max-width: 80%;
+    height: 400px;
+    float: center;
 }    
 
 
@@ -24,8 +28,8 @@ body {
 }
 
 .swiper-slide img {
-	width: 600px;
-	height: 280px;
+	width: 750px;
+	height: 400px;
 	float: center;
 	
 }

@@ -1,7 +1,7 @@
 <div class="wrapper">
 
     <div class="page-header">
-        <h2> Books </h2> <%= link_to 'New Book', new_book_path %>
+        <h2> Books </h2> <%= link_to 'Add Book', new_book_path %>
         <div class="admin-content-box">
 
             <% @books.each do |book|  %>
@@ -69,15 +69,21 @@
     </div>
 
     <div class="page-header">
-        <h2> Reading Lists </h2> <%= link_to 'New Reading List', new_reading_list_path %>
+        <h2> Manage Reading Lists </h2> <%= link_to 'Add Reading List', new_reading_list_path %>
         <div class="content-box">
-            <% @reading_lists.each do |list|  %>
-                <div class="book-container">
-                    <div class="book_title">
-                        <h4><%= list.title %></h4>
+            <% @reading_lists.each do |reading_list|  %>
+                <div class="readinglist-container">
+                    
+                    <div class="readinglist_cover">
+                        <%= link_to ( image_tag(reading_list.image_link)), reading_list_path(reading_list) %>
                     </div>
-                    <td><%= link_to 'Edit', edit_reading_list_path(list) %> |</td>
-                    <td><%= link_to 'Destroy', reading_list_path(list), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    <div class="readindlist_title">
+                        <h4><%= reading_list.title %></h4>
+                    </div>
+                    <div>
+                        <%= link_to 'Edit', edit_reading_list_path(reading_list) %> |
+                        <%= link_to 'Destroy', reading_list_path(reading_list), method: :delete, data: { confirm: 'Are you sure?' } %>
+                    </div>
                 </div>
             <%end%> 
         </div>  
