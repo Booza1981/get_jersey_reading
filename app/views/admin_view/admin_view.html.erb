@@ -1,7 +1,7 @@
 <div class="wrapper">
 
     <div class="page-header">
-        <h2> Books </h2> <%= link_to 'New Book', new_book_path %>
+        <h2> Books </h2> <%= link_to 'Add Book', new_book_path %>
         <div class="admin-content-box">
 
             <% @books.each do |book|  %>
@@ -69,7 +69,7 @@
     </div>
 
     <div class="page-header">
-        <h2> Manage Reading Lists </h2> <%= link_to 'New Reading List', new_reading_list_path %>
+        <h2> Manage Reading Lists </h2> <%= link_to 'Add Reading List', new_reading_list_path %>
         <div class="content-box">
             <% @reading_lists.each do |reading_list|  %>
                 <div class="readinglist-container">
