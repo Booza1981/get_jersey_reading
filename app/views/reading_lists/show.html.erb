@@ -1,32 +1,29 @@
+<div class="wrapper">
 <p id="notice"><%= notice %></p>
+	<div class="page-header">
+		<h1><%= @reading_list.title %></h1>
 
-<h1><%= @reading_list.title %></h1>
+			<% if @reading_list.books.any? %>
 
-<% if @reading_list.books.any? %>
+				<% @reading_list.books.each do |book| %>
 
-	<% @reading_list.books.each do |book| %>
+					<div class="book-container">
+			                    <div class="book_cover">
+			                        <%= link_to ( image_tag(book.image_link)), book_path(book) %>
+			                    </div>
 
-		<div class="book-container">
-                    <div class="book_cover">
-                        <%= link_to ( image_tag(book.image_link)), book_path(book) %>
-                    </div>
+			                    <div class="book_title">
+			                        <h4><%= link_to (book.title), book_path(book) %></h4>
+			                    </div>
+			                </div>
+				<% end %>
 
-                    <div class="book_title">
-                        <h4><%= link_to (book.title), book_path(book) %></h4>
-                    </div>
-                </div>
-
-	<% end %>
-
-<% else %>
-
-	<p>There are no books in this reading list.</p>
-
-
-<% end %>
-
-
-<div>
-<%= link_to 'Edit', edit_reading_list_path(@reading_list) %> |
-<%= link_to 'Back', reading_lists_path %>
+			<% else %>
+				<p>There are no books in this reading list.</p>
+			<% end %>
+	</div>
+		
 </div>
+
+
+
