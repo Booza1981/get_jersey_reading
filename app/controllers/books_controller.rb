@@ -1,12 +1,12 @@
 class BooksController < ApplicationController
 
   before_action :set_book, only: [:show, :edit, :update, :destroy, :like, :dislike, :hide]
-  
-  
+
+
   # GET /books
   # GET /books.json
   def index
-    
+
     @books = Book.all
     @top_readers = User.all.sort_by(&:points).reverse.take(3)
     @top_recommended_books = Book.top(5)
@@ -22,6 +22,13 @@ class BooksController < ApplicationController
     @book_show = @books.first # the one result
     @thumb = @book.image_link
     @top_tags = Tag.joins(:books).where(:books => {:id => @book.id}).group(:name).count.sort_by{|k,v| v}.reverse.first(3).map {|a| a[0]}
+
+    # # Setting the hashtag - will finish this later
+    # if Option.exists?(key: 'hashtag')
+    #   @hashtag = Option.find_by(key: 'hashtag').value
+    # else
+    #   @hashtag = '#JerseyWordFest'
+    # end
   end
 
   def top_tags

@@ -1,0 +1,27 @@
+.aboutpic {
+	display: none;
+
+	@include breakpoint(medium) {
+		display: block;
+		float: right;
+		width: 300px;
+		margin-left: 30px;
+		margin-bottom: 30px;
+	}
+}
+
+.about-content {
+
+	h1 {
+		margin-bottom: 40px;
+	}
+
+	h2 {
+		margin-top: 40px;
+	}
+
+	p {
+		line-height: 1.5;
+		margin: 0 0 10px;
+	}
+}

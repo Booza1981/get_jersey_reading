@@ -1,0 +1,55 @@
+/***************************************
+HEADER
+*****************************************/
+
+.main-header {
+  background: orange;
+
+  .content-wrap {
+    padding: 20px 30px;
+  }
+
+  .logo {
+    float: left;
+    a {
+      display: block;
+    }
+  }
+
+  .logo img {
+    height: 40px;
+
+    @include breakpoint(small) {
+      height: 85px;
+    }
+  }
+}
+
+/****************************************
+NAVIGATION
+*****************************************/
+.nav {
+  float: right;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      line-height: 1;
+      text-decoration: none;
+      padding: 30px 15px;
+      list-style: none;
+      display: inline-block;
+      font-size: 17px;
+    }
+  }
+
+}
+
+/* NAV Media Query */
+
+.nav select {
+  display:none;
+}
+

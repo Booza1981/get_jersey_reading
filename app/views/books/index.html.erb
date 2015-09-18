@@ -1,97 +1,85 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.1.2/css/swiper.min.css">
-
-  
 <div id="hero-carousel" class="owl-carousel owl-theme">
-        <div class="hero-img"><%= image_tag ("https://dl.dropboxusercontent.com/u/12000520/Jersey%20Festival%20of%20Words.png")  %></div>
-        <% @reading_lists.each do |reading_list| %>
-            <% if reading_list.image_link.present? %>
-              <div class="hero-img">
-                <%= link_to reading_list do %>
-                    <%= image_tag(reading_list.image_link) %>
-                <% end %>
 
-              </div>
+    <div class="hero-img"><%= image_tag ("https://dl.dropboxusercontent.com/u/12000520/Jersey%20Festival%20of%20Words.png")  %></div>
+
+    <% @reading_lists.each do |reading_list| %>
+        <% if reading_list.image_link.present? %>
+        <div class="hero-img">
+            <%= link_to reading_list do %>
+            <%= image_tag(reading_list.image_link) %>
             <% end %>
+        </div>
         <% end %>
-        </div>
+    <% end %>
+
 </div>
-
- <div class="twitter-feed">
-            <a class="twitter-timeline" href="https://twitter.com/JerseyWordFest" width="200" height="600" data-widget-id="636675700120907776">Tweets by @JerseyWordFest</a>
-        </div>
-
 
 <div class="wrapper">
 
-    <div class="hero">
-      
+    <div class="twitter-feed">
+        <a class="twitter-timeline" href="https://twitter.com/JerseyWordFest" data-widget-id="636675700120907776">Tweets by @JerseyWordFest</a>
     </div>
-
-
-
 
     <div class="page-header">
         <h2> Top Recommendations</h2>
         <p> Jersey words festival books 2015..</p>
-        <div class="content-box">
-            <% @top_recommended_books.each do |book|  %>
-                <div class="book-container">
-            		<div class="book_cover">
-            			<%= link_to ( image_tag(book.image_link)), book_path(book) %>
-            		</div>
-
-            		<div class="book_title">
-            			<h4><%= link_to (book.title), book_path(book) %></h4>
-            		</div>
-            	</div>
-            <%end%>	
-        </div>	
     </div>
 
-    <div class="box">
+    <div class="content-box">
+
+        <% @top_recommended_books.each do |book| %>
+
+            <div class="book-container">
+
+                <div class="book_cover">
+                    <%= link_to ( image_tag(book.image_link)), book_path(book) %>
+                </div>
+
+                <div class="book_title">
+                    <h4><%= link_to (book.title), book_path(book) %></h4>
+                </div>
+
+            </div>
+
+        <% end %>
+
     </div>
 
     <div class="page-header">
-
         <h2>Top Readers</h2>
-        <div class="content-box">
-            <% @top_readers.each do |user|  %>
-                <div class="user-container">
-            		<div class="avatar">
+    </div>
 
-            			<%= link_to ( image_tag(user.logo)), profile_path(user) %>
-            			
-            		</div>
-
-            		<div class="username">
-            			<h4><%= link_to (user.username), profile_path(user) %> </h4>
-            			<a><%= user.points %></a>
-            		</div>
+    <div class="content-box">
+        <% @top_readers.each do |user|  %>
+            <div class="user-container">
+                <div class="avatar">
+                 <%= link_to ( image_tag(user.logo)), "profiles/#{user.username}" %>
                 </div>
-            <%end%>
-        </div>
 
-       
-
+                <div class="username">
+                    <h4><%= link_to (user.username), "profiles/#{user.username}" %> </h4>
+                    <a><%= user.points %></a>
+                </div>
+            </div>
+        <%end%>
     </div>
 
     <div class="page-header">
-
         <h2>All Books</h2>
-        <div class="content-box">
-            <% @books.each do |book|  %>
-                <div class="book-container">
-                    <div class="book_cover">
-                        <%= link_to ( image_tag(book.image_link)), book_path(book) %>
-                    </div>
+    </div>
 
-                    <div class="book_title">
-                        <h4><%= link_to (book.title), book_path(book) %></h4>
-                    </div>
-                </div>
-            <%end%>
+    <div class="content-box">
+        <% @books.each do |book|  %>
+        <div class="book-container">
+            <div class="book_cover">
+                <%= link_to ( image_tag(book.image_link)), book_path(book) %>
+            </div>
+
+            <div class="book_title">
+                <h4><%= link_to (book.title), book_path(book) %></h4>
+            </div>
         </div>
-
+        <%end%>
     </div>
 
 </div>
@@ -103,22 +91,22 @@
 
 
 
-<script> 
+<script>
   $(".owl-carousel").owlCarousel({
     autoPlay: 5000,
     paginationSpeed : 400,
     slideSoeed: 400,
     singleItem: true
-    
- 
+
+
       // "singleItem:true" is a shortcut for:
-      // items : 1, 
+      // items : 1,
       // itemsDesktop : false,
       // itemsDesktopSmall : false,
       // itemsTablet: false,
       // itemsMobile : false
- 
+
   });
 
-  </script>
+</script>
 

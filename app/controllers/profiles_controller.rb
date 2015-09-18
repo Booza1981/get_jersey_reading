@@ -1,12 +1,12 @@
 class ProfilesController < ApplicationController
-  
+
   def show
-  	if params[:id].present?
-  		@user = User.find_by_username(params[:id])
+  	if params[:username].present?
+  		@user = User.find_by_username(params[:username])
   	else
   		@user = current_user
   	end
-  	
+
   	Recommendable::Helpers::Calculations.update_similarities_for(@user.id)
     Recommendable::Helpers::Calculations.update_recommendations_for(@user.id)
 

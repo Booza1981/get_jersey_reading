@@ -11,53 +11,63 @@
 	</head>
 
 	<body>
-			<header class="group">
-				
-				<div class="logo"><%= link_to image_tag("GetReadingLogo.png"), root_url %></div>
 
+		<header class="main-header">
 
-			<div class="nav">
-				<ul>
-					<li><%= link_to 'Home', books_path %></li>
-					<li><%= link_to "About", "/about" %></li>
-					<% if user_signed_in? %>
-						<li><%= link_to "My Profile", profile_path %></li>
-						<% if current_user.admin? %>
-							<li><%= link_to "Admin", admin_path %></li>
+			<div class="content-wrap">
+
+				<div class="logo">
+					<%= link_to image_tag("GetReadingLogo.png"), root_url %>
+				</div>
+
+				<div class="nav">
+					<ul>
+						<li><%= link_to "About", about_path %></li>
+						<% if user_signed_in? %>
+							<li><%= link_to "My Profile", profile_path %></li>
+							<% if current_user.admin? %>
+								<li><%= link_to "Admin", admin_path %></li>
+							<% end %>
+		  				<li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'%></li>
+						<% else %>
+		  				<li><%= link_to "Login", new_user_session_path %></li>
 						<% end %>
-	  				<li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'%>
-	  				</li>
-					<% else %>
-	  				<li><%= link_to "Login", new_user_session_path %></li>
-					<% end %>
-				</ul>
-			
-			</div>
-			</header>
+					</ul>
 
-			<div class="yield">
+				</div>
+
+			</div>
+
+		</header>
+
+		<div class="yield">
+
+			<div class="content-wrap">
 				<%= yield %>
 			</div>
-			
-			<div class="clear"></div>
 
-			<footer>
-
-		<div class="socials">	
-				 <a href="https://facebook.com/jerseyfestivalofwords/timeline/"><%=image_tag("FB-f-Logo__blue_100.png",:class =>"footerimg")%></a>
-			      <a href="http://twitter.com/jerseywordfest"><%=image_tag("twitterlogo.png",:class =>"footerimg") %></a> 
 		</div>
+
+		<footer>
+
+			<div class="content-wrap">
+
+				<div class="socials">
+				 	<a href="https://facebook.com/jerseyfestivalofwords/timeline/"><%=image_tag("FB-f-Logo__blue_100.png",:class =>"footerimg")%></a>
+		      <a href="http://twitter.com/jerseywordfest"><%=image_tag("twitterlogo.png",:class =>"footerimg") %></a>
+				</div>
 
 				<div class="footerlogo">
 					<a href="http://www.jerseyfestivalofwords.org/"><%=image_tag("smallfestivallogo.jpg",:class =>"footerlogo")%></a>
 				</div>
 
+			  <div class="copyr">
+					<p>&copy; 2015 Jersey Festival of Words</p>
+				</div>
 
-				
-			     <div class="copyr">
-				<p>&copy; 2015 Jersey Festival of Words</p>
-					</div>
-			</footer>
+			</div>
+
+		</footer>
 
 	</body>
 </html>
