@@ -3,8 +3,37 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .add-tag {
-	background: red;
+	background: #FECA08;
+				border-style: none;
+			border-radius: 2px;
 }
 .remove-tag {
-	background: blue;
+	background: #ED1C24;
+				border-style: none;
+			border-radius: 2px;
+}
+
+.tag-container {
+	
+    float: left;
+    display: inline-block;
+    padding: 10px;
+    width: 33.3%;
+
+	.tags {
+		text-align: center;	
+
+		form {
+			display: inline-block;
+		}
+
+		input {
+			height: 30px;
+			font-size: 1em;
+			text-align: center;	
+			margin: 2px;
+			padding: 3px;
+		}
+	}		
+
 }

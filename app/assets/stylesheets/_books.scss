@@ -4,11 +4,15 @@ body {
 }
 
 
-#hero-carousel .hero-img img {
-	display: block;
-	width: 100%;
-}
+.owl-wrapper-outer {
+	height:25vw;
 
+	img {
+		width: 100%;
+	}
+
+}
+s
 
 #recommendations  {
 	float: left;
