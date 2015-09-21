@@ -45,24 +45,6 @@
 
     </div>
 
-    <div class="page-header">
-        <h2>Top Readers</h2>
-    </div>
-
-    <div class="content-box">
-        <% @top_readers.each do |user|  %>
-            <div class="user-container">
-                <div class="avatar">
-                 <%= link_to ( image_tag(user.logo)), "profiles/#{user.username}" %>
-                </div>
-
-                <div class="username">
-                    <h4><%= link_to (user.username), "profiles/#{user.username}" %> </h4>
-                    <a><%= user.points %></a>
-                </div>
-            </div>
-        <%end%>
-    </div>
 
     <div class="page-header">
         <h2>All Books</h2>
@@ -81,6 +63,26 @@
         </div>
         <%end%>
     </div>
+
+    <div class="page-header">
+        <h2>Top Readers</h2>
+    </div>
+
+    <div class="content-box">
+        <% @top_readers.each do |user|  %>
+            <div class="user-container">
+                <div class="avatar">
+                 <%= link_to ( image_tag(user.logo)), "profiles/#{user.username}" %>
+                </div>
+
+                <div class="username">
+                    <h4><%= link_to (user.username), "profiles/#{user.username}" %> </h4>
+                    <a><%= user.points %></a>
+                </div>
+            </div>
+        <%end%>
+    </div>
+    
 
 </div>
 
