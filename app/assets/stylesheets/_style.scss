@@ -209,13 +209,25 @@ SHOW BOOK
 	border-radius: 5px;
 }
 
-.book_ratings {
-  display: block;
-  padding-top: 30px;
+.ratings_and_tags {
+	width: 100%;
+    margin: 0;
+    float: left;
+    display: inline-flex;
+
+    .book_ratings {
+    width: 33.3%;
+    margin: 0;
+    float: left;
+    padding: 10px;
+
+	}
 }
+
 
 .rating_icons {
 	padding-top: 20px;
+	height: 100px;
 }
 
 .rating_icon {
@@ -229,15 +241,7 @@ SHOW BOOK
 	text-decoration: none;
 }
 
-.tags {
-	padding-top: 40px;
-	float:left;
-	width: 100%;
-}
 
-.tags form{
-	float: left;
-}
 
 .dev-buttons {
 	float:left;

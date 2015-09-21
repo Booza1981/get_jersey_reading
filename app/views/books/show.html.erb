@@ -57,19 +57,28 @@
 	      		</div>
 	      	</div>
 
-			<div class="tags">
+			<div class="tag-container">
+
 				<h4> What tags best describe the book: </h4>
-				<% Tag.all.each do |tag| %>
-					<% if books_tag = @book.books_tags.find_by(user: current_user, book: @book, tag: tag) %>
 
-						<%= render 'books_tags/destroy_books_tag_form', tag: tag, books_tag: books_tag %>
+				<div class="tags">
 
-					<% else %>
+					<% Tag.all.each do |tag| %>
 
-						<%= render 'books_tags/create_books_tag_form', book: @book, tag: tag %>
+						<% if books_tag = @book.books_tags.find_by(user: current_user, book: @book, tag: tag) %>
+
+							<%= render 'books_tags/destroy_books_tag_form', tag: tag, books_tag: books_tag %>
+
+						<% else %>
+
+							<%= render 'books_tags/create_books_tag_form', book: @book, tag: tag %>
+
+						<% end %>
 
 					<% end %>
-				<% end %>
+
+				</div>
+
 			</div>
 		<% end %>
 		<br>
