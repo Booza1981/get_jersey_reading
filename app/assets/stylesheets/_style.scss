@@ -23,11 +23,6 @@ HEADER
     padding-left: 15px;
 }
 
-.page-header {
-  padding-bottom: 17px;
-  margin: 18px 0;
-  border-bottom: 1px solid #eeeeee;
-}
 
 .page-header h1 , p {
   line-height: 1;
@@ -78,6 +73,28 @@ CONTENT
 
 .book-container {
   float:left;
+  width: 350px;
+  height: 230px;
+  margin: 10px;
+
+  	.book_title {
+  		margin-top: 10px;
+
+  		a {
+		color: black;
+		font-size: 20px;
+		bottom: 0;
+		}
+  	}
+
+  	.book_cover {
+		margin: 10px;
+		float: left;
+	}
+
+	.book_cover img { 
+		height: 200px;
+	}
 }
 
 /*******************
@@ -87,26 +104,11 @@ HOME PAGE
 .content-box {
   @extend .group;
 	// width: 100%;
-  // display: inline-block;
-  // float: left;
-  // margin: 7px;
+ 	// display: inline-block;
+	// float: left;
+	// margin: 7px;
 }
 
-.book_title {
-	margin: 10px;
-	width: 120px;
-  height: 300px;
-}
-
-.book_cover {
-	margin: 10px;
-	float: left;
-}
-
-.book_cover img{
-	width: 100px;
-    padding-top: 20px;
-}
 
 .avatar {
 	margin: 20px;
@@ -190,6 +192,8 @@ SHOW BOOK
 	}
 
 	.book-title {
+		
+
 
 		h3 {
 			margin: 0;
@@ -261,9 +265,12 @@ SHOW BOOK
     margin: 0;
     float: none;
     display: inline-block;
-	
+		@include breakpoint(medium-large) {
+			display:flex;
+		}
 	.review {
 		width: 100%;
+		padding: 10px;
 
 		@include breakpoint(medium-large) {
 			width:33.3%;
