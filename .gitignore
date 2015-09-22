@@ -20,3 +20,5 @@ public/system/users/logos/*
 dump.rdb
 
 /public/assets
+
+/config/database.yml
