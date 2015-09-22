@@ -16,9 +16,17 @@
 
 <div class="wrapper">
 
+      
+
     <div class="twitter-feed">
         <a class="twitter-timeline" href="https://twitter.com/JerseyWordFest" data-widget-id="636675700120907776">Tweets by @JerseyWordFest</a>
     </div>
+
+    <% if @booksearch.present? %>
+        <%= render 'books/books', :books => @books %>
+    <% end %>
+
+    
 
     <div class="page-header">
         <h2> Top Recommendations</h2>
@@ -62,6 +70,9 @@
             </div>
         </div>
         <%end%>
+
+       
+
     </div>
 
     <div class="page-header">

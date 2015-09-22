@@ -14,11 +14,9 @@ class Book < ActiveRecord::Base
 	has_many :users, through: :books_tags
 
 
-	BOOKS = [
-		{ isbn: '0141355743', link: "http://capitadiscovery.co.uk/jersey/items/365975?query=Steven+Butler&resultsUri=items%3Fquery%3DSteven%2BButler" },
-		{ isbn: '0141333901', link: "http://capitadiscovery.co.uk/jersey/items/365975?query=Steven+Butler&resultsUri=items%3Fquery%3DSteven%2BButler" },
-
-	]
+	def self.search(search)
+  	where("title LIKE ? OR description LIKE ? OR authors LIKE ?", "%#{search}%","%#{search}%","%#{search}%") 
+	end
 
 
 	# Loops over all the books and adds title and image link to the database (uses the Google Book API)
