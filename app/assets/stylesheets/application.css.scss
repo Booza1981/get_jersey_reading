@@ -198,37 +198,3 @@ body {
 
 
 
-/****************************************
-SOCIAL MEDIA TAG COLORS
-*****************************************/
-
-.social {
-	display: inline-block;
-	width: 33.3%;
-	padding: 10px;
-}
-
-/* Facebook */
-.fa-facebook-square {
-    color: #3b5998;
-
-}
-
-/* Twitter */
-.fa-twitter-square {
-    color: #00a0d1;
-}
-
-/* Tumblr */
-.fa-tumblr-square {
-    color: #34526f;
-}
-
-.social .fa {
-	float: left;
-	padding-left: 0.2em;
-	padding-right: 0.2em;
-
-}
-
-.clear { clear: both; height: 65px; }

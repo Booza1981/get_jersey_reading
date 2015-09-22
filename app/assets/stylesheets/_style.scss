@@ -130,10 +130,7 @@ body {
   float: left;
 }
 
-/**********************
-SHOW BOOK
-***********************/
-
+/* Don't know what this is......?*/
 .img-circle {
 	width: 60px;
 	height: 60px;
@@ -141,105 +138,211 @@ SHOW BOOK
 	float: left;
 	margin-right: 10px;
 }
-.cover-image-wrap {
-  position: relative;
-  width: 50%;
-  display: block;
-  margin: 0 auto 30px;
 
-  img {
-    width: 100%;
-  }
-
-  @include breakpoint(small) {
-    width: 225px;
-    float: left;
-    border-radius: 5px;
-    margin-right: 30px;
-  }
-  @include breakpoint(medium) {
-    width: 300px;
-  }
-
-  .read-it-link {
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
-    background: rgba(0,0,0,0.6);
-    color: #FFF;
-    padding: 20px;
-    font-size: 25px;
-    // font-variant: small-caps;
-    text-transform: uppercase;
-    border-top: 1px solid white;
-  }
-}
+/**********************
+SHOW BOOK
+***********************/
 
 .book-info {
-	margin: 30px 0 0 0;
-	width: 100%;
 	overflow: auto;
-}
 
-.book-title {
-	margin: 30px 0 0 0;
-}
+	.cover-image-wrap {
+	  position: relative;
+	  width: 50%;
+	  display: block;
+	  margin: 0 auto 30px;
 
-.book-description {
-	margin: 30px 0 30px 0;
-}
+	  img {
+	    width: 100%;
+	  }
 
-.book-link {
-	margin: 30px 0 30px 0;
-}
+	  @include breakpoint(small) {
+	    width: 225px;
+	    float: left;
+	    border-radius: 5px;
+	    margin-right: 30px;
+	  }
 
-.book-link :hover{
-	background: gray;
-}
+	  @include breakpoint(medium) {
+	    width: 300px;
+	  }
 
-.book-link a {
-	width: 80px;
-	margin: 0 30px 0 0;
-	padding: 0 10px 0 10px;
-	color: white;
-	background: red;
-	border-radius: 5px;
+	  .read-it-link {
+	    display: block;
+	    position: absolute;
+	    bottom: 0;
+	    left: 0;
+	    right: 0;
+	    text-align: center;
+	    background: rgba(0,0,0,0.6);
+	    color: #FFF;
+	    padding: 20px;
+	    font-size: 25px;
+	    // font-variant: small-caps;
+	    text-transform: uppercase;
+	    border-top: 1px solid white;
+	  }
+
+	  .read-it-link:hover {
+	    background: #ED1C24;
+	    opacity: 0.8;
+	  }
+	}
+
+	.book-title {
+
+		h3 {
+			margin: 0;
+			color: black;
+			font-size: 40px;
+		}
+		
+		a {
+			font-weight: normal;
+			margin: 8px 0 8px 0;
+			text-decoration: none;
+			color:#ED1C24;
+			font-size: 20px;
+		}
+	}
+
+	.book-title:hover {
+		a {
+			color:red;
+		}
+	}
+
+	.author_button {
+
+		a {
+			font-weight: bold;
+			color:#FECA08;
+		}
+	}
+
+	.author_button:hover a {		
+			color:orange;
+	}
+
+	.top_tags {
+		height:50px;
+		a 	{
+			font-weight: bold;
+			color: black;
+			text-decoration: none;
+		}
+
+		.tag {
+
+			a {
+				font-weight: normal;
+				margin: 5px;
+				padding: 4px;
+				float: left;
+				background: #FECA08;
+				border-style: none;
+				border-radius: 2px;
+			}
+		}
+	}
+
+	.book-description {
+		margin: 30px 0 30px 0;
+		float:left;
+
+		@include breakpoint(medium-large) {
+			float: none;
+		}
+	}
 }
 
 .ratings_and_tags {
 	width: 100%;
     margin: 0;
-    float: left;
-    display: inline-flex;
+    float: none;
+    display: inline-block;
+	
+	.review {
+		width: 100%;
 
-    .book_ratings {
-    width: 33.3%;
-    margin: 0;
-    float: left;
-    padding: 10px;
-
+		@include breakpoint(medium-large) {
+			width:33.3%;
+			float:left;	
+		}
+			
 	}
+
+    	.rating_icons {
+			padding-top: 20px;
+			height: 100px;
+
+			.rating_icon {
+				display: inline-block;
+				text-align: center;
+				float: left;
+
+					i {
+						font-size: 90px;
+						width: 90px;
+						margin: 0;
+					}
+
+					a {
+					    color: #FECA08;
+
+					}
+
+					a:hover {
+					    color: orange;
+					}
+					
+					.selected {
+						color: #ED1C24;
+					}
+
+			}
+
+		}
+
+	
+
 }
 
+/****************************************
+SOCIAL MEDIA TAG COLORS
+*****************************************/
 
-.rating_icons {
-	padding-top: 20px;
-	height: 100px;
-}
-
-.rating_icon {
+.social {
 	display: inline-block;
-	min-width: 100px;
-	text-align: center;
-	float: left;
+	width: 33.3%;
+	padding: 10px;
 }
 
-.rating_icon i{
-	text-decoration: none;
+/* Facebook */
+.fa-facebook-square {
+    color: #3b5998;
+
 }
+
+/* Twitter */
+.fa-twitter-square {
+    color: #00a0d1;
+}
+
+/* Tumblr */
+.fa-tumblr-square {
+    color: #34526f;
+}
+
+.social .fa {
+	float: left;
+	padding-left: 0.2em;
+	padding-right: 0.2em;
+
+}
+
+.clear { clear: both; height: 65px; }
+
 
 
 
