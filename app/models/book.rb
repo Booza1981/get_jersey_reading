@@ -42,11 +42,11 @@ class Book < ActiveRecord::Base
 	    	book = google_books.first
 
 	    	# Make sure the page count is set to 0 if it is NULL from the google response
-	    	page_count = book.page_count ||= 0
+	    	page_count = book.page_count.blank? ? 0 : book.page_count
 
 		    self.update_columns(	title: book.title,
 		    											image_link: book.image_link,
-		    											page_count: book.page_count,
+		    											page_count: page_count,
 		    											authors: book.authors,
 		    											description: book.description,
 		    											categories: book.categories,
