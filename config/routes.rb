@@ -9,8 +9,11 @@ Rails.application.routes.draw do
   get 'admin' => 'admin_view#admin_view'
 
 
+
   # get 'reading_list' => 'reading_lists#show'
-  resources :reading_lists
+  resources :reading_lists do
+    get 'books_table' => 'reading_lists#books_table'
+  end
 
   resources :users do
     member do

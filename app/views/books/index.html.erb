@@ -43,10 +43,6 @@
                     <%= link_to ( image_tag(book.image_link)), book_path(book) %>
                 </div>
 
-                <div class="book_title">
-                    <%= link_to (book.title), book_path(book) %>
-                </div>
-
             </div>
 
         <% end %>
@@ -63,10 +59,6 @@
         <div class="book-container">
             <div class="book_cover">
                 <%= link_to ( image_tag(book.image_link)), book_path(book) %>
-            </div>
-
-            <div class="book_title">
-                <%= link_to (book.title), book_path(book) %>
             </div>
         </div>
         <%end%>
@@ -87,8 +79,8 @@
                 </div>
 
                 <div class="username">
-                    <%= link_to (user.username), "profiles/#{user.username}" %>
-                    <a><%= user.points %></a>
+                    <%= link_to (user.username), "profiles/#{user.username}" %><br>
+                    <a class="points"><%= user.points %></a>
                 </div>
             </div>
         <%end%>

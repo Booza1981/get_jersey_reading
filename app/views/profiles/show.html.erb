@@ -1,12 +1,12 @@
 <div class="wrapper">
 
-  <div class="page-header">
+  <div class="page-header-profile group">
     
-    <%= image_tag(@user.logo, :alt => "book_review placeholder", :class => "img-circle") %>
+    <div><%= image_tag(@user.logo, :alt => "book_review placeholder", :class => "img-circle") %></div>
     
-    <h1 class="text-right"><%= @user.username %></h1>
+    <div> <h1 class="text-right"><%= @user.username %></h1>
 
-    <%= @user.points %>
+    <a> <%= @user.points %> </a> </div>
 
   </div>
 
@@ -27,20 +27,14 @@
 
         			<%= link_to ( image_tag(book.image_link)), book_path(book) %>
         		</div>
-
-        		<div class="book_title">
-
-        			<h4><%= link_to (book.title), book_path(book) %></h4>
-      		
-            </div>
       	
           </div>
       
       <%end%>	
       
-      </div>	
+    </div>	
 
-	</div>
+</div>
 
 
 	<div class="page-header">
@@ -53,16 +47,9 @@
 
         <div class="book-container">
 
-    		<div class="book_cover">
-
-    			<%= link_to ( image_tag(book.image_link)), book_path(book) %>
-    		</div>
-
-    		<div class="book_title">
-
-    			<h4><%= link_to (book.title), book_path(book) %></h4>
-    		
-            </div>
+      		<div class="book_cover">
+      			<%= link_to ( image_tag(book.image_link)), book_path(book) %>
+      		</div>
     	
         </div>
     

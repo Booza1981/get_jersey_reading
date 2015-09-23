@@ -2,7 +2,7 @@
 if defined?(Wice::Defaults)
 
   # Default number of rows to show per page.
-  Wice::Defaults::PER_PAGE = 20
+  Wice::Defaults::PER_PAGE = 500
 
   # Default order direction
   Wice::Defaults::ORDER_DIRECTION = 'asc'
@@ -94,7 +94,7 @@ if defined?(Wice::Defaults)
   Wice::Defaults::ALLOW_SHOWING_ALL_RECORDS = true
 
   # If number of all queries is more than this value, the user will be given a warning message
-  Wice::Defaults::START_SHOWING_WARNING_FROM = 100
+  Wice::Defaults::START_SHOWING_WARNING_FROM = 1000
 
   # Hide the "show all" link if the number of all records is more than...
   # Force-resets back to pagination starting from this value.
