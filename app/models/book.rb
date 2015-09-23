@@ -1,13 +1,13 @@
 class Book < ActiveRecord::Base
 	validates :link, uniqueness: true
 	has_many :reviews
-	
+
 	has_many :book_reading_lists
 	has_many :reading_lists, :through => :book_reading_lists
 
 	# Automatically add google book info when a book is created
-	after_create :add_information_from_google_books, :modify_page_count_if_null
-	after_update :add_information_from_google_books, :modify_page_count_if_null
+	after_create :add_information_from_google_books
+	after_update :add_information_from_google_books
 
 	has_many :books_tags, dependent: :destroy
 	has_many :tags, through: :books_tags
@@ -15,7 +15,7 @@ class Book < ActiveRecord::Base
 
 
 	def self.search(search)
-  	where("title LIKE ? OR description LIKE ? OR authors LIKE ?", "%#{search}%","%#{search}%","%#{search}%") 
+  	where("title LIKE ? OR description LIKE ? OR authors LIKE ?", "%#{search}%","%#{search}%","%#{search}%")
 	end
 
 
@@ -27,7 +27,7 @@ class Book < ActiveRecord::Base
 		Book.all.each do |book|
 			book.add_information_from_google_books
 		end
-		
+
 	end
 
 
@@ -41,7 +41,10 @@ class Book < ActiveRecord::Base
 
 	    	book = google_books.first
 
-		    self.update_columns(	title: book.title, 
+	    	# Make sure the page count is set to 0 if it is NULL from the google response
+	    	page_count = book.page_count ||= 0
+
+		    self.update_columns(	title: book.title,
 		    											image_link: book.image_link,
 		    											page_count: book.page_count,
 		    											authors: book.authors,
@@ -54,10 +57,4 @@ class Book < ActiveRecord::Base
 
 	end
 
-	def modify_page_count_if_null
-
-		if page_count == "null"
-			page_count = 0
-		end
-	end
 end
