@@ -7,7 +7,7 @@ class Book < ActiveRecord::Base
 
 	# Automatically add google book info when a book is created
 	after_create :add_information_from_google_books
-	after_update :add_information_from_google_books
+	# after_update :add_information_from_google_books
 
 	has_many :books_tags, dependent: :destroy
 	has_many :tags, through: :books_tags
