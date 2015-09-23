@@ -33,11 +33,11 @@
                   end
 
                   g.column name: 'Add to Reading List' do |book|
-                    "Add"
+                    check_box_tag "reading_list[book_ids][]", book.id, @reading_list.books.include?(book)
                   end
 
                   g.column name: 'Title', attribute: 'title' do |book|
-                    book.title
+                    book.title 
                   end
                   
                   g.column name: 'Created At', attribute: 'created_at' do |book|
