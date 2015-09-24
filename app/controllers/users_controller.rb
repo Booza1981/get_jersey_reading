@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /tags/1
   # PATCH/PUT /tags/1.json
   def update
+    authorize! :update, @user
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to admin_path, notice: 'User was successfully updated.'}
@@ -28,6 +29,8 @@ class UsersController < ApplicationController
   end
 
   def admin
+    authorize! :update, @user
+
   	if @user.admin == true
   		@user.admin = false
   		@user.save

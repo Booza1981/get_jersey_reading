@@ -11,9 +11,6 @@ class BooksTagsController < ApplicationController
   	@books_tag.destroy
   end
 
-
-
-
   private 
 
 	# Never trust parameters from the scary internet, only allow the white list through.
