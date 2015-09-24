@@ -8,11 +8,6 @@
     <%= f.label :username %><br />
     <%= f.text_field :username, autofocus: true %>
   </div>
-
-  <div class="field">
-    <%= f.label :date_of_birth %><br />
-    <%= f.date_select(:date_of_birth, :start_year => 1920)  %>
-  </div>
   
   <div>
   <%= radio_button_tag :is_female, '1', true %><%= f.label :is_female, "Female" %>
