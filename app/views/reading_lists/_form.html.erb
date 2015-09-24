@@ -36,11 +36,11 @@
                     check_box_tag "reading_list[book_ids][]", book.id, @reading_list.books.include?(book)
                   end
 
-                  g.column name: 'Title', attribute: 'title' do |book|
+                  g.column name: 'Title' do |book|
                     book.title 
                   end
                   
-                  g.column name: 'Created At', attribute: 'created_at' do |book|
+                  g.column name: 'Created At' do |book|
                     book.created_at.to_s(:short)
                   end
 

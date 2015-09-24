@@ -9,8 +9,8 @@ class UsersController < ApplicationController
   # PATCH/PUT /tags/1.json
   def update
     respond_to do |format|
-      if @tag.update(tag_params)
-        format.html { redirect_to admin_path, notice: 'Tag was successfully updated.'}
+      if @user.update(user_params)
+        format.html { redirect_to admin_path, notice: 'User was successfully updated.'}
       else
         format.html { render :edit }
       end
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to admin_path, notice: 'Tag was successfully destroyed.' }
+      format.html { redirect_to admin_path, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -51,8 +51,8 @@ class UsersController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def tag_params
-      params.require(:user).permit(:id)
+    def user_params
+      params.require(:user).permit(:id, :username)
     end
 
 end
