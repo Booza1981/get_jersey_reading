@@ -14,6 +14,7 @@ class TagsController < ApplicationController
 
   # GET /tags/new
   def new
+    authorize! :create, Tag
     @tag = Tag.new
   end
 
@@ -24,6 +25,7 @@ class TagsController < ApplicationController
   # POST /tags
   # POST /tags.json
   def create
+    authorize! :create, Tag
     @tag = Tag.new(tag_params)
 
     respond_to do |format|
@@ -38,6 +40,7 @@ class TagsController < ApplicationController
   # PATCH/PUT /tags/1
   # PATCH/PUT /tags/1.json
   def update
+    authorize! :update, @tag
     respond_to do |format|
       if @tag.update(tag_params)
         format.html { redirect_to admin_path, notice: 'Tag was successfully updated.'}

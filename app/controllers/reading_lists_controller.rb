@@ -14,6 +14,7 @@ class ReadingListsController < ApplicationController
 
   # GET /reading_lists/new
   def new
+    authorize! :create, ReadingList
     @reading_list = ReadingList.new
     @books_grid = initialize_grid(Book.all, name: 'g1', order:'books.created_at', order_direction: 'desc')
 
@@ -21,6 +22,7 @@ class ReadingListsController < ApplicationController
 
   # GET /reading_lists/1/edit
   def edit
+    authorize! :update, @reading_list
     @books_grid = initialize_grid(Book.all, name: 'g1', order:'books.created_at', order_direction: 'desc')
 #    @reading_list = ReadingList.find(params[:id])
   end
@@ -28,6 +30,7 @@ class ReadingListsController < ApplicationController
   # POST /reading_lists
   # POST /reading_lists.json
   def create
+    authorize! :create, ReadingList
     params[:reading_list][:book_ids] ||= []
     @reading_list = ReadingList.new(reading_list_params)
     respond_to do |format|
@@ -42,7 +45,7 @@ class ReadingListsController < ApplicationController
   # PATCH/PUT /reading_lists/1
   # PATCH/PUT /reading_lists/1.json
   def update
-
+    authorize! :update, @reading_list
     params[:reading_list][:book_ids] ||= []
 
     respond_to do |format|

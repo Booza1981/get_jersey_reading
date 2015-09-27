@@ -13,11 +13,11 @@
                     book.id
                   end
 
-                  g.column name: 'Title', attribute: 'title' do |book|
+                  g.column name: 'Title' do |book|
                     book.title
                   end
                   
-                  g.column name: 'Created At', attribute: 'created_at' do |book|
+                  g.column name: 'Created At' do |book|
                     book.created_at.to_s(:short)
                   end
 
@@ -44,19 +44,19 @@
                     user.id
                   end
 
-                  g.column name: 'Username', attribute: 'username' do |user|
+                  g.column name: 'Username' do |user|
                     user.username
                   end
 
-                  g.column name: 'Email', attribute: 'email' do |user|
+                  g.column name: 'Email' do |user|
                     user.email
                   end
                   
-                  g.column name: 'Created At', attribute: 'created_at' do |user|
+                  g.column name: 'Created At' do |user|
                     user.created_at.to_s(:short)
                   end
 
-                  g.column name: 'Last Sign In', attribute: 'last_sign_in_at' do |user|
+                  g.column name: 'Last Sign In' do |user|
                     user.last_sign_in_at.to_s(:short)
                   end
 

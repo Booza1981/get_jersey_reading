@@ -9,7 +9,7 @@ class BooksController < ApplicationController
 
     @books = Book.all
     @top_readers = User.all.sort_by(&:points).reverse.take(3)
-    @top_recommended_books = Book.top(5)
+    @top_recommended_books = Book.top(8)
     @reading_lists = ReadingList.all
     if params[:search]
       @booksearch = Book.search(params[:search]).order("created_at DESC")
@@ -50,7 +50,6 @@ class BooksController < ApplicationController
   # GET /books/1/edit
   def edit
     authorize! :update, @book
-
   end
 
   # POST /books
