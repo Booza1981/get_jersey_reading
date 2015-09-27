@@ -5,6 +5,13 @@ GIT
     googlebooks (0.0.8)
       httparty
 
+GIT
+  remote: https://github.com/ncri/owlcarousel-rails.git
+  revision: d82fd7b51277ed527a696b5b18a36deb479ab5b4
+  specs:
+    owlcarousel-rails (1.1.3.3)
+      jquery-rails
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -108,8 +115,6 @@ GEM
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
-    owlcarousel-rails (1.1.3.3)
-      jquery-rails
     paperclip (4.3.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -211,7 +216,7 @@ DEPENDENCIES
   jquery-rails (~> 2.3.0)
   jquery-ui-rails
   mysql2
-  owlcarousel-rails
+  owlcarousel-rails!
   paperclip
   rails (= 4.2.3)
   recommendable
