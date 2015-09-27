@@ -1,8 +1,7 @@
 class ProfilesController < ApplicationController
 
   def show
-        authorize! :read, User
-
+    authorize! :read, User
   	if params[:username].present?
   		@user = User.find_by_username(params[:username])
   	else
