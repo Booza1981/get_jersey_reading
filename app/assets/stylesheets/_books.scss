@@ -13,6 +13,10 @@ body {
 
 }
 
+.ie .owl-wrapper-outer {
+	height: 100px;
+}
+
 #recommendations  {
 	float: left;
 	max-width: 60%;
@@ -70,5 +74,12 @@ body {
 	}
 
 }
+
+.ie .twitter-feed {
+	display: block;
+	float: right;
+	margin-left: 30px;
+}	
+
 
 
