@@ -96,31 +96,6 @@ input, textarea {
 }
 
 
-/* This applies from 600px onwards */
-
-
-/*@media (min-width: 700px) {
-  .cover_review {
-    max-width: 300px;
-    float: left;
-  }*/
-/*
-  .book_ratings {
-    min-width: 100px;
-    max-width: 400px;
-    float: left;
-    margin: 0 center;
-    padding: 10px;
-  }
-
-  .tags_review_page {
-    min-width: 100px;
-    max-width: 400px;
-    float: left;
-    padding: 10px;
-    margin: 0 center;
-  }
-*/
 
 
 
@@ -143,5 +118,7 @@ input, textarea {
 }
 */
 
-
+#user_login, #user_password {
+  width: 300px;
+}
 
