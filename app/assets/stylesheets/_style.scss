@@ -92,6 +92,11 @@ CONTENT
 	}
 }
 
+.ie img {
+	text-decoration: none; 
+	border: 0px
+}
+
 /*******************
 HOME PAGE
 ********************/
@@ -201,7 +206,7 @@ SHOW BOOK
 	    left: 0;
 	    right: 0;
 	    text-align: center;
-	    background: rgba(0,0,0,0.6);
+	    background: rgba(0,0,0,0.9);
 	    color: #FFF;
 	    padding: 20px;
 	    font-size: 25px;
@@ -335,6 +340,12 @@ SHOW BOOK
 			}
 
 		}
+}
+
+.ie .book-info .cover-image-wrap {
+	width: 300px;
+	float: left;
+	margin-right: 30px;
 }
 
 .ie .book-info .cover-image-wrap img {

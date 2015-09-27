@@ -54,8 +54,15 @@ NAVIGATION
 
 }
 
-.ie .nav ul li {
-  display: inline;
+.ie .nav ul {
+  li {
+    display: inline;
+  }
+  .search {
+    margin: 0;
+    padding: 0;
+  }
+
 }
 
 
