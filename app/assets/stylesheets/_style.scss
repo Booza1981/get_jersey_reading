@@ -335,10 +335,25 @@ SHOW BOOK
 			}
 
 		}
-
-	
-
 }
+
+.ie .book-info .cover-image-wrap img {
+	width: 300px;
+}
+
+.ie .book-info .book-description {
+	float:none;
+}
+
+.ie .ratings_and_tags {
+	display:flex;
+}
+	
+.ie .ratings_and_tags	.review {
+	width:33.3%;
+	float:left;	
+}
+
 
 /****************************************
 SOCIAL MEDIA TAG COLORS

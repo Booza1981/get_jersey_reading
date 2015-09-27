@@ -25,6 +25,13 @@ HEADER
   }
 }
 
+.ie .main-header {
+
+  .logo img {
+    height: 85px;
+  }
+}
+
 /****************************************
 NAVIGATION
 *****************************************/
@@ -46,6 +53,11 @@ NAVIGATION
   }
 
 }
+
+.ie .nav ul li {
+  display: inline;
+}
+
 
 /* NAV Media Query */
 
