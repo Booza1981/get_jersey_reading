@@ -72,6 +72,10 @@ a:link_to {
   }
 }
 
+.ie .yield .content-wrap {
+  padding: 30px;
+}
+
 .content-wrap {
 	width: 100%;
 	@extend .group;
@@ -81,6 +85,11 @@ a:link_to {
 		margin: 0 auto;
 	}
 
+}
+
+.ie .content-wrap {
+  width: 1200px;
+  margin: 0 auto;
 }
 
 

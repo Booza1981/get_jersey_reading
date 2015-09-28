@@ -5,14 +5,18 @@ body {
 
 
 .owl-wrapper-outer {
-	height:25vw;
+	height:20vw;
 
 	img {
 		width: 100%;
 	}
 
 }
-s
+
+.ie .owl-wrapper-outer {
+	height: 350px;
+}
+
 
 #recommendations  {
 	float: left;
@@ -71,5 +75,12 @@ s
 	}
 
 }
+
+.ie .twitter-feed {
+	display: block;
+	float: right;
+	margin-left: 30px;
+}	
+
 
 

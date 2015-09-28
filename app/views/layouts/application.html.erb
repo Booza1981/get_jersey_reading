@@ -2,8 +2,18 @@
 <html>
 	<head>
 	  <meta charset="utf-8">
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 			<title>Get Jersey Reading</title>
+			<!-- Pulled from http://code.google.com/p/html5shiv/ -->
+			<!--[if lt IE 9]>
+	 	 	<script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+	 	 	<html class="ie" lang="en" xml:lang="en"> 
+	 	 	<style>input[type="password"] {
+    		font-family: Arial;
+	 	 	}
+  		</style>
+			<![endif]-->
 			<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700|PT+Sans|Raleway:400,700' rel='stylesheet' type='text/css'>
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 			<%= stylesheet_link_tag 	'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -22,8 +32,9 @@
 				</div>
 
 				<div class="nav">
-					<ul>
-						<li><%= form_tag(books_path, :method => "get", id: "search-form") do %>
+					<span class="group">
+					<ul id="nav"></span>
+						<li class="search"><%= form_tag(books_path, :method => "get", id: "search-form", class: "search") do %>
 						<%= text_field_tag :search, params[:search], placeholder: "Search Books" %>
 						<%= submit_tag "Search" %>
 						<% end %>
@@ -73,6 +84,18 @@
 			</div>
 
 		</footer>
+
+		<script type="text/javascript">
+			$("#nav").addClass("js").before('<div id="menu">&#9776;</div>');
+			$("#menu").click(function(){
+				$("#nav").toggle();
+			});
+			$(window).resize(function(){
+				if(window.innerWidth > 768) {
+					$("#nav").removeAttr("style");
+				}
+			});
+		</script>
 
 	</body>
 </html>

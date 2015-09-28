@@ -31,14 +31,7 @@ HEADER
 	background-color: #B60011;
 }
 *****/
-li {
-	text-decoration: none;
-	text-align: center;
-	padding: 0 10px;
-	list-style: none;
-	display: inline;
-	line-height: 100px;
-}
+
 
 /*******************
 CONTENT
@@ -89,6 +82,11 @@ CONTENT
 		height: 200px;
 		width: 131px;
 	}
+}
+
+.ie img {
+	text-decoration: none; 
+	border: 0px
 }
 
 /*******************
@@ -200,7 +198,7 @@ SHOW BOOK
 	    left: 0;
 	    right: 0;
 	    text-align: center;
-	    background: rgba(0,0,0,0.6);
+	    background: rgba(0,0,0,0.9);
 	    color: #FFF;
 	    padding: 20px;
 	    font-size: 25px;
@@ -334,10 +332,31 @@ SHOW BOOK
 			}
 
 		}
-
-	
-
 }
+
+.ie .book-info .cover-image-wrap {
+	width: 300px;
+	float: left;
+	margin-right: 30px;
+}
+
+.ie .book-info .cover-image-wrap img {
+	width: 300px;
+}
+
+.ie .book-info .book-description {
+	float:none;
+}
+
+.ie .ratings_and_tags {
+	display:flex;
+}
+	
+.ie .ratings_and_tags	.review {
+	width:33.3%;
+	float:left;	
+}
+
 
 /****************************************
 SOCIAL MEDIA TAG COLORS
