@@ -9,6 +9,11 @@ module ApplicationHelper
     end
   end
 
+  def title(page_title)
+    content_for(:title) { page_title }
+  end
+
+
   def external_book_url(source)
     URI.join(root_url, book_path(source))
   end
