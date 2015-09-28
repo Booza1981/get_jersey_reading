@@ -44,13 +44,6 @@
                     book.created_at.to_s(:short)
                   end
 
-                  g.column name: 'Edit' do |book|
-                    link_to('Edit', edit_book_path(book))
-                  end
-
-                  g.column name: 'Delete' do |book|
-                    link_to 'Delete', book_path(book), method: :delete, data: { confirm: 'Are you sure?' }
-                  end
                 end %>
             </div>
 
