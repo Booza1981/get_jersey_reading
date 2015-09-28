@@ -11,14 +11,12 @@ HEADER
 
   .logo {
     float: left;
-    a {
-      display: block;
-    }
   }
 
   .logo img {
     height: 40px;
-
+    display: block;
+    
     @include breakpoint(small) {
       height: 85px;
     }
@@ -35,21 +33,77 @@ HEADER
 /****************************************
 NAVIGATION
 *****************************************/
-.nav {
+.nav span {
+  display:block;
+  vertical-align:middle;
   float: right;
+  line-height: 40px;
+  padding-right: 15px;
+  right: 10px;
+
+
+  @include breakpoint(small) {
+    line-height: 85px;
+  }
+}
+
+#menu {
+  display: block;
+  float: right;
+  text-align: right;
+  font-size: 30px;
+  color: #ED1C24;
+  
+
+
+  @include breakpoint(small) {
+    font-size: 50px;
+  }
+
+  @include breakpoint(medium) {
+    display: none;
+  }
+}
+
+#nav.js {
+  display: none;
+
+  @include breakpoint(medium) {
+    display: inline-block;
+  }
+}
+
+.nav {
 
   ul {
     margin: 0;
     padding: 0;
-    list-style: none;
+    width: 100%;
+    float: right;
+    
     li {
       line-height: 1;
       text-decoration: none;
-      padding: 30px 15px;
-      list-style: none;
-      display: inline-block;
       font-size: 17px;
+      display: block;
+      text-align: right;
+
+
+    
+      @include breakpoint(medium) {
+        display: inline-block;
+        padding: 30px 15px;
+        float: left;
+      }
+
     }
+
+    @include breakpoint(medium) {
+      float: right;
+      width: auto;
+    }
+
+
   }
 
 }
