@@ -5,7 +5,7 @@ body {
 
 
 .owl-wrapper-outer {
-	height:20vw;
+	height:25vw;
 
 	img {
 		width: 100%;
@@ -72,6 +72,20 @@ body {
 		display: block;
 		float: right;
 		margin-left: 30px;
+	}
+
+}
+
+.twitter-feed-mobile {
+	width:100%;
+
+	@include breakpoint(small) {
+		margin: 0 auto;
+		width: 50%;
+	}
+
+	@include breakpoint(large) {
+		display:none;
 	}
 
 }

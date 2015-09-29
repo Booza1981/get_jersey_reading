@@ -31,27 +31,47 @@
 					<%= link_to image_tag("GetReadingLogo.png"), root_url %>
 				</div>
 
-				<div class="nav">
-					<span class="group">
-					<ul id="nav"></span>
-						<li class="search"><%= form_tag(books_path, :method => "get", id: "search-form", class: "search") do %>
-						<%= text_field_tag :search, params[:search], placeholder: "Search Books" %>
-						<%= submit_tag "Search" %>
-						<% end %>
-						<li><%= link_to "About", about_path %></li>
-						<% if user_signed_in? %>
-							<li><%= link_to "My Profile", profile_path %></li>
+				<div id="nav-bar">
+
+				
+
+					<div class="nav">
+						<span class="group">
+						<ul id="nav"></span>
+
+	
+
+
+							<li><%= link_to "Reading Lists", reading_lists_path %></li>
+
+							<li><%= link_to "Top Readers", root_url(anchor: 'readers') %></li>
+
+							<li><%= link_to "#jerseyfestivalofwords", root_url( anchor: 'twitterfeed') %></li>
+							
+							<% if user_signed_in? %>
+								<li><%= link_to "My Profile", profile_path %></li>
+
 							<% if current_user.admin? %>
-								<li><%= link_to "Admin", admin_path %></li>
+								<li><%= link_to "Admin", admin_path %></li><% end %>
+
+			  			<li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'%></li>
+							<% else %>
+			  				<li><%= link_to "Login", new_user_session_path %></li>
 							<% end %>
-		  				<li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'%></li>
-						<% else %>
-		  				<li><%= link_to "Login", new_user_session_path %></li>
-						<% end %>
-					</ul>
+							<li><%= link_to "About", about_path %></li>
+						</ul>
+					</div>
 
+					<div class="search-box">
+						<div class="search-container">
+							<span class="icon"><i class="fa fa-search"></i></span>
+							<%= form_tag(books_path, :method => "get", id: "search-form", class: "search") do %>
+							<%= text_field_tag :search, params[:search], placeholder: "Search Books" %>
+							<%= submit_tag "Search", :style => "display: none;" %>
+							<% end %>
+						</div>
+					</div>
 				</div>
-
 			</div>
 
 		</header>
