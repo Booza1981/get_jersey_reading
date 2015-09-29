@@ -41,9 +41,15 @@
 
 							
 							<% if user_signed_in? %>
-								<li><%= link_to "My Profile", profile_path %></li><% end %>
+								<li><%= link_to "My Profile", profile_path %></li>
+								<% end %>
 
-							<li><%= link_to "Top Readers", root_url, :anchor => "topReaders"%>
+
+							<li><%= link_to "Reading Lists", reading_lists_path %></li>
+
+							<li><%= link_to "Top Readers", root_url(anchor: 'readers') %></li>
+
+							<li><%= link_to "#jerseyfestivalofwords", root_url( anchor: 'twitterfeed') %></li>
 
 							<% if current_user.admin? %>
 								<li><%= link_to "Admin", admin_path %></li><% end %>
