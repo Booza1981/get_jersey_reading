@@ -31,6 +31,16 @@
 					<%= link_to image_tag("GetReadingLogo.png"), root_url %>
 				</div>
 
+				<div class="search-box">
+					<div class="search-container">
+						<span class="icon"><i class="fa fa-search"></i></span>
+						<%= form_tag(books_path, :method => "get", id: "search-form", class: "search") do %>
+						<%= text_field_tag :search, params[:search], placeholder: "Search Books" %>
+						<%= submit_tag "Search", :style => "display: none;" %>
+						<% end %>
+					</div>
+				</div>
+
 				<div id="nav-bar">
 
 				
@@ -40,13 +50,13 @@
 						<ul id="nav"></span>
 
 	
-
+							<li><%= link_to "Home", root_url %></li>
 
 							<li><%= link_to "Reading Lists", reading_lists_path %></li>
 
 							<li><%= link_to "Top Readers", root_url(anchor: 'readers') %></li>
 
-							<li><%= link_to "#jerseyfestivalofwords", root_url( anchor: 'twitterfeed') %></li>
+							<li><%= link_to "News", root_url( anchor: 'twitterfeed') %></li>
 							
 							<% if user_signed_in? %>
 								<li><%= link_to "My Profile", profile_path %></li>
@@ -62,15 +72,7 @@
 						</ul>
 					</div>
 
-					<div class="search-box">
-						<div class="search-container">
-							<span class="icon"><i class="fa fa-search"></i></span>
-							<%= form_tag(books_path, :method => "get", id: "search-form", class: "search") do %>
-							<%= text_field_tag :search, params[:search], placeholder: "Search Books" %>
-							<%= submit_tag "Search", :style => "display: none;" %>
-							<% end %>
-						</div>
-					</div>
+
 				</div>
 			</div>
 

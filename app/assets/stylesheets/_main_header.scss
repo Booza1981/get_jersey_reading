@@ -6,7 +6,9 @@ HEADER
   background: orange;
 
   .content-wrap {
-    padding: 20px 30px;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 
   .logo {
@@ -15,7 +17,6 @@ HEADER
 
   .logo img {
     height: 40px;
-    display: block;
     
     @include breakpoint(small) {
       height: 85px;
@@ -30,18 +31,24 @@ HEADER
   }
 }
 
+.nav {
+  display: block ;
+  width:100%;
+}
+
 /****************************************
 SEARCH
 *****************************************/
 
 .search-box {
-  width: 200px;
   height: 40px;
   float: right;
   display: none;
+  padding-right: 15px;
+
   
   @include breakpoint(medium) {
-    display: block;
+    display: inline-block;
   }
 }
 
@@ -153,6 +160,7 @@ NAVIGATION
 
 #nav.js {
   display: none;
+  padding-top: 0px;
 
   @include breakpoint(medium) {
     display: inline-block;
@@ -161,25 +169,92 @@ NAVIGATION
 
 .nav {
 
+  width: auto;
+
+  ul:after {
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+
   ul {
+    list-style: none;
     margin: 0;
     padding: 0;
-    width: 100%;
-    float: right;
+    line-height: 1;
+    display: block;
+    zoom: 1;
     
     li {
       line-height: 1;
       text-decoration: none;
       font-size: 17px;
       display: block;
-      text-align: right;
+      float: right;
+
+      a {
+        color: #ED1C24;
+        text-decoration: none;
+        display: block;
+        padding: 15px 15px;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 14px;
+        position: relative;
+        -webkit-transition: color .25s;
+        -moz-transition: color .25s;
+        -ms-transition: color .25s;
+        -o-transition: color .25s;
+        transition: color .25s;
+       }
+
+      a:hover {
+        color: #333333;
+      }
+
+      a:hover:before {
+        width: 100%;
+      }
+
+      li a:after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: -3px;
+        top: 19px;
+        height: 6px;
+        width: 6px;
+        background: #ffffff;
+        opacity: .5;
+      }
+
+      li a:before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 3px;
+        width: 0;
+        background: #333333;
+        -webkit-transition: width .25s;
+        -moz-transition: width .25s;
+        -ms-transition: width .25s;
+        -o-transition: width .25s;
+        transition: width .25s;
+      }
 
 
     
       @include breakpoint(medium) {
-        display: inline-block;
-        padding: 30px 15px;
         float: left;
+        display: inline-block;
+        padding: 0;
+        margin: 0;
       }
 
     }
@@ -194,15 +269,8 @@ NAVIGATION
 
 }
 
-.ie .nav ul {
-  li {
-    display: inline;
-  }
-  .search {
-    margin: 0;
-    padding: 0;
-  }
-
+.ie .nav ul li {
+  display: inline;
 }
 
 

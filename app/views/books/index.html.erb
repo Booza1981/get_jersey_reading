@@ -20,9 +20,10 @@
 
       
 
+    <a name="twitterfeed">
     <div class="twitter-feed">
         <a class="twitter-timeline" href="https://twitter.com/JerseyWordFest" data-widget-id="636675700120907776">Tweets by @JerseyWordFest</a>
-    </div>
+    </div></a>
 
     <% if @booksearch.present? %>
         <%= render 'books/books', :books => @books %>
@@ -88,9 +89,9 @@
         <%end%>
     </div>
 
-    <a name="twitterfeed"><div class="twitter-feed-mobile" >
-        <a class="twitter-timeline" href="https://twitter.com/JerseyWordFest" data-widget-id="636675700120907776">Tweets by @JerseyWordFest</a>
-    </div></a>
+    <div class="twitter-feed-mobile" >
+        <%= render 'books/twitter' %>
+    </div>
     
 
 </div>
