@@ -187,15 +187,27 @@ NAVIGATION
     line-height: 1;
     display: block;
     zoom: 1;
+    float: left;
+
+
     
     li {
       line-height: 1;
       text-decoration: none;
       font-size: 17px;
       display: block;
-      float: right;
+      float: none;
+
+      @include breakpoint(medium) {
+        float: right;
+      }
 
       a {
+        width: 100%;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        border-bottom: 1px solid #fb998c;
         color: #ED1C24;
         text-decoration: none;
         display: block;
@@ -210,7 +222,8 @@ NAVIGATION
         -ms-transition: color .25s;
         -o-transition: color .25s;
         transition: color .25s;
-       }
+
+      }
 
       a:hover {
         color: #333333;

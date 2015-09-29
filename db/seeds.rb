@@ -1,3 +1,4 @@
+Book.skip_callback(:create, :after, :add_information_from_google_books)
 Book.create!([
   {link: "http://capitadiscovery.co.uk/jersey/items/365975?query=Steven+Butler&resultsUri=items%3Fquery%3DSteven%2BButler", isbn: "0141355743", title: "The Diary of Dennis the Menace: Beanotown Battle", image_link: "http://books.google.com/books/content?id=-axtngEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api", authors: "Steven Butler", description: "I've had the worst news ever! The boring Mayor has entered Beanotown in a flower competition and you know what awful stinky creatures flowers attract? Softies. Me and Gnasher are going to have to think of a brilliant emergency menacing plan to save Beanotown from the invasion. Read all about The Beano's most popular character - scribbled in his own words (and pictures . . . and doddles and splats). With help from Steven Butler, the hilarious author of The Wrong Pong, shortlisted for the Roald Dahl Funny Prize", page_count: 144, categories: "Children's stories", publisher: nil, published_date: nil},
   {link: "http://capitadiscovery.co.uk/jersey/items/324966?query=Steven+Butler&resultsUri=items%3Fquery%3DSteven%2BButler", isbn: "0141333901", title: "The Wrong Pong", image_link: "http://books.google.com/books/content?id=XRun0N2BfR0C&printsec=frontcover&img=1&zoom=1&source=gbs_api", authors: "Steven Butler", description: "Oh dungle droppings! Neville's been yanked down the toilet by a TROLL but there's no use gripin' in the pipin'. He's part of the Bulch family now - whether he likes it or not. And he certainly doesn't like their grizzly feasts of rat patties and earwax brownies and pickled fish eyes - totally GROTSOME! Neville wants to go home - but can he get there without being EATEN? If you go down the toilet today you're in for a BIG surprise with this laugh-out-loud tale of trolls, toadstools and trollaballoos . . .", page_count: 160, categories: "Juvenile Fiction", publisher: nil, published_date: nil},
@@ -84,6 +85,8 @@ Book.create!([
   {link: "http://capitadiscovery.co.uk/jersey/items/357837?query=durrell&resultsUri=items%3Fquery%3Ddurrell%26offset%3D10%26aj%3Dt", isbn: "9781447214489", title: "Fillets of Plaice", image_link: "http://books.google.com/books/content?id=u2VqMgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api", authors: "Gerald Durrell", description: "At that moment came a noise like somebody breaking the backbone of a whale and the palm leaf punka crashed straight onto the table, one end of it completely obliterating the District Commissioner. 'Oh my God!' screamed Mary, upsetting her gin and tonic. 'I'm terribly, terribly sorry, sir,' said Martin to the invisible D.C. The palm fronds rusted and the D.C.'s head appeared. He opened his mouth to say something - and then caught sight of a very hairy spider the circumference of a saucer making its way along the punka towards him . . . 'Delightful. A collection of scattered and dotty reminiscences.' Sunday Mirror 'Durrell calamity prone in a mad world!' Sunday Times", page_count: 188, categories: "Biography & Autobiography", publisher: nil, published_date: nil},
   {link: "http://capitadiscovery.co.uk/jersey/items/127342?query=durrell&resultsUri=items%3Fquery%3Ddurrell%26facet%255B0%255D%3Dmainauthor%253A%2522Durrell%252C%2BGerald%252C%2B1925-%2522%26offset%3D50&facet%5B0%5D=mainauthor%3A%22Durrell%2C+Gerald%2C+1925-%22", isbn: "9780006344629", title: "Catch Me a Colobus", image_link: "http://books.google.com/books/content?id=_vmSMgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api", authors: "Gerald Durrell", description: "A pot-pourri of humorous animal anecdotes concocted by the famous wildlife lover, leading conservationist and award-winning author, Gerald Durrell. Hectic, hilarious days at his Jersey zoo and forays to various corners of the earth to rescue animal species in danger of extinction provide a series of wonderful stories that are wry, witty and wonderful. Apes get loose, tigers get pregnant and women fall by the droves for a handsome zoo keeper. Endearingly funny, occasionally outrageous, Catch me a Colobos is classic Gerald Durrell.", page_count: 194, categories: "Biography & Autobiography", publisher: nil, published_date: nil}
 ])
+Book.set_callback(:create, :after, :add_information_from_google_books)
+
 BookReadingList.create!([
   {reading_list_id: 1, book_id: 56},
   {reading_list_id: 1, book_id: 26},
@@ -120,16 +123,12 @@ BooksTag.create!([
   {book_id: 26, user_id: 1, tag_id: 18},
   {book_id: 48, user_id: 1, tag_id: 16},
   {book_id: 48, user_id: 1, tag_id: 26},
-  {book_id: 48, user_id: 1, tag_id: 10},
-  {book_id: 16, user_id: 1, tag_id: 13},
-  {book_id: 16, user_id: 1, tag_id: 17},
-  {book_id: 16, user_id: 1, tag_id: 28},
-  {book_id: 16, user_id: 1, tag_id: 27}
+  {book_id: 48, user_id: 1, tag_id: 10}
 ])
 ReadingList.create!([
   {title: "War and Remembrance", image_link: "war.jpg"},
-  {title: "Local Talent", image_link: "children_list.png"},
-  {title: "Children's Books", image_link: "local_list.png"}
+  {title: "Local Talent", image_link: "local_list.png"},
+  {title: "Children's Books", image_link: "children_list.png"}
 ])
 Tag.create!([
   {name: "Wild"},
