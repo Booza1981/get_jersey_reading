@@ -171,6 +171,12 @@ NAVIGATION
 
   width: auto;
 
+  @include breakpoint(medium) {
+    width: 764px;
+    float: right;
+  }
+
+
   ul:after {
     content: " ";
     display: block;
@@ -188,6 +194,11 @@ NAVIGATION
     display: block;
     zoom: 1;
     float: left;
+
+    @include breakpoint(medium) {
+      float: right;
+    }
+
 
 
     
