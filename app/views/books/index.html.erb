@@ -57,7 +57,7 @@
     </div>
 
     <div class="content-box">
-        <% @books.each do |book|  %>
+        <% @books.shuffle.each do |book|  %>
         <div class="book-container">
             <div class="book_cover">
                 <%= link_to ( image_tag(book.image_link)), book_path(book) %>
@@ -70,7 +70,7 @@
     </div>
 
     <div class="page-header">
-        <h2>Top Readers</h2>
+        <h2><a name="readers">Top Readers</a><h2>
     </div>
 
     <div class="content-box">
@@ -87,6 +87,10 @@
             </div>
         <%end%>
     </div>
+
+    <a name="twitterfeed"><div class="twitter-feed-mobile" >
+        <a class="twitter-timeline" href="https://twitter.com/JerseyWordFest" data-widget-id="636675700120907776">Tweets by @JerseyWordFest</a>
+    </div></a>
     
 
 </div>

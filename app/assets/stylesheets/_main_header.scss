@@ -31,6 +31,92 @@ HEADER
 }
 
 /****************************************
+SEARCH
+*****************************************/
+
+.search-box {
+  width: 200px;
+  height: 40px;
+  float: right;
+  display: none;
+  
+  @include breakpoint(medium) {
+    display: block;
+  }
+}
+
+.search-container {
+  overflow: hidden;
+  width: 200px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+
+  input#search{
+    width: 45px;
+    height: 50px;
+    background: #ffffff;
+    border: none;
+    font-size: 10pt;
+    float: right;
+    color: #63717f;
+    padding-right: 35px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color: #000000;
+
+    -webkit-transition: width .55s ease;
+    -moz-transition: width .55s ease;
+    -ms-transition: width .55s ease;
+    -o-transition: width .55s ease;
+    transition: width .55s ease;
+  }
+  
+  
+  input#search::-webkit-input-placeholder {
+    color: #65737e;
+  }
+ 
+  input#search:-moz-placeholder { /* Firefox 18- */
+    color: #65737e;  
+  }
+ 
+  input#search::-moz-placeholder {  /* Firefox 19+ */
+    color: #65737e;  
+  }
+ 
+  input#search:-ms-input-placeholder {  
+    color: #65737e;  
+  }
+
+  .icon{
+    position: absolute;
+    top: 10%;
+    margin-left: 175px;
+    margin-top: 17px;
+    z-index: 1;
+    color: #4f5b66;
+    }
+
+  input#search:focus, input#search:active{
+    outline:none;
+    width: 200px;
+  }
+   
+  :hover input#search{
+  width: 200px;
+  }
+   
+  :hover .icon{
+    color: #93a2ad;
+  }
+  
+}
+
+
+
+/****************************************
 NAVIGATION
 *****************************************/
 .nav span {
