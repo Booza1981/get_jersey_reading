@@ -39,10 +39,7 @@
 						<span class="group">
 						<ul id="nav"></span>
 
-							
-							<% if user_signed_in? %>
-								<li><%= link_to "My Profile", profile_path %></li>
-								<% end %>
+	
 
 
 							<li><%= link_to "Reading Lists", reading_lists_path %></li>
@@ -50,12 +47,14 @@
 							<li><%= link_to "Top Readers", root_url(anchor: 'readers') %></li>
 
 							<li><%= link_to "#jerseyfestivalofwords", root_url( anchor: 'twitterfeed') %></li>
+							
+							<% if user_signed_in? %>
+								<li><%= link_to "My Profile", profile_path %></li>
 
 							<% if current_user.admin? %>
 								<li><%= link_to "Admin", admin_path %></li><% end %>
-							
-							<% if user_signed_in? %>
-			  				<li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'%></li>
+
+			  			<li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'%></li>
 							<% else %>
 			  				<li><%= link_to "Login", new_user_session_path %></li>
 							<% end %>
