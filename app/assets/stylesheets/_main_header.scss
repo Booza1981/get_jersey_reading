@@ -37,8 +37,12 @@ SEARCH
 .search-box {
   width: 200px;
   height: 40px;
-  display: block;
   float: right;
+  display: none;
+  
+  @include breakpoint(medium) {
+    display: block;
+  }
 }
 
 .search-container {
