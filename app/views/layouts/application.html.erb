@@ -56,7 +56,7 @@
 
 							<li><%= link_to "Top Readers", root_url(anchor: 'readers') %></li>
 
-							<li><%= link_to "News", root_url( anchor: 'twitterfeed') %></li>
+							<li class="news"><%= link_to "News", root_url( anchor: 'twitterfeed') %></li>
 							
 							<% if user_signed_in? %>
 								<li><%= link_to "My Profile", profile_path %></li>

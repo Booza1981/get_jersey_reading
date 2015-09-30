@@ -74,6 +74,10 @@ body {
 		margin-left: 30px;
 	}
 
+.ie .twitter-feed {
+	display: none;
+}
+
 }
 
 .twitter-feed-mobile {
@@ -90,11 +94,9 @@ body {
 
 }
 
-.ie .twitter-feed {
-	display: block;
-	float: right;
-	margin-left: 30px;
-}	
+.ie .twitter-feed-mobile {
+	display:none
+}
 
 
 
