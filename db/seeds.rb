@@ -1,18 +1,18 @@
 User.create!([
-  {email: "gwyngarfieldbennett@gmail.com", password: "valid_password", password_confirmation: "valid_password"},
-  {email: "jerseyboy@jerseyboy.com", password: "valid_password", password_confirmation: "valid_password"},
-  {email: "teengirl@teengirl.com", password: "valid_password", password_confirmation: "valid_password"},
-  {email: "mary@lou.com", password: "valid_password", password_confirmation: "valid_password"},
-  {email: "beyonce@begone.com", password: "valid_password", password_confirmation: "valid_password"},
-  {email: "dave@davetherave.com", password: "valid_password", password_confirmation: "valid_password"},
-  {email: "max@mymax.com", password: "valid_password", password_confirmation: "valid_password"},
-  {email: "nancy@anncygirl.com", password: "valid_password", password_confirmation: "valid_password"},
-  {email: "anna@anna.com", password: "valid_password", password_confirmation: "valid_password"},
-  {email: "des@anemail.com", password: "valid_password", password_confirmation: "valid_password"},
-  {email: "tess@tessy.com", password: "valid_password", password_confirmation: "valid_password"},
-  {email: "nipper@nip.com", password: "valid_password", password_confirmation: "valid_password"},
-  {email: "diane@diane.com", password: "valid_password", password_confirmation: "valid_password"},
-  {email: "rich@rich.com", encrypted_password: password: "valid_password", password_confirmation: "valid_password"}
+  {email: "gwyngarfieldbennett@gmail.com", password: "valid_password", password_confirmation: "valid_password", username: "codergwyn"},
+  {email: "jerseyboy@jerseyboy.com", password: "valid_password", password_confirmation: "valid_password", username: "Jerseyboy"},
+  {email: "teengirl@teengirl.com", password: "valid_password", password_confirmation: "valid_password", username: "teengirl"},
+  {email: "mary@lou.com", password: "valid_password", password_confirmation: "valid_password", username: "Marylou"},
+  {email: "beyonce@begone.com", password: "valid_password", password_confirmation: "valid_password", username: "Beyonce"},
+  {email: "dave@davetherave.com", password: "valid_password", password_confirmation: "valid_password", username: "Dave"},
+  {email: "max@mymax.com", password: "valid_password", password_confirmation: "valid_password", username: "Max"},
+  {email: "nancy@anncygirl.com", password: "valid_password", password_confirmation: "valid_password", username: "Nancy"},
+  {email: "anna@anna.com", password: "valid_password", password_confirmation: "valid_password", username: "anna"},
+  {email: "des@anemail.com", password: "valid_password", password_confirmation: "valid_password", username: "Des"},
+  {email: "tess@tessy.com", password: "valid_password", password_confirmation: "valid_password", username: "Tess"},
+  {email: "nipper@nip.com", password: "valid_password", password_confirmation: "valid_password", username: "Nipper"},
+  {email: "diane@diane.com", password: "valid_password", password_confirmation: "valid_password", username: "Diane"},
+  {email: "rich@rich.com", password: "valid_password", password_confirmation: "valid_password", username: "Richard"}
 ])
 Book.skip_callback(:create, :after, :add_information_from_google_books)
 Book.create!([
