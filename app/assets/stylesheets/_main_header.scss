@@ -6,9 +6,12 @@ HEADER
   background: orange;
 
   .content-wrap {
-    padding-top: 20px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 20px 30px;
+    
+    @include breakpoint(medium) {
+      padding-bottom: 0px;
+    }
+
   }
 
   .logo {
@@ -174,6 +177,14 @@ NAVIGATION
   @include breakpoint(medium) {
     width: 764px;
     float: right;
+  }
+
+  @include breakpoint(medium-large) {
+    width: 960px
+  }
+
+  @include breakpoint (large) {
+    width: 1200px
   }
 
 

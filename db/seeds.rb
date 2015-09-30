@@ -1,3 +1,19 @@
+User.create!([
+  {email: "gwyngarfieldbennett@gmail.com", password: "valid_password", password_confirmation: "valid_password"},
+  {email: "jerseyboy@jerseyboy.com", password: "valid_password", password_confirmation: "valid_password"},
+  {email: "teengirl@teengirl.com", password: "valid_password", password_confirmation: "valid_password"},
+  {email: "mary@lou.com", password: "valid_password", password_confirmation: "valid_password"},
+  {email: "beyonce@begone.com", password: "valid_password", password_confirmation: "valid_password"},
+  {email: "dave@davetherave.com", password: "valid_password", password_confirmation: "valid_password"},
+  {email: "max@mymax.com", password: "valid_password", password_confirmation: "valid_password"},
+  {email: "nancy@anncygirl.com", password: "valid_password", password_confirmation: "valid_password"},
+  {email: "anna@anna.com", password: "valid_password", password_confirmation: "valid_password"},
+  {email: "des@anemail.com", password: "valid_password", password_confirmation: "valid_password"},
+  {email: "tess@tessy.com", password: "valid_password", password_confirmation: "valid_password"},
+  {email: "nipper@nip.com", password: "valid_password", password_confirmation: "valid_password"},
+  {email: "diane@diane.com", password: "valid_password", password_confirmation: "valid_password"},
+  {email: "rich@rich.com", encrypted_password: password: "valid_password", password_confirmation: "valid_password"}
+])
 Book.skip_callback(:create, :after, :add_information_from_google_books)
 Book.create!([
   {link: "http://capitadiscovery.co.uk/jersey/items/365975?query=Steven+Butler&resultsUri=items%3Fquery%3DSteven%2BButler", isbn: "0141355743", title: "The Diary of Dennis the Menace: Beanotown Battle", image_link: "http://books.google.com/books/content?id=-axtngEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api", authors: "Steven Butler", description: "I've had the worst news ever! The boring Mayor has entered Beanotown in a flower competition and you know what awful stinky creatures flowers attract? Softies. Me and Gnasher are going to have to think of a brilliant emergency menacing plan to save Beanotown from the invasion. Read all about The Beano's most popular character - scribbled in his own words (and pictures . . . and doddles and splats). With help from Steven Butler, the hilarious author of The Wrong Pong, shortlisted for the Roald Dahl Funny Prize", page_count: 144, categories: "Children's stories", publisher: nil, published_date: nil},
@@ -85,15 +101,11 @@ Book.create!([
   {link: "http://capitadiscovery.co.uk/jersey/items/357837?query=durrell&resultsUri=items%3Fquery%3Ddurrell%26offset%3D10%26aj%3Dt", isbn: "9781447214489", title: "Fillets of Plaice", image_link: "http://books.google.com/books/content?id=u2VqMgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api", authors: "Gerald Durrell", description: "At that moment came a noise like somebody breaking the backbone of a whale and the palm leaf punka crashed straight onto the table, one end of it completely obliterating the District Commissioner. 'Oh my God!' screamed Mary, upsetting her gin and tonic. 'I'm terribly, terribly sorry, sir,' said Martin to the invisible D.C. The palm fronds rusted and the D.C.'s head appeared. He opened his mouth to say something - and then caught sight of a very hairy spider the circumference of a saucer making its way along the punka towards him . . . 'Delightful. A collection of scattered and dotty reminiscences.' Sunday Mirror 'Durrell calamity prone in a mad world!' Sunday Times", page_count: 188, categories: "Biography & Autobiography", publisher: nil, published_date: nil},
   {link: "http://capitadiscovery.co.uk/jersey/items/127342?query=durrell&resultsUri=items%3Fquery%3Ddurrell%26facet%255B0%255D%3Dmainauthor%253A%2522Durrell%252C%2BGerald%252C%2B1925-%2522%26offset%3D50&facet%5B0%5D=mainauthor%3A%22Durrell%2C+Gerald%2C+1925-%22", isbn: "9780006344629", title: "Catch Me a Colobus", image_link: "http://books.google.com/books/content?id=_vmSMgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api", authors: "Gerald Durrell", description: "A pot-pourri of humorous animal anecdotes concocted by the famous wildlife lover, leading conservationist and award-winning author, Gerald Durrell. Hectic, hilarious days at his Jersey zoo and forays to various corners of the earth to rescue animal species in danger of extinction provide a series of wonderful stories that are wry, witty and wonderful. Apes get loose, tigers get pregnant and women fall by the droves for a handsome zoo keeper. Endearingly funny, occasionally outrageous, Catch me a Colobos is classic Gerald Durrell.", page_count: 194, categories: "Biography & Autobiography", publisher: nil, published_date: nil}
 ])
-Book.set_callback(:create, :after, :add_information_from_google_books)
-
 BookReadingList.create!([
   {reading_list_id: 1, book_id: 56},
   {reading_list_id: 1, book_id: 26},
   {reading_list_id: 2, book_id: 20},
   {reading_list_id: 2, book_id: 8},
-  {reading_list_id: 3, book_id: 47},
-  {reading_list_id: 3, book_id: 46},
   {reading_list_id: 4, book_id: 11},
   {reading_list_id: 4, book_id: 12},
   {reading_list_id: 5, book_id: 3},
@@ -111,7 +123,35 @@ BookReadingList.create!([
   {reading_list_id: 4, book_id: 19},
   {reading_list_id: 4, book_id: 15},
   {reading_list_id: 4, book_id: 9},
-  {reading_list_id: 4, book_id: 10}
+  {reading_list_id: 4, book_id: 10},
+  {reading_list_id: 1, book_id: 57},
+  {reading_list_id: 1, book_id: 23},
+  {reading_list_id: 1, book_id: 27},
+  {reading_list_id: 1, book_id: 37},
+  {reading_list_id: 1, book_id: 38},
+  {reading_list_id: 1, book_id: 39},
+  {reading_list_id: 1, book_id: 41},
+  {reading_list_id: 1, book_id: 54},
+  {reading_list_id: 1, book_id: 58},
+  {reading_list_id: 1, book_id: 59},
+  {reading_list_id: 1, book_id: 60},
+  {reading_list_id: 1, book_id: 68},
+  {reading_list_id: 2, book_id: 21},
+  {reading_list_id: 2, book_id: 31},
+  {reading_list_id: 2, book_id: 35},
+  {reading_list_id: 2, book_id: 40},
+  {reading_list_id: 2, book_id: 41},
+  {reading_list_id: 2, book_id: 52},
+  {reading_list_id: 2, book_id: 53},
+  {reading_list_id: 2, book_id: 54},
+  {reading_list_id: 2, book_id: 57},
+  {reading_list_id: 2, book_id: 59},
+  {reading_list_id: 2, book_id: 76},
+  {reading_list_id: 3, book_id: 55},
+  {reading_list_id: 3, book_id: 1},
+  {reading_list_id: 3, book_id: 2},
+  {reading_list_id: 3, book_id: 3},
+  {reading_list_id: 3, book_id: 7}
 ])
 BooksTag.create!([
   {book_id: 26, user_id: 1, tag_id: 6},
