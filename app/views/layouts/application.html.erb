@@ -55,9 +55,9 @@
 							<li><%= link_to "Reading Lists", reading_lists_path %></li>
 
 							<li><%= link_to "Top Readers", root_url(anchor: 'readers') %></li>
-
-							<li class="news"><%= link_to "News", root_url( anchor: 'twitterfeed') %></li>
-							
+							<!-- 
+							<li class="newsie"><%= link_to "News", root_url( anchor: 'twitterfeed') %></li>
+							-->
 							<% if user_signed_in? %>
 								<li><%= link_to "My Profile", profile_path %></li>
 
