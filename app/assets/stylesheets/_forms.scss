@@ -79,6 +79,14 @@ input, textarea {
   text-align: center;
 }
 
+.search-container input#search {
+  margin-top: 0;
+
+  @include breakpoint(medium) {
+    margin-top: 10px;
+  }
+}
+
 .review_page {
   text-align: center;
 }

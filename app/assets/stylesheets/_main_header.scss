@@ -48,6 +48,7 @@ SEARCH
   float: left;
   display: inline-block;
   padding-right: 15px;
+  margin-top: 0;
 
   @include breakpoint(medium) {
     display: none;
@@ -59,14 +60,16 @@ SEARCH
   display: none;
 }
 
-
+.search-container {
+  margin-top: 0;
+}
 
 .search-box {
   height: 50px;
   float: right;
   display: none;
   padding-right: 15px;
-
+  margin-top: 0;
   
   @include breakpoint(medium) {
     display: inline-block;
@@ -149,6 +152,7 @@ SEARCH
       top: 10%;
       margin-left: 175px;
       display: block;
+      cursor: pointer;
     }
   }
 
@@ -174,6 +178,10 @@ SEARCH
   white-space: nowrap;
   position: relative;
 
+  input{
+    margin-top: 0;
+  }
+
 
   input#search{
     width: 45px;
@@ -188,6 +196,7 @@ SEARCH
     -moz-border-radius: 5px;
     border-radius: 5px;
     color: #000000;
+    margin-top: 0px;
 
     -webkit-transition: width .55s ease;
     -moz-transition: width .55s ease;
@@ -275,6 +284,7 @@ NAVIGATION
   text-align: right;
   font-size: 30px;
   color: #ED1C24;
+  cursor: pointer;
   
 
   @include breakpoint(small) {
